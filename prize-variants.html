@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Главный приз — три варианта</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&family=Cormorant+Garamond:wght@400;500&family=Manrope:wght@400;500;600;700&display=swap">
+<style>
+  body{margin:0;background:#F3F7FB;color:#2A2420;font-family:Manrope,Arial,sans-serif}
+  main{width:min(1360px,100%);margin:0 auto;padding:48px 40px 80px;box-sizing:border-box}
+  .lead{max-width:720px;margin:0 0 48px}
+  .lead h1{margin:0 0 12px;font-family:Jost,Arial,sans-serif;font-weight:400;font-size:36px;letter-spacing:.02em}
+  .lead p{margin:0;font-size:17px;line-height:1.55;color:#3F4750}
+  .option{margin:0 0 56px}
+  .option h2{margin:0 0 6px;font-size:13px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#8A5526}
+  .option .why{margin:0 0 16px;max-width:680px;font-size:16px;line-height:1.5;color:#3F4750}
+  figure{margin:0}
+  .card{display:flex;background:#fff;border:1px solid #D9BE9C;border-radius:18px;overflow:hidden;box-shadow:0 18px 40px rgba(40,70,100,.08)}
+  .copy{flex:1 1 420px;min-width:0;padding:32px 36px;display:flex;flex-direction:column;justify-content:center;gap:14px}
+  .copy h3{margin:0;font-family:Jost,Arial,sans-serif;font-weight:400;font-size:clamp(26px,3vw,36px);line-height:1.12;text-transform:uppercase;color:#231D19}
+  .copy .body{margin:0;font-size:16px;line-height:1.6;color:#3F4750}
+  .cash{display:flex;flex-direction:column;gap:6px;padding-top:14px;border-top:1px solid #E3DED6}
+  .cash strong{font-size:20px;font-weight:600;color:#231D19}
+  .cash strong span{font-family:'Cormorant Garamond',Georgia,serif;font-size:40px;font-weight:500;color:#8A5526}
+  .cash p{margin:0;font-size:14px;line-height:1.5;color:#4F5862}
+  .shot{position:relative;flex:0 0 280px;min-height:280px}
+  .shot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 20%}
+  .cap{position:absolute;left:14px;right:14px;bottom:14px;margin:0;padding:10px 14px;border-radius:999px;background:rgba(255,255,255,.92);color:#231D19;font-size:14px;font-weight:600;text-align:center}
+  .plain{flex:0 0 210px;margin:12px;padding:24px 18px;border-radius:14px;background:#F7F1E8;display:flex;flex-direction:column;justify-content:center;gap:6px;text-align:center}
+  .plain .k{margin:0;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#8A5526}
+  .plain .n{margin:0;font-family:'Cormorant Garamond',Georgia,serif;font-size:72px;font-weight:500;line-height:.9;color:#8A5526}
+  .plain .s{margin:0;font-size:15px;line-height:1.35;color:#3F4750}
+  .card-c{flex-direction:column}
+  .banner{position:relative;height:280px}
+  .banner img{width:100%;height:100%;object-fit:cover;object-position:center 38%}
+  .pill{align-self:flex-start;margin:0;padding:8px 14px;border-radius:999px;background:#F7F1E8;color:#8A5526;font-size:13px;font-weight:700;letter-spacing:.04em}
+  @media (max-width:800px){
+    main{padding:32px 20px 56px}
+    .card,.card-c{flex-direction:column}
+    .shot,.plain{flex:none;min-height:240px;margin:12px 12px 0}
+    .plain{min-height:0}
+  }
+</style>
+</head>
+<body>
+<main>
+  <div class="lead">
+    <h1>Главный приз, три варианта</h1>
+    <p>Карточка сейчас держит два чужих куска: фото камней и тёмную плашку, где цифра 20 не говорит, что именно получат победители. Текст программы и кешбэк не менял. Ниже три способа сделать блок легче. Фото одно — девушка и мужчина, которые радуются.</p>
+  </div>
+
+  <section class="option">
+    <h2>А. Одна фотография</h2>
+    <p class="why">Зелёной плашки нет. На снимке короткая подпись: это главный приз, и его получат 20 человек. Дальше сразу программа.</p>
+    <article class="card">
+      <figure class="shot">
+        <img src="./assets/couple-prize.jpg" alt="Женщина и мужчина смеются на фоне гор">
+        <figcaption class="cap">Главный приз · 20 победителей</figcaption>
+      </figure>
+      <div class="copy">
+        <h3>Программа заботы о&nbsp;здоровье</h3>
+        <p class="body">Комплексный приём травматолога-ортопеда с&nbsp;плантографией и&nbsp;3&nbsp;повторных приёма, 1&nbsp;пара индивидуальных стелек, ортопедическая подушка TRELAX, 2&nbsp;банки коллагена ARQUILLENA и&nbsp;3&nbsp;сеанса кинезиотейпирования</p>
+        <div class="cash">
+          <strong>+ кешбэк 100% до&nbsp;<span>20&nbsp;000</span> бонусов</strong>
+          <p>Вернём бонусами всю сумму ваших покупок за&nbsp;период акции&nbsp;— 10&nbsp;декабря. Списание&nbsp;— по&nbsp;вашему уровню в&nbsp;программе лояльности, бонусы действуют 1&nbsp;год</p>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <section class="option">
+    <h2>Б. Цифра рядом, но светлая</h2>
+    <p class="why">Второй блок остаётся, только он больше не тёмный плакат. На кремовом фоне написано, что эти 20 человек получат именно эту программу.</p>
+    <article class="card">
+      <figure class="shot">
+        <img src="./assets/couple-prize.jpg" alt="Женщина и мужчина смеются на фоне гор">
+      </figure>
+      <aside class="plain">
+        <p class="k">Главный приз</p>
+        <p class="n">20</p>
+        <p class="s">человек получат эту программу</p>
+      </aside>
+      <div class="copy">
+        <h3>Программа заботы о&nbsp;здоровье</h3>
+        <p class="body">Комплексный приём травматолога-ортопеда с&nbsp;плантографией и&nbsp;3&nbsp;повторных приёма, 1&nbsp;пара индивидуальных стелек, ортопедическая подушка TRELAX, 2&nbsp;банки коллагена ARQUILLENA и&nbsp;3&nbsp;сеанса кинезиотейпирования</p>
+        <div class="cash">
+          <strong>+ кешбэк 100% до&nbsp;<span>20&nbsp;000</span> бонусов</strong>
+          <p>Вернём бонусами всю сумму ваших покупок за&nbsp;период акции&nbsp;— 10&nbsp;декабря. Списание&nbsp;— по&nbsp;вашему уровню в&nbsp;программе лояльности, бонусы действуют 1&nbsp;год</p>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <section class="option">
+    <h2>В. Фото сверху, цифра в подписи</h2>
+    <p class="why">Самый спокойный. Снимок на всю ширину карточки, без второй колонки. «20 победителей» — маленькая плашка над заголовком, а не отдельный экран.</p>
+    <article class="card card-c">
+      <div class="banner">
+        <img src="./assets/couple-prize.jpg" alt="Женщина и мужчина смеются на фоне гор">
+      </div>
+      <div class="copy">
+        <p class="pill">Главный приз · 20 победителей</p>
+        <h3>Программа заботы о&nbsp;здоровье</h3>
+        <p class="body">Комплексный приём травматолога-ортопеда с&nbsp;плантографией и&nbsp;3&nbsp;повторных приёма, 1&nbsp;пара индивидуальных стелек, ортопедическая подушка TRELAX, 2&nbsp;банки коллагена ARQUILLENA и&nbsp;3&nbsp;сеанса кинезиотейпирования</p>
+        <div class="cash">
+          <strong>+ кешбэк 100% до&nbsp;<span>20&nbsp;000</span> бонусов</strong>
+          <p>Вернём бонусами всю сумму ваших покупок за&nbsp;период акции&nbsp;— 10&nbsp;декабря. Списание&nbsp;— по&nbsp;вашему уровню в&nbsp;программе лояльности, бонусы действуют 1&nbsp;год</p>
+        </div>
+      </div>
+    </article>
+  </section>
+</main>
+</body>
+</html>

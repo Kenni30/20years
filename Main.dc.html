@@ -1,0 +1,713 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<script>if(!window.matchMedia("(prefers-reduced-motion: reduce)").matches)document.documentElement.classList.add("motion")</script>
+<title>Юбилей ОРТЕКИ – 20 ЛЕТ!</title>
+<script src="./vendor/react.js"></script>
+<script src="./vendor/react-dom.js"></script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&amp;family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&amp;family=Manrope:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0;background:#F3F7FB}
+a{color:#8A5526}a:hover{color:#6B3F18}
+*{box-sizing:border-box}
+[data-track]::-webkit-scrollbar{display:none}
+input::placeholder{color:#8A8F96}
+
+.prize-carousel{position:relative;width:100%;container-type:inline-size}
+.prize-nav{position:absolute;top:50%;z-index:2;display:flex;align-items:center;justify-content:center;width:42px;height:42px;margin:0;padding:0;border:none;border-radius:50%;background:#1F4A4E;cursor:pointer;box-shadow:0 8px 18px rgba(31,74,78,.28);transform:translateY(-50%);transition:transform .25s ease,box-shadow .25s ease}
+.prize-nav.prev{left:-21px}
+.prize-nav.next{right:-21px}
+.prize-nav:hover{transform:translateY(calc(-50% - 2px))}
+.prize-nav:focus-visible{outline:2px solid #F0C99E;outline-offset:3px}
+.prize-track{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:none;padding:2px 0 8px}
+.prize-track > div{
+  flex:0 0 calc((100% - 48px) / 4);
+  min-width:0;
+  scroll-snap-align:start;
+  transition:transform .35s cubic-bezier(.16,1,.3,1),box-shadow .35s ease;
+}
+.prize-track > div:last-child{scroll-snap-align:end}
+.prize-track > div:hover{transform:translateY(-6px)}
+.prize-card{background:#fff;border:1px solid #E7E0D6;border-radius:18px;overflow:hidden;display:flex;flex-direction:column;height:100%;box-shadow:0 12px 28px rgba(40,70,100,.07)}
+.prize-card img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;background:#F7F4EF}
+.prize-card-body{flex:1;display:flex;flex-direction:column;gap:6px;padding:16px 16px 18px}
+.prize-brand{margin:0;font-size:15px;font-weight:700;line-height:1.3;color:#231D19}
+.prize-desc{margin:0;min-height:2.8em;font-size:14px;line-height:1.4;color:#4F4640}
+.prize-pill{align-self:flex-start;margin-top:10px;display:inline-flex;align-items:center;gap:6px;padding:6px 12px 6px 10px;border-radius:999px;background:#F6F1E8;color:#231D19;font-size:13px;font-weight:600;line-height:1}
+.more-prizes{margin:40px 0 0;font-size:26px;font-weight:700;line-height:1.3;color:#231D19;text-align:center}
+.more-prizes span{color:#9A5F2B}
+@container (max-width:1040px){
+  .prize-track > div{flex-basis:calc((100% - 32px) / 3)}
+}
+@container (max-width:820px){
+  .prize-track > div{flex-basis:calc((100% - 16px) / 2)}
+  .prize-nav.prev{left:6px}
+  .prize-nav.next{right:6px}
+}
+@container (max-width:480px){
+  .prize-track > div{flex-basis:100%}
+  .more-prizes{font-size:20px}
+}
+
+.hero{position:relative;display:grid;container-type:inline-size;background:#E4EEF6}
+.hero::before{content:"";grid-area:1/1;padding-top:35.4167%}
+.hero-banner{grid-area:1/1;width:100%;height:100%;object-fit:cover;object-position:center center}
+.wrap{box-sizing:border-box;width:100%;max-width:1360px !important;margin-left:auto;margin-right:auto;padding-left:40px !important;padding-right:40px !important}
+.hero-copy{position:absolute;top:0;bottom:0;left:max(40px,calc((100cqi - 1360px) / 2 + 40px));z-index:1;width:min(540px,calc((min(100cqi,1360px) - 80px) * 0.48));display:flex;flex-direction:column;justify-content:center;gap:12px;padding:24px 0;box-sizing:border-box}
+.hero-kicker{margin:0;font-size:13px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:#3C4650}
+.hero-copy h1{margin:0;font-family:'Jost',Arial,sans-serif;font-weight:300;font-size:clamp(36px,4cqi,78px);line-height:.96;text-transform:uppercase;letter-spacing:.01em;color:#8A5526}
+.hero-copy h1 span{color:#1F4A4E}
+.hero-lead{margin:0;font-size:17px;line-height:1.5;color:#2C3640}
+.hero-date{margin:2px 0 0;font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(24px,2.4cqi,32px);font-weight:500;color:#8A5526}
+.hero-copy a{align-self:flex-start;margin-top:4px}
+@media (max-width:1100px){
+  .hero{min-height:92svh}
+  .hero::before{padding-top:0}
+  .hero-banner{position:absolute;inset:0;object-position:62% 30%}
+  .hero-copy{inset:auto 0 0 0;width:auto;justify-content:flex-end;gap:12px;padding:108px 20px 28px;background:linear-gradient(180deg,rgba(243,247,251,0) 0%,rgba(243,247,251,.92) 32%,#F3F7FB 58%)}
+  .hero-copy h1{font-size:clamp(40px,11vw,56px)}
+  .hero-kicker{font-size:12px;letter-spacing:.14em}
+  .hero-lead{font-size:16px}
+  .hero-copy a{white-space:normal}
+}
+@media (max-width:700px){
+  #how h2,#dates h2,#faq h2{white-space:normal !important;letter-spacing:.12em !important;font-size:15px !important}
+  .how-grid{grid-template-columns:1fr !important}
+  .join-card{padding:24px 18px !important}
+  .join-card button,.scan-banner a,.hero-copy a{white-space:normal !important}
+  #faq>img{display:none}
+  .benefit-value{font-size:46px}
+  .wrap,.benefits{padding-left:20px !important;padding-right:20px !important}
+}
+.main-prize{width:100%;display:grid;grid-template-columns:20.2% 20.2% 1fr;background:#fff;border:1px solid #E7E0D6;border-radius:20px;overflow:hidden;box-shadow:0 16px 40px rgba(40,70,100,.08)}
+.main-prize-photo{grid-column:1;grid-row:1;width:100%;height:0;min-height:100%;object-fit:cover;object-position:center 18%}
+.prize-gold-text{background:linear-gradient(135deg,#7E4B1F 0%,#B97D43 45%,#D9A66B 60%,#8A5526 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:#9A5F2B}
+.main-prize-count{grid-column:2;grid-row:1;position:relative;min-height:0;background:#F8F1E7;padding:8px 14px 8px 18px}
+.main-prize-count .num{margin:0;font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-weight:400;font-size:100px;line-height:.9;color:#8A5526}
+.main-prize-count .label{margin:4px 0 0;font-size:18px;line-height:1.25}
+.main-prize-ribbon{position:absolute;right:0;bottom:0;width:96px;height:auto;pointer-events:none}
+.main-prize-copy{grid-column:3;grid-row:1;min-width:0;padding:36px;display:flex;flex-direction:column;justify-content:flex-start;gap:6px}
+.main-prize-copy h3{margin:0;font-family:'Jost',Arial,sans-serif;font-weight:400;font-size:clamp(22px,2.2vw,28px);line-height:1.1;text-transform:uppercase;color:#231D19}
+.main-prize-copy .body{margin:0;font-size:15px;line-height:1.4;color:#3F4750}
+.main-prize-cash{display:flex;flex-direction:column;gap:2px;padding-top:6px;border-top:1px solid #E3DED6}
+.main-prize-cash strong{font-size:17px;font-weight:600;line-height:1.35;color:#231D19}
+.main-prize-cash strong span{font-family:'Cormorant Garamond',Georgia,serif;font-size:32px;font-weight:500;color:#8A5526}
+.main-prize-cash p{margin:0;font-size:14px;line-height:1.4;color:#4F5862}
+@media (max-width:800px){
+  .main-prize{grid-template-columns:42% 1fr}
+  .main-prize-count{padding-bottom:120px}
+  .main-prize-ribbon{width:140px;right:0;bottom:0}
+  .main-prize-copy{grid-column:1 / -1;grid-row:2;padding:20px}
+}
+.scan-banner{position:relative;overflow:hidden;width:100%;display:grid;grid-template-columns:auto minmax(220px,1fr);align-items:stretch;min-height:228px;border-radius:24px;background:radial-gradient(ellipse at 85% 30%, #2D6468 0%, #1F4A4E 60%);color:#fff;box-shadow:0 22px 48px rgba(8,50,56,.18)}
+.scan-copy{position:relative;z-index:1;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;padding:32px 28px 30px 48px}
+.scan-kicker{margin:0;font-size:12px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:#E4C48A}
+.scan-title{margin:12px 0 0;font-family:'Jost',Arial,sans-serif;font-weight:400;font-size:clamp(28px,2.7vw,40px);line-height:1.15;color:#fff}
+.scan-title s{margin-left:12px;font-size:.68em;font-weight:400;color:rgba(255,255,255,.62);text-decoration:line-through;text-decoration-thickness:1.5px}
+.scan-cta{margin-top:18px;display:inline-flex;align-items:center;gap:10px;min-height:46px;padding:0 22px;border-radius:999px;background:#fff;color:#123E42;font-size:15px;font-weight:600;line-height:1;text-decoration:none}
+.scan-cta svg{flex:none}
+.scan-note{margin:12px 0 0;font-size:13px;line-height:1.4;color:#D5E4E5}
+.scan-foot-slot{position:relative;min-height:100%}
+.scan-foot{position:absolute;left:50%;top:0;height:100%;width:auto;max-width:100%;transform:translateX(calc(-50% - 12px));display:block;pointer-events:none;object-fit:contain;object-position:center bottom}
+.scan-spark{position:absolute;border-radius:1px;background:#E3B57E;opacity:.8;pointer-events:none}
+@media (max-width:700px){
+  .scan-banner{display:flex;flex-direction:column;min-height:0}
+  .scan-copy{padding:24px 20px 8px}
+  .scan-title{font-size:26px}
+  .scan-foot-slot{width:100%;height:180px;min-height:0;flex:none}
+  .scan-foot{top:auto;bottom:0;height:180px;max-width:none}
+}
+.pill{position:relative;align-self:flex-start;margin-top:8px;display:inline-flex;align-items:center;min-height:46px;padding:0 22px;border-radius:999px;background:linear-gradient(120deg,#8A5526 0%,#B97D43 55%,#C9945A 100%);color:#FFFFFF;font-size:15px;font-weight:700;line-height:1;text-decoration:none;box-shadow:0 10px 22px rgba(138,85,38,.26)}
+.gift-shot{position:absolute;right:-64px;bottom:-8px;width:380px;height:auto;pointer-events:none}
+@media (max-width:700px){
+  .gift-card{padding-right:36px !important;padding-bottom:190px !important}
+  .gift-shot{width:230px;right:-40px;bottom:-20px}
+}
+.benefits{box-sizing:border-box;width:100%;max-width:1360px;margin-left:auto;margin-right:auto;padding:52px 40px 12px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
+.benefit{display:flex;flex-direction:column;gap:14px;padding:4px 28px 36px;min-width:0}
+.benefit:first-child{padding-left:0}
+.benefit:last-child{padding-right:0}
+.benefit:not(:first-child){box-shadow:inset 1px 0 0 #E6DDD2}
+.benefit-head{display:flex;align-items:center;gap:14px;min-width:0}
+.benefit-icon{flex:none;height:44px;display:flex;align-items:center}
+.benefit-icon svg{display:block}
+.benefit-label{margin:0;font-size:12px;font-weight:600;letter-spacing:.14em;line-height:1.35;text-transform:uppercase;color:#3C4650}
+.benefit-value{margin:0;font-family:'Cormorant Garamond',Georgia,serif;font-size:54px;font-weight:500;line-height:.9;white-space:nowrap;color:#231D19}
+.benefit-value span{font-family:'Manrope',Arial,sans-serif;font-size:16px;font-weight:500;letter-spacing:0;margin-left:8px}
+.benefit-text{margin:0;font-size:15px;line-height:1.55;color:#3F4750}
+@media (max-width:860px){
+  .benefits{grid-template-columns:1fr 1fr}
+  .benefit{box-shadow:none;padding:28px 18px}
+  .benefit:nth-child(odd){padding-left:0}
+  .benefit:nth-child(even){padding-right:0}
+  .benefit:nth-child(2n){box-shadow:inset 1px 0 0 #E6DDD2}
+  .benefit:nth-child(n+3){box-shadow:inset 0 1px 0 #E6DDD2}
+  .benefit:nth-child(4){box-shadow:inset 1px 0 0 #E6DDD2,inset 0 1px 0 #E6DDD2}
+}
+@media (max-width:560px){
+  .benefits{grid-template-columns:1fr}
+  .benefit{box-shadow:inset 0 1px 0 #E6DDD2;padding-left:0;padding-right:0}
+  .benefit:first-child{box-shadow:none}
+}
+html.motion [data-reveal]{opacity:0;transform:translateY(22px)}
+html.motion a[href="#join"],
+html.motion a[href="https://orteka.ru/catalog/"],
+html.motion #join button[type="button"]:not(:disabled),
+html.motion .pill{transition:transform .28s cubic-bezier(.16,1,.3,1),box-shadow .28s ease}
+html.motion a[href="#join"]:hover,
+html.motion a[href="https://orteka.ru/catalog/"]:hover,
+html.motion #join button[type="button"]:not(:disabled):hover,
+html.motion .pill:hover{transform:translateY(-2px)}
+@media (prefers-reduced-motion:reduce){
+  .prize-nav,.prize-track > div{transition:none}
+  .prize-nav:hover{transform:translateY(-50%)}
+  .prize-track > div:hover{transform:none}
+}
+</style>
+</helmet>
+<div style="width: 100%; font-family: 'Manrope', Arial, sans-serif; color: #2A2420; background: #F3F7FB">
+
+  <!-- Первый экран -->
+  <section id="top" class="hero" data-reveal="self" data-reveal-id="hero">
+    <img class="hero-banner" src="./assets/banner.jpg" alt="Женщина в светлом пальто на фоне гор, рядом надпись 20 лет">
+    <div class="hero-copy">
+      <p class="hero-kicker">Юбилей ОРТЕКИ&nbsp;– 20&nbsp;ЛЕТ!</p>
+      <h1><span>20&nbsp;лет</span><br>мы даём<br>опору</h1>
+      <p class="hero-lead">20&nbsp;лет мы заботимся о&nbsp;вашем здоровье и&nbsp;помогаем двигаться свободно и&nbsp;уверенно. В&nbsp;юбилей благодарим подарками каждого.</p>
+      <p class="hero-date">17&nbsp;ноября&nbsp;– 9&nbsp;декабря</p>
+      <a href="#join" style="white-space: nowrap; display: inline-flex; align-items: center; gap: 14px; min-height: 58px; padding: 0 clamp(20px, 3vw, 32px); border-radius: 999px; background: #1F4A4E; color: #FFFFFF; font-size: 17px; font-weight: 600; text-decoration: none; box-shadow: 0 12px 28px rgba(31,74,78,0.25)">Принять участие в&nbsp;розыгрыше
+        <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M14 6l6 6-6 6"></path></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- Четыре выгоды -->
+  <section id="gifts" data-reveal="self" data-reveal-id="gifts" style="background: #FFFFFF; border-top: 1px solid #E2EAF2; border-bottom: 1px solid #E2EAF2; display: flex; flex-direction: column; align-items: center">
+    <div class="benefits">
+      <div class="benefit">
+        <div class="benefit-head"><div class="benefit-icon"><svg aria-hidden="true" width="44" height="44" viewBox="0 0 48 48" fill="none" stroke="#A5672F" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="18" width="34" height="24" rx="2"></rect><rect x="4" y="12" width="40" height="7" rx="1.5"></rect><path d="M24 12v30"></path><path d="M24 12c-3-6-11-7-11-2 0 3 6 2 11 2zM24 12c3-6 11-7 11-2 0 3-6 2-11 2z"></path></svg></div><p class="benefit-label">Бонусы</p></div>
+        <p class="benefit-value">2&nbsp;000</p>
+        <p class="benefit-text">Всем участникам программы лояльности «Ваш ключ к&nbsp;здоровью». Оплачивайте ими до&nbsp;20% покупки до&nbsp;9&nbsp;декабря</p>
+      </div>
+      <div class="benefit">
+        <div class="benefit-head"><div class="benefit-icon"><svg aria-hidden="true" width="44" height="44" viewBox="0 0 48 48" fill="none" stroke="#A5672F" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="24" cy="24" r="20"></circle><path d="M16 32l16-16"></path><circle cx="17.5" cy="17.5" r="3"></circle><circle cx="30.5" cy="30.5" r="3"></circle></svg></div><p class="benefit-label">Кешбэк</p></div>
+        <p class="benefit-value">20%</p>
+        <p class="benefit-text">Бонусами с&nbsp;каждой покупки с&nbsp;17.11&nbsp;по&nbsp;09.12. Воспользоваться ими можно с&nbsp;10&nbsp;по&nbsp;31&nbsp;декабря</p>
+      </div>
+      <div class="benefit">
+        <div class="benefit-head"><div class="benefit-icon"><svg aria-hidden="true" width="44" height="44" viewBox="0 0 48 48" fill="none" stroke="#A5672F" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 13V6h7M37 6h7v7M44 35v7h-7M11 42H4v-7"></path><path d="M20 17C16.5 18 15.3 22.5 16 27C16.6 31 17 33 17 36C17 39 19 41 21.8 41C24.6 41 26 39 26 36C26 33.5 27.6 32 29.6 28.5C31.6 25 31.3 20 28.4 17.6C26 15.8 23 16.2 20 17Z"></path><ellipse cx="19.6" cy="11.6" rx="2.3" ry="2.9"></ellipse><circle cx="24.6" cy="10.4" r="1.6"></circle><circle cx="28.3" cy="11.6" r="1.4"></circle><circle cx="31" cy="14.2" r="1.2"></circle><circle cx="32.6" cy="17.6" r="1.05"></circle></svg></div><p class="benefit-label">Сканирование стопы</p></div>
+        <p class="benefit-value">за&nbsp;1&nbsp;₽</p>
+        <p class="benefit-text">Гарантированный подарок всем участникам розыгрыша. Действует до&nbsp;31&nbsp;января 2027&nbsp;года</p>
+      </div>
+      <div class="benefit">
+        <div class="benefit-head"><div class="benefit-icon"><svg aria-hidden="true" width="44" height="44" viewBox="0 0 48 48" fill="none" stroke="#A5672F" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 8h20v8a10 10 0 01-20 0z"></path><path d="M14 11H8c0 6 3 9 7 9M34 11h6c0 6-3 9-7 9"></path><path d="M24 26v8M17 40h14l-2-6H19z"></path></svg></div><p class="benefit-label">Розыгрыш<br>супер-подарков</p></div>
+        <p class="benefit-value">120 <span>победителей</span></p>
+        <p class="benefit-text">Итоги 10&nbsp;декабря</p>
+      </div>
+    </div>
+    <div class="wrap" style="width: 100%; max-width: 1240px; padding: 0 24px 44px; display: flex; justify-content: center">
+      <a href="https://orteka.ru/catalog/" target="_blank" rel="noopener" style="max-width: 100%; text-align: center; display: inline-flex; align-items: center; gap: 14px; min-height: 58px; padding: 10px clamp(20px, 4vw, 34px); border-radius: 999px; background: linear-gradient(120deg, #8A5526 0%, #B97D43 55%, #C9945A 100%); color: #FFFFFF; font-size: 17px; font-weight: 700; text-decoration: none; box-shadow: 0 14px 30px rgba(138,85,38,0.28)">
+        <svg aria-hidden="true" width="24" height="24" viewBox="0 0 48 48" fill="none" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex: none"><rect x="7" y="18" width="34" height="24" rx="2"></rect><rect x="4" y="12" width="40" height="7" rx="1.5"></rect><path d="M24 12v30"></path><path d="M24 12c-3-6-11-7-11-2 0 3 6 2 11 2zM24 12c3-6 11-7 11-2 0 3-6 2-11 2z"></path></svg>
+        Использовать 2&nbsp;000&nbsp;бонусов на&nbsp;покупку
+        <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M14 6l6 6-6 6"></path></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- Обращение -->
+  <section id="letter" data-reveal="self" data-reveal-id="letter" style="position: relative; overflow: hidden; background: #F3F7FB; display: flex; flex-direction: column; align-items: center">
+    <p aria-hidden="true" style="position: absolute; right: -40px; top: -40px; margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-size: 520px; line-height: 1; color: #E3EBF4">20</p>
+    <svg aria-hidden="true" viewBox="0 0 400 300" style="position: absolute; right: -40px; top: 40px; width: 420px; height: 320px; opacity: 0.9"><defs><linearGradient id="rba" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F6DDB8"></stop><stop offset="0.45" stop-color="#D9A66B"></stop><stop offset="0.7" stop-color="#FBE9CF"></stop><stop offset="1" stop-color="#B97D43"></stop></linearGradient></defs><path d="M10 40C120 10 170 120 110 160C60 195 40 110 130 100C230 90 260 250 390 280" fill="none" stroke="url(#rba)" stroke-width="10" stroke-linecap="round"></path><path d="M10 40C120 10 170 120 110 160C60 195 40 110 130 100C230 90 260 250 390 280" fill="none" stroke="#FFFFFF" stroke-opacity="0.45" stroke-width="2" stroke-linecap="round" transform="translate(-2 -3)"></path></svg>
+    <span aria-hidden="true" style="position: absolute; left: 95.9%; top: 57.1%; width: 6px; height: 6px; border-radius: 50%; background: #D9A66B; opacity: 0.75"></span>
+    <span aria-hidden="true" style="position: absolute; left: 85.3%; top: 41.5%; width: 13px; height: 4px; border-radius: 1px; background: #F0C99E; transform: rotate(64deg); opacity: 0.8"></span>
+    <span aria-hidden="true" style="position: absolute; left: 77.9%; top: 12.9%; width: 14px; height: 6px; border-radius: 1px; background: #E3B57E; transform: rotate(163deg); opacity: 0.8"></span>
+    <span aria-hidden="true" style="position: absolute; left: 95.6%; top: 34.5%; width: 5px; height: 5px; border-radius: 50%; background: #E3B57E; opacity: 0.75"></span>
+    <span aria-hidden="true" style="position: absolute; left: 91.8%; top: 24.4%; width: 13px; height: 4px; border-radius: 1px; background: #F0C99E; transform: rotate(97deg); opacity: 0.8"></span>
+    <span aria-hidden="true" style="position: absolute; left: 76.9%; top: 17.2%; width: 6px; height: 6px; border-radius: 50%; background: #D9A66B; opacity: 0.75"></span>
+    <span aria-hidden="true" style="position: absolute; left: 74.5%; top: 24.1%; width: 12px; height: 5px; border-radius: 1px; background: #B97D43; transform: rotate(172deg); opacity: 0.8"></span>
+    <span aria-hidden="true" style="position: absolute; left: 85.3%; top: 54.8%; width: 12px; height: 4px; border-radius: 1px; background: #F0C99E; transform: rotate(151deg); opacity: 0.8"></span>
+    <span aria-hidden="true" style="position: absolute; left: 95.8%; top: 26.4%; width: 12px; height: 5px; border-radius: 1px; background: #E3B57E; transform: rotate(167deg); opacity: 0.8"></span>
+    <span aria-hidden="true" style="position: absolute; left: 94.4%; top: 32.0%; width: 12px; height: 5px; border-radius: 1px; background: #F0C99E; transform: rotate(169deg); opacity: 0.8"></span>
+    <span aria-hidden="true" style="position: absolute; left: 77.2%; top: 55.5%; width: 11px; height: 6px; border-radius: 1px; background: #E3B57E; transform: rotate(124deg); opacity: 0.8"></span>
+    <span aria-hidden="true" style="position: absolute; left: 90.1%; top: 53.1%; width: 12px; height: 5px; border-radius: 1px; background: #B97D43; transform: rotate(68deg); opacity: 0.8"></span>
+    <span aria-hidden="true" style="position: absolute; left: 64.6%; top: 48.8%; width: 14px; height: 6px; border-radius: 1px; background: #B97D43; transform: rotate(143deg); opacity: 0.8"></span>
+    <span aria-hidden="true" style="position: absolute; left: 78.2%; top: 21.5%; width: 14px; height: 6px; border-radius: 1px; background: #C08A4E; transform: rotate(125deg); opacity: 0.8"></span>
+    <span aria-hidden="true" style="position: absolute; left: 92.3%; top: 47.9%; width: 10px; height: 6px; border-radius: 1px; background: #F0C99E; transform: rotate(2deg); opacity: 0.8"></span>
+    <span aria-hidden="true" style="position: absolute; left: 55.1%; top: 36.2%; width: 14px; height: 4px; border-radius: 1px; background: #D9A66B; transform: rotate(69deg); opacity: 0.8"></span>
+    <span aria-hidden="true" style="position: absolute; left: 86.2%; top: 11.6%; width: 9px; height: 5px; border-radius: 1px; background: #F0C99E; transform: rotate(62deg); opacity: 0.8"></span>
+    <span aria-hidden="true" style="position: absolute; left: 93.1%; top: 46.5%; width: 10px; height: 6px; border-radius: 1px; background: #D9A66B; transform: rotate(92deg); opacity: 0.8"></span>
+    <div class="wrap" style="position: relative; width: 100%; max-width: 1200px; padding: 80px 24px 88px; display: flex; flex-direction: column; gap: 56px">
+        <div style="display: flex; flex-wrap: wrap; gap: 32px 72px">
+        <div style="flex: 1 1 300px; display: flex; flex-direction: column; gap: 16px">
+          <p style="margin: 0; font-size: 13px; font-weight: 600; letter-spacing: 5px; text-transform: uppercase; color: #8A5526">20&nbsp;лет нам. Подарки вам!</p>
+          <h2 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-weight: 400; font-size: clamp(44px, 5vw, 64px); line-height: 1.05; color: #231D19">20&nbsp;лет рядом</h2>
+          <div style="width: 64px; height: 1px; background: #A5672F; margin-top: 8px"></div>
+        </div>
+        <div style="flex: 2 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 20px; font-size: 18px; line-height: 1.7; color: #2F3640">
+          <p style="margin: 0">Уже 20&nbsp;лет мы помогаем людям сохранять свободу движения, чувствовать уверенность в&nbsp;каждом шаге и&nbsp;заботиться о&nbsp;своём здоровье. Объединяя медицинскую экспертизу, современные технологии и&nbsp;индивидуальный подход, мы создаём пространство, где каждый может найти профессиональную поддержку и&nbsp;внимание к&nbsp;своим потребностям.</p>
+          <p style="margin: 0">Спасибо вам за&nbsp;доверие к&nbsp;ОРТЕКЕ, нашим специалистам и&nbsp;врачам, передовым технологиям, эксклюзивным брендам и&nbsp;уникальным решениям, которые мы выбираем для&nbsp;вас.</p>
+          <p style="margin: 0">Все эти годы мы даём вам опору. А&nbsp;ваше доверие становится опорой для&nbsp;нас. И&nbsp;сегодня, отмечая 20-летие ОРТЕКИ, мы хотим сказать вам спасибо&nbsp;— и&nbsp;подарить ещё больше поводов для&nbsp;заботы о&nbsp;себе.</p>
+        </div>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px">
+        <div style="position: relative; overflow: hidden; background: #FFFFFF; border-radius: 22px; padding: 36px; display: flex; flex-direction: column; gap: 12px; box-shadow: 0 20px 50px rgba(40,70,100,0.10)">
+          <svg aria-hidden="true" viewBox="0 0 300 160" style="position: absolute; right: -30px; bottom: -40px; width: 220px; height: 160px; opacity: 0.85"><defs><linearGradient id="rbb" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F6DDB8"></stop><stop offset="0.45" stop-color="#D9A66B"></stop><stop offset="0.7" stop-color="#FBE9CF"></stop><stop offset="1" stop-color="#B97D43"></stop></linearGradient></defs><path d="M10 140C80 120 60 40 140 50C200 58 190 130 280 90" fill="none" stroke="url(#rbb)" stroke-width="10" stroke-linecap="round"></path><path d="M10 140C80 120 60 40 140 50C200 58 190 130 280 90" fill="none" stroke="#FFFFFF" stroke-opacity="0.45" stroke-width="2" stroke-linecap="round" transform="translate(-2 -3)"></path></svg>
+          <p style="position: relative; margin: 0; font-size: 16px; font-weight: 600; color: #8A5526">17&nbsp;ноября&nbsp;– 9&nbsp;декабря</p>
+          <h3 style="position: relative; margin: 0; font-family: 'Jost', Arial, sans-serif; font-weight: 300; font-size: 30px; line-height: 1.15; text-transform: uppercase; color: #231D19">Дни особенных подарков</h3>
+          <p style="position: relative; margin: 0; max-width: 460px; font-size: 16px; line-height: 1.6; color: #3F4750">В&nbsp;салонах ОРТЕКИ и&nbsp;интернет-магазине: начисляем каждому клиенту 2&nbsp;000&nbsp;бонусов на&nbsp;покупки и&nbsp;возвращаем 20% бонусами с&nbsp;каждой покупки. Пусть забота о&nbsp;себе в&nbsp;юбилейные дни будет ещё приятнее.</p>
+          <a href="#gifts" class="pill">Подробнее</a>
+        </div>
+        <div class="gift-card" style="position: relative; overflow: hidden; background: radial-gradient(ellipse at 85% 30%, #2D6468 0%, #1F4A4E 60%); color: #FFFFFF; border-radius: 22px; padding: 36px 210px 36px 36px; display: flex; flex-direction: column; gap: 12px; box-shadow: 0 20px 50px rgba(31,74,78,0.22)">
+          <img class="gift-shot" src="./assets/gift-box.png" alt="">
+          <p style="position: relative; margin: 0; font-size: 13px; font-weight: 600; letter-spacing: 4px; text-transform: uppercase; color: #F0C99E">10&nbsp;декабря</p>
+          <h3 style="position: relative; margin: 0; font-family: 'Jost', Arial, sans-serif; font-weight: 300; font-size: 30px; line-height: 1.15; text-transform: uppercase; color: #FFFFFF">Главное юбилейное событие</h3>
+          <p style="position: relative; margin: 0; font-size: 16px; line-height: 1.6; color: #DCE8E8">Розыгрыш 120&nbsp;призов: программа заботы о&nbsp;здоровье, ортопедическая обувь, стельки, компрессионный трикотаж и&nbsp;другие подарки для&nbsp;активной и&nbsp;комфортной жизни.</p>
+          <a href="#prizes" class="pill">Смотреть призы</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Главное юбилейное событие: розыгрыш -->
+  <section id="prizes" data-reveal="self" data-reveal-id="prizes" style="position: relative; overflow: hidden; background: radial-gradient(ellipse at 50% 0%, #FFFFFF 0%, rgba(255,255,255,0) 60%), linear-gradient(180deg, #F7FAFD 0%, #EAF1F8 100%); border-top: 1px solid #E2EAF2; display: flex; flex-direction: column; align-items: center">
+    <svg aria-hidden="true" viewBox="0 0 400 300" style="position: absolute; left: -60px; top: 30px; width: 380px; height: 280px; opacity: 0.85"><defs><linearGradient id="rbc" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F6DDB8"></stop><stop offset="0.45" stop-color="#D9A66B"></stop><stop offset="0.7" stop-color="#FBE9CF"></stop><stop offset="1" stop-color="#B97D43"></stop></linearGradient></defs><path d="M10 260C60 160 160 220 170 140C180 60 90 40 120 20C150 0 260 40 390 10" fill="none" stroke="url(#rbc)" stroke-width="10" stroke-linecap="round"></path><path d="M10 260C60 160 160 220 170 140C180 60 90 40 120 20C150 0 260 40 390 10" fill="none" stroke="#FFFFFF" stroke-opacity="0.45" stroke-width="2" stroke-linecap="round" transform="translate(-2 -3)"></path></svg>
+    <svg aria-hidden="true" viewBox="0 0 400 300" style="position: absolute; right: -50px; top: 120px; width: 360px; height: 260px; opacity: 0.85"><defs><linearGradient id="rbd" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F6DDB8"></stop><stop offset="0.45" stop-color="#D9A66B"></stop><stop offset="0.7" stop-color="#FBE9CF"></stop><stop offset="1" stop-color="#B97D43"></stop></linearGradient></defs><path d="M390 250C300 200 330 120 250 120C170 120 190 210 120 190C50 170 60 60 10 30" fill="none" stroke="url(#rbd)" stroke-width="10" stroke-linecap="round"></path><path d="M390 250C300 200 330 120 250 120C170 120 190 210 120 190C50 170 60 60 10 30" fill="none" stroke="#FFFFFF" stroke-opacity="0.45" stroke-width="2" stroke-linecap="round" transform="translate(-2 -3)"></path></svg>
+    <span aria-hidden="true" style="position: absolute; left: 24.7%; top: 5.9%; width: 5px; height: 5px; border-radius: 50%; background: #E3B57E; opacity: 0.75"></span>
+    <span aria-hidden="true" style="position: absolute; left: 3.9%; top: 22.9%; width: 7px; height: 7px; border-radius: 50%; background: #F0C99E; opacity: 0.75"></span>
+    <span aria-hidden="true" style="position: absolute; left: 28.6%; top: 8.6%; width: 5px; height: 5px; border-radius: 50%; background: #D9A66B; opacity: 0.75"></span>
+    <span aria-hidden="true" style="position: absolute; left: 81.6%; top: 32.7%; width: 7px; height: 7px; border-radius: 50%; background: #F0C99E; opacity: 0.75"></span>
+    <span aria-hidden="true" style="position: absolute; left: 62.2%; top: 29.8%; width: 11px; height: 6px; border-radius: 1px; background: #F0C99E; transform: rotate(22deg); opacity: 0.8"></span>
+    <span aria-hidden="true" style="position: absolute; left: 39.2%; top: 11.5%; width: 7px; height: 7px; border-radius: 50%; background: #C08A4E; opacity: 0.75"></span>
+    <span aria-hidden="true" style="position: absolute; left: 2.7%; top: 13.1%; width: 8px; height: 8px; border-radius: 50%; background: #F0C99E; opacity: 0.75"></span>
+    <span aria-hidden="true" style="position: absolute; left: 59.5%; top: 18.4%; width: 5px; height: 5px; border-radius: 50%; background: #C08A4E; opacity: 0.75"></span>
+    <span aria-hidden="true" style="position: absolute; left: 9.8%; top: 19.6%; width: 12px; height: 6px; border-radius: 1px; background: #F0C99E; transform: rotate(132deg); opacity: 0.8"></span>
+    <span aria-hidden="true" style="position: absolute; left: 34.9%; top: 39.9%; width: 10px; height: 6px; border-radius: 1px; background: #C08A4E; transform: rotate(17deg); opacity: 0.8"></span>
+    <span aria-hidden="true" style="position: absolute; left: 62.7%; top: 12.5%; width: 11px; height: 6px; border-radius: 1px; background: #F0C99E; transform: rotate(111deg); opacity: 0.8"></span>
+    <span aria-hidden="true" style="position: absolute; left: 55.6%; top: 36.4%; width: 11px; height: 6px; border-radius: 1px; background: #D9A66B; transform: rotate(15deg); opacity: 0.8"></span>
+    <span aria-hidden="true" style="position: absolute; left: 61.1%; top: 11.0%; width: 5px; height: 5px; border-radius: 50%; background: #F0C99E; opacity: 0.75"></span>
+    <span aria-hidden="true" style="position: absolute; left: 6.1%; top: 28.5%; width: 9px; height: 5px; border-radius: 1px; background: #F0C99E; transform: rotate(172deg); opacity: 0.8"></span>
+    <span aria-hidden="true" style="position: absolute; left: 29.7%; top: 38.7%; width: 13px; height: 6px; border-radius: 1px; background: #1F4A4E; transform: rotate(105deg); opacity: 0.8"></span>
+    <span aria-hidden="true" style="position: absolute; left: 80.5%; top: 13.1%; width: 7px; height: 7px; border-radius: 50%; background: #C08A4E; opacity: 0.75"></span>
+    <span aria-hidden="true" style="position: absolute; left: 38.6%; top: 38.5%; width: 5px; height: 5px; border-radius: 50%; background: #F0C99E; opacity: 0.75"></span>
+    <span aria-hidden="true" style="position: absolute; left: 45.7%; top: 15.9%; width: 12px; height: 4px; border-radius: 1px; background: #F0C99E; transform: rotate(74deg); opacity: 0.8"></span>
+    <span aria-hidden="true" style="position: absolute; left: 42.7%; top: 9.9%; width: 6px; height: 6px; border-radius: 50%; background: #D9A66B; opacity: 0.75"></span>
+    <span aria-hidden="true" style="position: absolute; left: 59.2%; top: 38.9%; width: 13px; height: 4px; border-radius: 1px; background: #B97D43; transform: rotate(10deg); opacity: 0.8"></span>
+    <span aria-hidden="true" style="position: absolute; left: 32.9%; top: 3.4%; width: 12px; height: 6px; border-radius: 1px; background: #B97D43; transform: rotate(74deg); opacity: 0.8"></span>
+    <span aria-hidden="true" style="position: absolute; left: 96.8%; top: 20.2%; width: 9px; height: 4px; border-radius: 1px; background: #C08A4E; transform: rotate(112deg); opacity: 0.8"></span>
+    <span aria-hidden="true" style="position: absolute; left: 42.4%; top: 11.4%; width: 9px; height: 4px; border-radius: 1px; background: #E3B57E; transform: rotate(55deg); opacity: 0.8"></span>
+    <span aria-hidden="true" style="position: absolute; left: 26.4%; top: 11.2%; width: 11px; height: 4px; border-radius: 1px; background: #C08A4E; transform: rotate(59deg); opacity: 0.8"></span>
+    <span aria-hidden="true" style="position: absolute; left: 33.2%; top: 35.9%; width: 8px; height: 8px; border-radius: 50%; background: #F0C99E; opacity: 0.75"></span>
+    <span aria-hidden="true" style="position: absolute; left: 94.4%; top: 26.8%; width: 12px; height: 4px; border-radius: 1px; background: #D9A66B; transform: rotate(126deg); opacity: 0.8"></span>
+    <span aria-hidden="true" style="position: absolute; left: 91.3%; top: 23.7%; width: 8px; height: 8px; border-radius: 50%; background: #C08A4E; opacity: 0.75"></span>
+    <span aria-hidden="true" style="position: absolute; left: 78.8%; top: 26.4%; width: 7px; height: 7px; border-radius: 50%; background: #E3B57E; opacity: 0.75"></span>
+    <span aria-hidden="true" style="position: absolute; left: 34.5%; top: 16.9%; width: 11px; height: 6px; border-radius: 1px; background: #E3B57E; transform: rotate(19deg); opacity: 0.8"></span>
+    <span aria-hidden="true" style="position: absolute; left: 66.2%; top: 3.7%; width: 11px; height: 6px; border-radius: 1px; background: #B97D43; transform: rotate(32deg); opacity: 0.8"></span>
+    <div class="wrap" style="position: relative; width: 100%; max-width: 1240px; padding: 88px 24px 80px; display: flex; flex-direction: column; align-items: center; gap: 40px">
+      <div style="display: flex; flex-direction: column; align-items: center; gap: 22px; text-align: center">
+        <p style="margin: 0; font-size: 15px; font-weight: 500; letter-spacing: 6px; text-transform: uppercase; color: #3C4650">Главное юбилейное событие</p>
+        <h2 style="margin: 0; font-family: 'Jost', Arial, sans-serif; font-weight: 400; font-size: clamp(40px, 5.2vw, 68px); line-height: 1.12; color: #231D19">10&nbsp;декабря<br><span class="prize-gold-text">розыгрыш 120&nbsp;призов</span> от&nbsp;ОРТЕКИ</h2>
+      </div>
+
+      <div class="main-prize">
+        <img class="main-prize-photo" src="./assets/couple-prize.jpg" alt="Женщина и мужчина смеются на фоне гор">
+        <div class="main-prize-count">
+          <p class="num">20</p>
+          <p class="label prize-gold-text">Победителей получат<br>главный приз</p>
+          <img class="main-prize-ribbon" src="./assets/prize-ribbon.png" alt="">
+        </div>
+        <div class="main-prize-copy">
+          <h3>Программа заботы о&nbsp;здоровье</h3>
+          <p class="body">Комплексный приём травматолога-ортопеда с&nbsp;плантографией и&nbsp;3&nbsp;повторных приёма, 1&nbsp;пара индивидуальных стелек, ортопедическая подушка TRELAX, 2&nbsp;банки коллагена ARQUILLENA и&nbsp;3&nbsp;сеанса кинезиотейпирования</p>
+          <div class="main-prize-cash">
+            <strong>+ кешбэк 100% до&nbsp;<span>20&nbsp;000</span> бонусов</strong>
+            <p>Вернём бонусами всю сумму ваших покупок за&nbsp;период акции&nbsp;— 10&nbsp;декабря. Списание&nbsp;— по&nbsp;вашему уровню в&nbsp;программе лояльности, бонусы действуют 1&nbsp;год</p>
+          </div>
+        </div>
+      </div>
+
+      <p class="more-prizes">И&nbsp;ещё <span>100</span> призов для активной и&nbsp;комфортной жизни</p>
+      <div class="prize-carousel">
+          <button type="button" class="prize-nav prev" aria-label="Предыдущие призы" onClick="{{prev}}"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"></path></svg></button>
+        <div ref="{{setTrack}}" class="prize-track" data-track="prizes">
+        <div class="prize-card">
+          <img src="./assets/e918013b76d1ce761b59ef548e43581a.jpg" alt="Коллаген ARQUILLENA">
+          <div class="prize-card-body">
+            <p class="prize-brand">ARQUILLENA</p>
+            <p class="prize-desc">Курс коллагена, 2&nbsp;банки. Для&nbsp;суставов и&nbsp;вен</p>
+            <p class="prize-pill"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#8A5526" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="13" rx="1.5"></rect><path d="M12 8v13M3 12h18"></path><path d="M12 8c-2.4-3.1-5.4-3.3-5.4-1.2S9.4 8 12 8c2.6 0 4.4-2.1 5.4-1.2S14.4 4.9 12 8z"></path></svg>20&nbsp;призов</p>
+          </div>
+        </div>
+        <div class="prize-card">
+          <img src="./assets/dfaa64eba579852e347dd99302fe4004.jpg" alt="Ортопедическая подушка TRELAX">
+          <div class="prize-card-body">
+            <p class="prize-brand">TRELAX</p>
+            <p class="prize-desc">Ортопедическая подушка по&nbsp;промокоду</p>
+            <p class="prize-pill"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#8A5526" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="13" rx="1.5"></rect><path d="M12 8v13M3 12h18"></path><path d="M12 8c-2.4-3.1-5.4-3.3-5.4-1.2S9.4 8 12 8c2.6 0 4.4-2.1 5.4-1.2S14.4 4.9 12 8z"></path></svg>10&nbsp;призов</p>
+          </div>
+        </div>
+        <div class="prize-card">
+          <img src="./assets/a9b294ebfb893ffee58ac04bb4f573c0.jpg" alt="Женщина в офисе в компрессионном трикотаже VENOTEKS">
+          <div class="prize-card-body">
+            <p class="prize-brand">VENOTEKS</p>
+            <p class="prize-desc">Компрессионный трикотаж, 2&nbsp;пары</p>
+            <p class="prize-pill"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#8A5526" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="13" rx="1.5"></rect><path d="M12 8v13M3 12h18"></path><path d="M12 8c-2.4-3.1-5.4-3.3-5.4-1.2S9.4 8 12 8c2.6 0 4.4-2.1 5.4-1.2S14.4 4.9 12 8z"></path></svg>15&nbsp;призов</p>
+          </div>
+        </div>
+        <div class="prize-card">
+          <img src="./assets/083282f69b96ea046ee5bbb3a87ebeea.jpg" alt="Зимние ботинки GOEKKEN с мехом">
+          <div class="prize-card-body">
+            <p class="prize-brand">BERKEMANN, ORTMANN, GEKKEN</p>
+            <p class="prize-desc">Ортопедическая обувь</p>
+            <p class="prize-pill"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#8A5526" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="13" rx="1.5"></rect><path d="M12 8v13M3 12h18"></path><path d="M12 8c-2.4-3.1-5.4-3.3-5.4-1.2S9.4 8 12 8c2.6 0 4.4-2.1 5.4-1.2S14.4 4.9 12 8z"></path></svg>10&nbsp;призов</p>
+          </div>
+        </div>
+        <div class="prize-card">
+          <img src="./assets/abf09751b3bedf91d0ceb3cdc7fbc318.jpg" alt="Ортопедические стельки ORTMANN">
+          <div class="prize-card-body">
+            <p class="prize-brand">BAUERFEIND, ORTMANN</p>
+            <p class="prize-desc">Ортопедические стельки</p>
+            <p class="prize-pill"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#8A5526" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="13" rx="1.5"></rect><path d="M12 8v13M3 12h18"></path><path d="M12 8c-2.4-3.1-5.4-3.3-5.4-1.2S9.4 8 12 8c2.6 0 4.4-2.1 5.4-1.2S14.4 4.9 12 8z"></path></svg>15&nbsp;призов</p>
+          </div>
+        </div>
+        <div class="prize-card">
+          <img src="./assets/b467da54325301176b48c8a6ea229dee.jpg" alt="Ручной массажёр GEZATONE">
+          <div class="prize-card-body">
+            <p class="prize-brand">GEZATONE</p>
+            <p class="prize-desc">Массажёр для&nbsp;тела</p>
+            <p class="prize-pill"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#8A5526" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="13" rx="1.5"></rect><path d="M12 8v13M3 12h18"></path><path d="M12 8c-2.4-3.1-5.4-3.3-5.4-1.2S9.4 8 12 8c2.6 0 4.4-2.1 5.4-1.2S14.4 4.9 12 8z"></path></svg>10&nbsp;призов</p>
+          </div>
+        </div>
+        <div class="prize-card">
+          <img src="./assets/ad6992e77cb3f14b53b84f4f144fcc53.jpg" alt="Кинезиотейп BBTAPE">
+          <div class="prize-card-body">
+            <p class="prize-brand">Кинезиотейпирование</p>
+            <p class="prize-desc">Абонемент на&nbsp;3&nbsp;сеанса в&nbsp;салоне ОРТЕКИ</p>
+            <p class="prize-pill"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#8A5526" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="13" rx="1.5"></rect><path d="M12 8v13M3 12h18"></path><path d="M12 8c-2.4-3.1-5.4-3.3-5.4-1.2S9.4 8 12 8c2.6 0 4.4-2.1 5.4-1.2S14.4 4.9 12 8z"></path></svg>20&nbsp;призов</p>
+          </div>
+        </div>
+        </div>
+          <button type="button" class="prize-nav next" aria-label="Следующие призы" onClick="{{next}}"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"></path></svg></button>
+      </div>
+
+      <div class="scan-banner">
+        <span class="scan-spark" aria-hidden="true" style="left: 2%; top: 46%; width: 11px; height: 4px; background: #F0C99E; transform: rotate(24deg)"></span>
+        <span class="scan-spark" aria-hidden="true" style="left: 22%; top: 8%; width: 5px; height: 5px; border-radius: 50%; background: #E3B57E"></span>
+        <span class="scan-spark" aria-hidden="true" style="left: 37%; top: 13%; width: 12px; height: 4px; background: #D9A66B; transform: rotate(32deg)"></span>
+        <span class="scan-spark" aria-hidden="true" style="left: 44%; top: 20%; width: 6px; height: 6px; border-radius: 50%; background: #F0C99E"></span>
+        <span class="scan-spark" aria-hidden="true" style="left: 58%; top: 10%; width: 13px; height: 4px; background: #E3B57E; transform: rotate(-18deg)"></span>
+        <span class="scan-spark" aria-hidden="true" style="left: 71%; top: 18%; width: 5px; height: 5px; border-radius: 50%; background: #C08A4E"></span>
+        <span class="scan-spark" aria-hidden="true" style="left: 84%; top: 12%; width: 11px; height: 4px; background: #F0C99E; transform: rotate(68deg)"></span>
+        <span class="scan-spark" aria-hidden="true" style="left: 52%; top: 72%; width: 12px; height: 4px; background: #D9A66B; transform: rotate(14deg)"></span>
+        <span class="scan-spark" aria-hidden="true" style="left: 91%; top: 58%; width: 6px; height: 6px; border-radius: 50%; background: #E3B57E"></span>
+        <div class="scan-copy">
+          <p class="scan-kicker">Гарантированно каждому участнику</p>
+          <p class="scan-title">Сканирование стопы за&nbsp;1&nbsp;₽ <s>1&nbsp;100&nbsp;₽</s></p>
+          <a href="#join" class="scan-cta">Принять участие в&nbsp;розыгрыше
+            <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#123E42" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+          </a>
+          <p class="scan-note">промокод придёт на&nbsp;email с&nbsp;10&nbsp;по&nbsp;15&nbsp;декабря · действует до&nbsp;31&nbsp;января 2027&nbsp;года</p>
+        </div>
+        <div class="scan-foot-slot">
+          <img class="scan-foot" src="./assets/scan-foot.png" alt="Стопа над светящимся сканером">
+        </div>
+      </div>
+      <p style="margin: 0; font-size: 16px; color: #3F4750; text-align: center">Итоги розыгрыша объявим 10&nbsp;декабря на&nbsp;сайте</p>
+    </div>
+  </section>
+
+  <!-- Как принять участие -->
+  <section id="how" data-reveal="self" data-reveal-id="how" style="background: #F3F7FB; display: flex; flex-direction: column; align-items: center">
+    <div class="wrap" style="width: 100%; max-width: 1200px; padding: 64px 24px 40px; display: flex; flex-direction: column; gap: 32px">
+      <div style="display: flex; align-items: center; gap: 24px">
+        <div style="flex: 1; height: 1px; background: #CBD7E3"></div>
+        <h2 style="margin: 0; white-space: nowrap; font-size: 18px; font-weight: 600; letter-spacing: 6px; text-transform: uppercase; color: #231D19; text-align: center">Как принять участие</h2>
+        <div style="flex: 1; height: 1px; background: #CBD7E3"></div>
+      </div>
+      <div class="how-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 24px">
+        <div style="background: #FFFFFF; border-radius: 22px; padding: 32px; display: flex; flex-direction: column; gap: 26px; box-shadow: 0 16px 40px rgba(40,70,100,0.08)">
+          <div style="display: flex; align-items: center; gap: 18px">
+            <svg aria-hidden="true" width="52" height="52" viewBox="0 0 48 48" fill="none" stroke="#A5672F" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex: none"><path d="M14 8h20v8a10 10 0 01-20 0z"></path><path d="M14 11H8c0 6 3 9 7 9M34 11h6c0 6-3 9-7 9"></path><path d="M24 26v8M17 40h14l-2-6H19z"></path></svg>
+            <h3 style="margin: 0; font-size: 22px; font-weight: 600; line-height: 1.3">Участвуйте в&nbsp;розыгрыше 120&nbsp;юбилейных призов</h3>
+          </div>
+          <ol style="margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 18px">
+            <li style="display: flex; flex-direction: column; gap: 10px"><span style="width: 30px; height: 30px; border-radius: 50%; background: #A5672F; color: #FFFFFF; font-size: 14px; font-weight: 700; display: flex; align-items: center; justify-content: center">1</span><span style="font-size: 15px; line-height: 1.45">Совершите покупку в&nbsp;ОРТЕКЕ с&nbsp;17.11&nbsp;по&nbsp;09.12&nbsp;с&nbsp;картой лояльности</span></li>
+            <li style="display: flex; flex-direction: column; gap: 10px"><span style="width: 30px; height: 30px; border-radius: 50%; background: #A5672F; color: #FFFFFF; font-size: 14px; font-weight: 700; display: flex; align-items: center; justify-content: center">2</span><span style="font-size: 15px; line-height: 1.45">Войдите в&nbsp;личный кабинет на&nbsp;сайте</span></li>
+            <li style="display: flex; flex-direction: column; gap: 10px"><span style="width: 30px; height: 30px; border-radius: 50%; background: #A5672F; color: #FFFFFF; font-size: 14px; font-weight: 700; display: flex; align-items: center; justify-content: center">3</span><span style="font-size: 15px; line-height: 1.45">Нажмите<br>«Принять&nbsp;участие в&nbsp;розыгрыше» на&nbsp;странице акции</span></li>
+          </ol>
+        </div>
+        <div style="background: #FFFFFF; border-radius: 22px; padding: 32px; display: flex; flex-direction: column; gap: 26px; box-shadow: 0 16px 40px rgba(40,70,100,0.08)">
+          <div style="display: flex; align-items: center; gap: 18px">
+            <svg aria-hidden="true" width="52" height="52" viewBox="0 0 48 48" fill="none" stroke="#A5672F" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex: none"><rect x="7" y="18" width="34" height="24" rx="2"></rect><rect x="4" y="12" width="40" height="7" rx="1.5"></rect><path d="M24 12v30"></path><path d="M24 12c-3-6-11-7-11-2 0 3 6 2 11 2zM24 12c3-6 11-7 11-2 0 3-6 2-11 2z"></path></svg>
+            <h3 style="margin: 0; font-size: 22px; font-weight: 600; line-height: 1.3">Получите гарантированный подарок</h3>
+          </div>
+          <ol style="margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 18px">
+            <li style="display: flex; flex-direction: column; gap: 10px"><span style="width: 30px; height: 30px; border-radius: 50%; background: #A5672F; color: #FFFFFF; font-size: 14px; font-weight: 700; display: flex; align-items: center; justify-content: center">1</span><span style="font-size: 15px; line-height: 1.45">Станьте участником розыгрыша</span></li>
+            <li style="display: flex; flex-direction: column; gap: 10px"><span style="width: 30px; height: 30px; border-radius: 50%; background: #A5672F; color: #FFFFFF; font-size: 14px; font-weight: 700; display: flex; align-items: center; justify-content: center">2</span><span style="font-size: 15px; line-height: 1.45">Получите промокод на&nbsp;ваш email</span></li>
+            <li style="display: flex; flex-direction: column; gap: 10px"><span style="width: 30px; height: 30px; border-radius: 50%; background: #A5672F; color: #FFFFFF; font-size: 14px; font-weight: 700; display: flex; align-items: center; justify-content: center">3</span><span style="font-size: 15px; line-height: 1.45">Запишитесь на&nbsp;сканирование стопы за&nbsp;1&nbsp;₽ в&nbsp;удобный салон до&nbsp;31.01.2027</span></li>
+          </ol>
+        </div>
+      </div>
+      <p style="margin: 0; text-align: center; font-size: 15px; line-height: 1.55; color: #3F4750">В&nbsp;розыгрыше участвуют только участники программы лояльности «Ваш ключ к&nbsp;здоровью» и&nbsp;покупки, совершённые с&nbsp;картой лояльности (в&nbsp;том числе по&nbsp;номеру телефона).</p>
+
+    </div>
+  </section>
+
+  <!-- Участие (интерактив) -->
+  <section id="join" data-reveal="self" data-reveal-id="join" style="position: relative; overflow: hidden; background: #F3F7FB; display: flex; flex-direction: column; align-items: center">
+    <div class="wrap" style="position: relative; width: 100%; max-width: 1200px; padding: 16px 24px 48px">
+      <div class="join-card" style="position: relative; overflow: hidden; display: flex; flex-wrap: wrap; gap: 32px 48px; align-items: center; background: #FFFFFF; border-radius: 26px; padding: 44px; box-shadow: 0 24px 60px rgba(40,70,100,0.12)">
+        <svg aria-hidden="true" viewBox="0 0 300 200" style="position: absolute; left: -40px; bottom: -60px; width: 300px; height: 200px; opacity: 0.7"><defs><linearGradient id="rbe" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F6DDB8"></stop><stop offset="0.45" stop-color="#D9A66B"></stop><stop offset="0.7" stop-color="#FBE9CF"></stop><stop offset="1" stop-color="#B97D43"></stop></linearGradient></defs><path d="M10 190C70 120 140 170 170 110C200 50 270 80 290 10" fill="none" stroke="url(#rbe)" stroke-width="10" stroke-linecap="round"></path><path d="M10 190C70 120 140 170 170 110C200 50 270 80 290 10" fill="none" stroke="#FFFFFF" stroke-opacity="0.45" stroke-width="2" stroke-linecap="round" transform="translate(-2 -3)"></path></svg>
+        <div style="position: relative; flex: 1 1 360px; display: flex; flex-direction: column; gap: 12px">
+          <h2 style="margin: 0; font-family: 'Jost', Arial, sans-serif; font-weight: 300; font-size: clamp(30px, 3.4vw, 42px); line-height: 1.1; text-transform: uppercase">Один шаг до&nbsp;юбилейных подарков</h2>
+          <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #3F4750">Нажать «Принять участие в&nbsp;розыгрыше» можно в&nbsp;любой день акции после покупки в&nbsp;салоне или онлайн. В&nbsp;розыгрыш попадут участники программы лояльности с&nbsp;покупкой по&nbsp;карте на&nbsp;любую сумму с&nbsp;17&nbsp;ноября по&nbsp;9&nbsp;декабря.</p>
+        </div>
+        <div style="position: relative; flex: 1 1 380px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+          <sc-if value="{{showForm}}" hint-placeholder-val="{{ true }}">
+            <p style="margin: 0; font-size: 16px; font-weight: 600; line-height: 1.5">Станьте участником розыгрыша: заполните поле «email», чтобы мы могли отправить вам подарки</p>
+            <label style="display: flex; flex-direction: column; gap: 6px; font-size: 13px; font-weight: 600; color: #4F5862">Email
+              <input type="email" value="{{email}}" onChange="{{setEmail}}" placeholder="name@example.ru" autocomplete="email" style="white-space: nowrap; min-height: 56px; padding: 0 20px; border: 1px solid #C9D3DD; border-radius: 14px; background: #F8FAFC; font-family: inherit; font-size: 16px; color: #231D19">
+            </label>
+            <label style="display: flex; gap: 12px; align-items: flex-start; font-size: 14px; line-height: 1.5; color: #3F4750; cursor: pointer">
+              <input type="checkbox" checked="{{consent}}" onChange="{{toggleConsent}}" style="width: 22px; height: 22px; margin: 1px 0 0; accent-color: #1F4A4E; flex: none">
+              <span>Соглашаюсь с&nbsp;<a href="#rules">правилами розыгрыша</a> и&nbsp;обработкой персональных данных</span>
+            </label>
+            <sc-if value="{{canJoin}}" hint-placeholder-val="{{ false }}">
+              <button type="button" onClick="{{join}}" style="white-space: nowrap; min-height: 58px; border: none; border-radius: 999px; background: #1F4A4E; color: #FFFFFF; font-family: inherit; font-size: 17px; font-weight: 600; cursor: pointer; box-shadow: 0 12px 28px rgba(31,74,78,0.25)">Принять участие в&nbsp;розыгрыше</button>
+            </sc-if>
+            <sc-if value="{{cannotJoin}}" hint-placeholder-val="{{ true }}">
+              <button type="button" disabled="{{ true }}" style="white-space: nowrap; min-height: 58px; border: none; border-radius: 999px; background: #E3E8ED; color: #5F6873; font-family: inherit; font-size: 17px; font-weight: 600">Принять участие в&nbsp;розыгрыше</button>
+            </sc-if>
+          </sc-if>
+          <sc-if value="{{joined}}" hint-placeholder-val="{{ false }}">
+            <div style="display: flex; align-items: center; gap: 16px">
+              <div style="flex: none; width: 52px; height: 52px; border-radius: 50%; background: #1F4A4E; display: flex; align-items: center; justify-content: center">
+                <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>
+              </div>
+              <p style="margin: 0; font-size: 22px; font-weight: 600">Вы участник розыгрыша</p>
+            </div>
+            <p style="margin: 0; font-size: 15px; line-height: 1.55; color: #3F4750">Промокод на&nbsp;сканирование стопы за&nbsp;1&nbsp;₽ отправим на&nbsp;{{email}} с&nbsp;10&nbsp;по&nbsp;15&nbsp;декабря. Итоги розыгрыша объявим 10&nbsp;декабря на&nbsp;сайте.</p>
+            <a href="#prizes" style="white-space: nowrap; display: inline-flex; align-items: center; justify-content: center; min-height: 52px; border-radius: 999px; border: 1px solid #1F4A4E; color: #1F4A4E; font-size: 15px; font-weight: 600; text-decoration: none">Посмотреть призы</a>
+          </sc-if>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Даты -->
+  <section id="dates" data-reveal="self" data-reveal-id="dates" style="background: #FFFFFF; border-top: 1px solid #E2EAF2; display: flex; flex-direction: column; align-items: center">
+    <div class="wrap" style="width: 100%; max-width: 1200px; padding: 72px 24px; display: flex; flex-direction: column; gap: 36px">
+      <h2 style="margin: 0; white-space: nowrap; font-size: 18px; font-weight: 600; letter-spacing: 6px; text-transform: uppercase; color: #231D19">Важные даты</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 0">
+        <div style="padding: 22px 22px 0 0; border-top: 1px solid #CBD7E3; display: flex; flex-direction: column; gap: 6px"><p style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 44px; font-weight: 500; line-height: 1; color: #8A5526">17.11</p><p style="margin: 0; font-size: 15px; line-height: 1.5; color: #4F4640">Старт акции: бонусы, кешбэк и&nbsp;регистрация в&nbsp;розыгрыше</p></div>
+        <div style="padding: 22px 22px 0 0; border-top: 1px solid #CBD7E3; display: flex; flex-direction: column; gap: 6px"><p style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 44px; font-weight: 500; line-height: 1; color: #231D19">09.12</p><p style="margin: 0; font-size: 15px; line-height: 1.5; color: #4F4640">Последний день покупок для&nbsp;участия</p></div>
+        <div style="padding: 22px 22px 0 0; border-top: 1px solid #CBD7E3; display: flex; flex-direction: column; gap: 6px"><p style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 44px; font-weight: 500; line-height: 1; color: #8A5526">10.12</p><p style="margin: 0; font-size: 15px; line-height: 1.5; color: #4F4640">Розыгрыш 120&nbsp;призов. Можно оплачивать покупки кешбэком 20%</p></div>
+        <div style="padding: 22px 22px 0 0; border-top: 1px solid #CBD7E3; display: flex; flex-direction: column; gap: 6px"><p style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 44px; font-weight: 500; line-height: 1; color: #231D19">31.12</p><p style="margin: 0; font-size: 15px; line-height: 1.5; color: #4F4640">Последний день, чтобы воспользоваться кешбэком 20%</p></div>
+        <div style="padding: 22px 22px 0 0; border-top: 1px solid #CBD7E3; display: flex; flex-direction: column; gap: 6px"><p style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 44px; font-weight: 500; line-height: 1; color: #231D19">31.01</p><p style="margin: 0; font-size: 15px; line-height: 1.5; color: #4F4640">До&nbsp;этой даты действует сканирование стопы за&nbsp;1&nbsp;₽</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" data-reveal="self" data-reveal-id="faq" style="position: relative; overflow: hidden; background: #F3F7FB; display: flex; flex-direction: column; align-items: center">
+    <img src="./assets/0606063e989c65493d03ba7aefd35937.jpg" alt="" aria-hidden="true" style="position: absolute; left: 0; top: 120px; width: 240px; height: auto; mix-blend-mode: multiply; opacity: 0.95">
+    <div class="wrap" style="position: relative; width: 100%; max-width: 1000px; padding: 72px 24px 88px; display: flex; flex-direction: column; gap: 28px">
+      <h2 style="margin: 0; white-space: nowrap; font-size: 18px; font-weight: 600; letter-spacing: 6px; text-transform: uppercase; color: #231D19">Вопросы и&nbsp;ответы</h2>
+      <div style="display: flex; flex-direction: column; gap: 12px">
+        <sc-for list="{{faq}}" as="item" hint-placeholder-count="6">
+          <div style="background: #FFFFFF; border-radius: 18px; padding: 0 26px; box-shadow: 0 8px 20px rgba(40,70,100,0.05)">
+            <button type="button" onClick="{{item.toggle}}" aria-expanded="{{item.expanded}}" style="width: 100%; min-height: 64px; padding: 18px 0; border: none; background: transparent; display: flex; align-items: center; justify-content: space-between; gap: 16px; text-align: left; font-family: inherit; font-size: 17px; font-weight: 600; color: #231D19; cursor: pointer">
+              <span>{{item.q}}</span>
+              <span aria-hidden="true" style="flex: none; font-family: 'Jost', Arial, sans-serif; font-size: 28px; font-weight: 300; color: #A5672F">{{item.sign}}</span>
+            </button>
+            <sc-if value="{{item.open}}" hint-placeholder-val="{{ false }}">
+              <p style="margin: 0 0 22px; font-size: 15px; line-height: 1.65; color: #3F4750">{{item.a}}</p>
+            </sc-if>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- Финал -->
+  <section id="finale" data-reveal="self" data-reveal-id="finale" style="position: relative; overflow: hidden; background: radial-gradient(ellipse at 80% 10%, #FFFFFF 0%, rgba(255,255,255,0) 55%), linear-gradient(180deg, #EAF1F8 0%, #D8E4EF 100%); display: flex; flex-direction: column; align-items: center">
+    <svg aria-hidden="true" viewBox="0 0 1440 220" preserveAspectRatio="none" style="position: absolute; left: 0; bottom: 0; width: 100%; height: 170px"><path d="M0 150 L150 104 L300 136 L460 74 L600 124 L740 92 L880 140 L1020 82 L1160 120 L1300 66 L1440 100 L1440 220 L0 220Z" fill="#C9D7E5" opacity="0.55"></path><path d="M0 190 L190 152 L350 178 L520 132 L690 172 L850 140 L1010 182 L1170 140 L1320 174 L1440 150 L1440 220 L0 220Z" fill="#AFC2D6" opacity="0.55"></path><path d="M0 208 L210 188 L430 202 L650 182 L870 200 L1090 186 L1310 202 L1440 192 L1440 220 L0 220Z" fill="#97ADC4" opacity="0.45"></path></svg>
+    <svg aria-hidden="true" viewBox="0 0 400 220" style="position: absolute; left: 30%; top: -30px; width: 420px; height: 220px; opacity: 0.85"><defs><linearGradient id="rbf" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F6DDB8"></stop><stop offset="0.45" stop-color="#D9A66B"></stop><stop offset="0.7" stop-color="#FBE9CF"></stop><stop offset="1" stop-color="#B97D43"></stop></linearGradient></defs><path d="M10 30C90 10 120 120 200 100C280 80 250 10 330 30C380 42 390 120 390 190" fill="none" stroke="url(#rbf)" stroke-width="10" stroke-linecap="round"></path><path d="M10 30C90 10 120 120 200 100C280 80 250 10 330 30C380 42 390 120 390 190" fill="none" stroke="#FFFFFF" stroke-opacity="0.45" stroke-width="2" stroke-linecap="round" transform="translate(-2 -3)"></path></svg>
+    <span aria-hidden="true" style="position: absolute; left: 33.1%; top: 14.0%; width: 5px; height: 5px; border-radius: 50%; background: #1F4A4E; opacity: 0.75"></span>
+    <span aria-hidden="true" style="position: absolute; left: 37.1%; top: 7.8%; width: 8px; height: 8px; border-radius: 50%; background: #B97D43; opacity: 0.75"></span>
+    <span aria-hidden="true" style="position: absolute; left: 42.1%; top: 19.9%; width: 5px; height: 5px; border-radius: 50%; background: #B97D43; opacity: 0.75"></span>
+    <span aria-hidden="true" style="position: absolute; left: 93.0%; top: 45.6%; width: 12px; height: 4px; border-radius: 1px; background: #B97D43; transform: rotate(15deg); opacity: 0.8"></span>
+    <span aria-hidden="true" style="position: absolute; left: 95.7%; top: 7.1%; width: 13px; height: 4px; border-radius: 1px; background: #C08A4E; transform: rotate(74deg); opacity: 0.8"></span>
+    <span aria-hidden="true" style="position: absolute; left: 56.8%; top: 41.0%; width: 14px; height: 4px; border-radius: 1px; background: #C08A4E; transform: rotate(26deg); opacity: 0.8"></span>
+    <span aria-hidden="true" style="position: absolute; left: 37.8%; top: 40.2%; width: 6px; height: 6px; border-radius: 50%; background: #D9A66B; opacity: 0.75"></span>
+    <span aria-hidden="true" style="position: absolute; left: 49.7%; top: 39.1%; width: 12px; height: 5px; border-radius: 1px; background: #F0C99E; transform: rotate(119deg); opacity: 0.8"></span>
+    <span aria-hidden="true" style="position: absolute; left: 30.8%; top: 56.4%; width: 13px; height: 5px; border-radius: 1px; background: #C08A4E; transform: rotate(20deg); opacity: 0.8"></span>
+    <span aria-hidden="true" style="position: absolute; left: 86.0%; top: 52.1%; width: 9px; height: 6px; border-radius: 1px; background: #F0C99E; transform: rotate(155deg); opacity: 0.8"></span>
+    <span aria-hidden="true" style="position: absolute; left: 42.1%; top: 54.0%; width: 14px; height: 4px; border-radius: 1px; background: #C08A4E; transform: rotate(125deg); opacity: 0.8"></span>
+    <span aria-hidden="true" style="position: absolute; left: 75.4%; top: 41.8%; width: 13px; height: 5px; border-radius: 1px; background: #F0C99E; transform: rotate(87deg); opacity: 0.8"></span>
+    <span aria-hidden="true" style="position: absolute; left: 57.7%; top: 34.1%; width: 14px; height: 4px; border-radius: 1px; background: #D9A66B; transform: rotate(69deg); opacity: 0.8"></span>
+    <span aria-hidden="true" style="position: absolute; left: 7.8%; top: 50.3%; width: 11px; height: 6px; border-radius: 1px; background: #B97D43; transform: rotate(174deg); opacity: 0.8"></span>
+    <span aria-hidden="true" style="position: absolute; left: 39.0%; top: 48.1%; width: 13px; height: 4px; border-radius: 1px; background: #D9A66B; transform: rotate(118deg); opacity: 0.8"></span>
+    <span aria-hidden="true" style="position: absolute; left: 49.4%; top: 18.4%; width: 12px; height: 5px; border-radius: 1px; background: #F0C99E; transform: rotate(33deg); opacity: 0.8"></span>
+    <span aria-hidden="true" style="position: absolute; left: 90.0%; top: 36.8%; width: 11px; height: 4px; border-radius: 1px; background: #C08A4E; transform: rotate(114deg); opacity: 0.8"></span>
+    <span aria-hidden="true" style="position: absolute; left: 80.7%; top: 61.0%; width: 11px; height: 6px; border-radius: 1px; background: #F0C99E; transform: rotate(180deg); opacity: 0.8"></span>
+    <span aria-hidden="true" style="position: absolute; left: 86.9%; top: 67.2%; width: 6px; height: 6px; border-radius: 50%; background: #C08A4E; opacity: 0.75"></span>
+    <span aria-hidden="true" style="position: absolute; left: 65.2%; top: 4.8%; width: 5px; height: 5px; border-radius: 50%; background: #B97D43; opacity: 0.75"></span>
+    <span aria-hidden="true" style="position: absolute; left: 16.0%; top: 39.3%; width: 6px; height: 6px; border-radius: 50%; background: #B97D43; opacity: 0.75"></span>
+    <span aria-hidden="true" style="position: absolute; left: 68.3%; top: 38.0%; width: 9px; height: 5px; border-radius: 1px; background: #B97D43; transform: rotate(167deg); opacity: 0.8"></span>
+    <img src="./assets/58c2607c2df609aee36116ad635f4442.jpg" alt="" aria-hidden="true" style="position: absolute; right: 2%; bottom: 24px; width: 300px; height: auto; mix-blend-mode: multiply; -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 18%); mask-image: linear-gradient(90deg, transparent 0%, #000 18%)">
+    <div class="wrap" style="position: relative; width: 100%; max-width: 1200px; padding: 72px 24px 140px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 28px">
+      <div style="flex: 1 1 520px; display: flex; flex-direction: column; gap: 14px">
+        <h2 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-weight: 400; font-size: clamp(40px, 5vw, 64px); line-height: 1.05; color: #231D19">Спасибо, что вы с&nbsp;нами!</h2>
+        <p style="margin: 0; max-width: 560px; font-size: 16px; line-height: 1.6; color: #2F3640">20&nbsp;лет мы даём опору: помогаем двигаться свободно, чувствовать себя уверенно и&nbsp;жить без&nbsp;ограничений. Этот юбилей&nbsp;— наша общая история, и&nbsp;мы рады отмечать его вместе с&nbsp;вами.</p>
+      </div>
+      <a href="#join" style="white-space: nowrap; display: inline-flex; align-items: center; gap: 14px; min-height: 58px; padding: 0 clamp(20px, 3vw, 32px); border-radius: 999px; background: #1F4A4E; color: #FFFFFF; font-size: 17px; font-weight: 600; text-decoration: none; box-shadow: 0 12px 28px rgba(31,74,78,0.25)">Принять участие в&nbsp;розыгрыше
+          <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M14 6l6 6-6 6"></path></svg>
+        </a>
+    </div>
+  </section>
+
+  <!-- Подвал -->
+  <footer id="rules" data-reveal="self" data-reveal-id="footer" style="background: #173A3E; color: #D3DEDF; display: flex; flex-direction: column; align-items: center">
+    <div class="wrap" style="width: 100%; max-width: 1200px; padding: 44px 24px; display: flex; flex-direction: column; gap: 12px; font-size: 13px; line-height: 1.65">
+      <p style="margin: 0; font-family: 'Jost', Arial, sans-serif; font-size: 18px; font-weight: 500; letter-spacing: 5px; color: #FFFFFF">ОРТЕКА</p>
+      <p style="margin: 0">Акция «Юбилей ОРТЕКИ&nbsp;– 20&nbsp;ЛЕТ!» проводится с&nbsp;17.11.2026&nbsp;по&nbsp;09.12.2026, розыгрыш 10.12.2026. Организатор: ООО «НИКАМЕД», ОГРН 1037700031588, 127015, г. Москва, Бумажный проезд, д. 14, стр. 2. Один участник может выиграть один приз розыгрыша. Подробные условия и&nbsp;порядок получения призов&nbsp;— в&nbsp;<a href="#rules" style="color: #F0C99E">правилах акции</a>.</p>
+      <p style="margin: 0">Бонусы начисляются на&nbsp;карту программы лояльности «Ваш ключ к&nbsp;здоровью». 2&nbsp;000&nbsp;бонусов действуют с&nbsp;17.11&nbsp;по&nbsp;09.12.2026, ими можно оплатить до&nbsp;20% суммы чека. Бонусы не&nbsp;списываются на&nbsp;медицинские услуги, подарочные карты, госпитальный компрессионный трикотаж, индивидуальные стельки, коллаген и&nbsp;товары категории «Ортопедия» и&nbsp;не&nbsp;суммируются с&nbsp;другими акциями.</p>
+      <p style="margin: 6px 0 0; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #FFFFFF">Имеются противопоказания. Необходимо проконсультироваться со&nbsp;специалистом</p>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":6560}}'>
+class Component extends DCLogic {
+constructor(props) {
+super(props);
+this.state = { email: '', consent: false, joined: false, openFaq: -1 };
+this._shown = new Set();
+this._watched = new Set();
+this.setTrack = (el) => {
+  const left = this.track && this.track !== el ? this.track.scrollLeft : 0;
+  if (this.track && this.track !== el && this._trackUpdate) this.track.removeEventListener('scroll', this._trackUpdate);
+  this.track = el;
+  if (!el) return;
+  this.bindTrackFade();
+  if (left) requestAnimationFrame(() => { el.scrollLeft = left; this._trackUpdate && this._trackUpdate(); });
+};
+}
+bindTrackFade() {
+const t = this.track;
+if (!t || this._boundTrack === t) return;
+this._boundTrack = t;
+const update = () => {
+  const max = t.scrollWidth - t.clientWidth;
+  document.documentElement.classList.toggle('prizes-scrolled', t.scrollLeft > 8);
+  document.documentElement.classList.toggle('prizes-end', max <= 8 || t.scrollLeft >= max - 8);
+};
+this._trackUpdate = update;
+update();
+t.addEventListener('scroll', update, { passive: true });
+if (!this._resizeBound) {
+  this._resizeBound = true;
+  window.addEventListener('resize', () => this._trackUpdate && this._trackUpdate());
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => this._trackUpdate && this._trackUpdate());
+}
+}
+sheet() {
+if (this._style) return this._style.sheet;
+const el = document.createElement('style');
+el.setAttribute('data-reveal-runtime', '');
+document.head.appendChild(el);
+this._style = el;
+return el.sheet;
+}
+show(el) {
+const id = el.getAttribute('data-reveal-id');
+if (!id || this._shown.has(id)) return;
+this._shown.add(id);
+const sheet = this.sheet();
+const ease = 'cubic-bezier(.16,1,.3,1)';
+sheet.insertRule(`html.motion [data-reveal-id="${id}"]{opacity:1;transform:none;transition:opacity .8s ${ease},transform .8s ${ease}}`, sheet.cssRules.length);
+}
+scanReveals(initial, force) {
+let visibleIndex = 0;
+document.querySelectorAll('[data-reveal-id]').forEach((el) => {
+  const id = el.getAttribute('data-reveal-id');
+  if (!id || this._shown.has(id)) return;
+  if (force) { this.show(el, 0); return; }
+  const rect = el.getBoundingClientRect();
+  const inView = rect.top < window.innerHeight - 40 && rect.bottom > 24;
+  if (initial && inView) this.show(el, visibleIndex++);
+  else if (this._io && !this._watched.has(el)) { this._watched.add(el); this._io.observe(el); }
+});
+}
+componentDidMount() {
+this.bindTrackFade();
+if (!document.documentElement.classList.contains('motion')) return;
+this._io = new IntersectionObserver((entries) => {
+  let i = 0;
+  entries.forEach((entry) => {
+    if (!entry.isIntersecting) return;
+    this.show(entry.target, i++);
+    this._io.unobserve(entry.target);
+  });
+}, { threshold: 0.16, rootMargin: '0px 0px -40px 0px' });
+this.scanReveals(true);
+}
+componentDidUpdate() {
+if (this._trackUpdate) this._trackUpdate();
+if (document.documentElement.classList.contains('motion')) this.scanReveals(false);
+}
+componentWillUnmount() {
+if (this._io) this._io.disconnect();
+if (this.track && this._trackUpdate) this.track.removeEventListener('scroll', this._trackUpdate);
+if (this._style) this._style.remove();
+}
+scrollPrizes(dir) {
+const t = this.track;
+if (!t) return;
+const card = t.firstElementChild;
+const step = card ? card.getBoundingClientRect().width + 16 : t.clientWidth / 4;
+const max = t.scrollWidth - t.clientWidth;
+let target = t.scrollLeft + dir * step;
+if (target > max + 2) target = 0;
+if (target < -2) target = max;
+t.scrollTo({ left: target, behavior: 'smooth' });
+}
+renderVals() {
+const s = this.state;
+const ok = (v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v || '');
+const canJoin = s.consent && ok(s.email);
+const faqData = [
+{ q: 'Кто может участвовать в розыгрыше?', a: 'Участники программы лояльности «Ваш ключ к здоровью», которые совершили покупку в салоне ОРТЕКИ или в интернет-магазине с 17 ноября по 9 декабря и нажали «Принять участие в розыгрыше» на странице акции, указав email.' },
+{ q: 'Нужна ли регистрация?', a: 'Да, нужен аккаунт на сайте ОРТЕКИ: так мы сверяем чеки за период акции. Если аккаунта нет, зарегистрируйтесь — это займёт пару минут.' },
+{ q: 'Есть ли минимальная сумма покупки?', a: 'Нет, участвовать можно с покупкой на любую сумму. Один участник может выиграть один приз розыгрыша, а сканирование стопы за 1 ₽ получает каждый.' },
+{ q: 'Как воспользоваться бонусами?', a: '2 000 бонусов действуют с 17 ноября по 9 декабря: ими можно оплатить до 20% суммы чека, после 9 декабря они сгорают. Кешбэк 20% начисляется на сумму, оплаченную деньгами, и его можно потратить с 10 по 31 декабря, тоже до 20% стоимости покупки. Бонусы не списываются на медицинские услуги, подарочные карты, госпитальный трикотаж, индивидуальные стельки, коллаген и товары категории «Ортопедия» и не суммируются с другими акциями.' },
+{ q: 'Как я узнаю, что выиграл?', a: 'Итоги объявим 10 декабря на сайте. Победителям также напишем на email, указанный при участии в розыгрыше.' },
+{ q: 'Как получить сканирование стопы за 1 ₽?', a: 'Промокод придёт на email, указанный при участии, с 10 по 15 декабря. Запишитесь в любой салон ОРТЕКИ — сканирование есть во всех. Промокод действует до 31 января 2027 года.' },
+];
+const faq = faqData.map((f, i) => ({ ...f, open: s.openFaq === i, expanded: s.openFaq === i ? 'true' : 'false', sign: s.openFaq === i ? '−' : '+', toggle: () => this.setState({ openFaq: s.openFaq === i ? -1 : i }) }));
+return {
+showForm: !s.joined,
+joined: s.joined,
+email: s.email,
+consent: s.consent,
+canJoin: canJoin,
+cannotJoin: !canJoin,
+setEmail: (e) => this.setState({ email: e.target.value }),
+toggleConsent: () => this.setState({ consent: !s.consent }),
+join: () => { if (canJoin) this.setState({ joined: true }); },
+faq: faq,
+setTrack: this.setTrack,
+prev: () => this.scrollPrizes(-1),
+next: () => this.scrollPrizes(1),
+};
+}
+}
+</script>
+</body>
+</html>
