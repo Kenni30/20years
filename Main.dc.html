@@ -2,6 +2,7 @@
 <html lang="ru">
 <head>
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <script>if(!window.matchMedia("(prefers-reduced-motion: reduce)").matches)document.documentElement.classList.add("motion")</script>
 <title>Юбилей ОРТЕКИ – 20 ЛЕТ!</title>
 <script src="./vendor/react.js"></script>
@@ -169,6 +170,133 @@ html.motion .pill:hover{transform:translateY(-2px)}
   .prize-nav:hover{transform:translateY(-50%)}
   .prize-track > div:hover{transform:none}
 }
+
+/* Планшет. Десктопные правила выше не меняются. */
+@media (max-width:1024px){
+  .wrap{padding-left:32px !important;padding-right:32px !important}
+  .benefits{padding-left:32px !important;padding-right:32px !important}
+  .hero-copy h1{font-size:clamp(44px,6vw,60px)}
+  .hero-lead{font-size:18px}
+  .hero-date{font-size:30px}
+  .letter-mark{font-size:280px !important;right:-70px;top:-30px}
+  #letter .wrap{padding-top:64px !important;padding-bottom:64px !important}
+  #letter .wrap > div:nth-child(2) > div h3{font-size:28px !important}
+  .gift-card{padding:28px 200px 28px 28px !important}
+  .gift-shot{width:190px !important;right:-16px !important;bottom:-8px !important}
+  #prizes .wrap{padding-top:64px !important;padding-bottom:64px !important}
+  #prizes h2{font-size:clamp(40px,5vw,56px) !important}
+  .main-prize-copy{padding:28px}
+  .main-prize-copy .body{font-size:16px}
+  .scan-banner{grid-template-columns:minmax(0,1.15fr) minmax(200px,.85fr)}
+  .scan-copy{min-width:0;padding:28px 16px 24px 32px}
+  .scan-title{font-size:32px}
+  .scan-note{font-size:15px}
+  .more-prizes{font-size:24px}
+  #faq>img{display:none}
+  .finale-photo{width:200px !important}
+  #how .wrap,#dates .wrap,#faq .wrap{padding-top:56px !important}
+  .how-steps{grid-template-columns:1fr !important}
+  #join .join-card{padding:32px !important}
+}
+@media (max-width:1024px) and (min-width:641px){
+  .benefits{grid-template-columns:1fr 1fr}
+  .benefit{box-shadow:none;padding:28px 22px}
+  .benefit:nth-child(odd){padding-left:0}
+  .benefit:nth-child(even){padding-right:0}
+  .benefit:nth-child(2n){box-shadow:inset 1px 0 0 #E6DDD2}
+  .benefit:nth-child(n+3){box-shadow:inset 0 1px 0 #E6DDD2}
+  .benefit:nth-child(4){box-shadow:inset 1px 0 0 #E6DDD2,inset 0 1px 0 #E6DDD2}
+  .benefit-text{font-size:16px}
+  .dates-grid{grid-template-columns:repeat(3,minmax(0,1fr)) !important}
+}
+
+/* Мобилка. Блоки складываются, текст крупнее. */
+@media (max-width:390px){
+  .wrap,.benefits{padding-left:20px !important;padding-right:20px !important}
+  .hero{min-height:100svh}
+  .hero-copy{padding:96px 20px 28px !important;gap:14px}
+  .hero-kicker{font-size:14px !important;letter-spacing:.12em}
+  .hero-copy h1{font-size:46px !important;line-height:1}
+  .hero-lead{font-size:18px !important;line-height:1.5}
+  .hero-date{font-size:30px !important}
+  .hero-copy a{width:100%;justify-content:center;font-size:18px !important;min-height:56px;text-align:center;white-space:normal !important}
+  .benefits{grid-template-columns:1fr;padding-top:28px}
+  .benefit{box-shadow:inset 0 1px 0 #E6DDD2;padding:22px 0 24px}
+  .benefit:first-child{box-shadow:none}
+  .benefit-label{font-size:14px !important;letter-spacing:.08em}
+  .benefit-value{font-size:56px !important}
+  .benefit-text{font-size:17px !important;line-height:1.5}
+  #gifts .wrap{padding-bottom:32px !important}
+  #gifts .wrap a{font-size:18px !important;white-space:normal;text-align:center;line-height:1.3}
+  .letter-mark{display:none}
+  #letter > svg{display:none}
+  #letter .wrap{padding-top:40px !important;padding-bottom:40px !important;gap:28px !important}
+  #letter .wrap > div:first-child{flex-direction:column !important;gap:16px !important}
+  #letter .wrap > div:first-child > div:first-child p{font-size:14px !important;letter-spacing:.12em !important}
+  #letter .wrap > div:first-child h2{font-size:48px !important}
+  #letter .wrap > div:first-child > div:last-child{font-size:18px !important;line-height:1.55 !important;gap:16px !important}
+  #letter .wrap > div:nth-child(2){grid-template-columns:1fr !important}
+  #letter .wrap > div:nth-child(2) > div{padding:24px 20px !important}
+  #letter .wrap > div:nth-child(2) h3{font-size:26px !important}
+  #letter .wrap > div:nth-child(2) p{font-size:17px !important}
+  .gift-card{padding:24px 20px 8px !important}
+  .gift-shot{position:relative !important;order:5;width:200px !important;right:auto !important;bottom:auto !important;align-self:center;margin:8px auto 0}
+  #prizes .wrap{padding:48px 20px 40px !important;gap:28px !important}
+  #prizes h2{font-size:36px !important}
+  .main-prize{grid-template-columns:1fr}
+  .main-prize-photo{grid-column:1;grid-row:1;height:240px;min-height:240px}
+  .main-prize-count{grid-column:1;grid-row:2;display:flex;flex-direction:row;align-items:flex-end;gap:8px;padding:8px 96px 12px 16px}
+  .main-prize-count .num{flex:none;font-size:88px}
+  .main-prize-count .label{flex:1;min-width:0;margin:0 0 10px;font-size:20px}
+  .main-prize-ribbon{width:92px}
+  .main-prize-copy{grid-column:1;grid-row:3;padding:20px 16px 22px}
+  .main-prize-copy h3{font-size:24px !important}
+  .main-prize-copy .body{font-size:17px}
+  .main-prize-cash strong{font-size:18px}
+  .main-prize-cash p{font-size:16px}
+  .more-prizes{margin-top:8px;font-size:22px}
+  .prize-brand{font-size:17px}
+  .prize-desc{font-size:16px}
+  .prize-pill{font-size:14px}
+  .prize-nav.prev{left:6px}
+  .prize-nav.next{right:6px}
+  .scan-banner{display:flex;flex-direction:column;min-height:0;border-radius:20px}
+  .scan-copy{padding:22px 18px 6px}
+  .scan-kicker{font-size:13px;letter-spacing:.12em}
+  .scan-title{font-size:30px}
+  .scan-note{font-size:16px}
+  .scan-cta{font-size:16px;min-height:50px}
+  .scan-foot-slot{width:100%;height:200px;min-height:0;flex:none}
+  .scan-foot{top:auto;bottom:0;height:200px;max-width:none}
+  #how h2,#dates h2,#faq h2{white-space:normal !important;letter-spacing:.1em !important;font-size:16px !important}
+  #how .wrap{padding-top:40px !important;gap:24px !important}
+  .how-grid{grid-template-columns:1fr !important}
+  #how .how-grid > div{padding:22px 18px !important}
+  #how h3{font-size:22px !important}
+  .how-steps{grid-template-columns:1fr !important;gap:14px !important}
+  .how-steps li{flex-direction:row !important;align-items:flex-start;gap:12px !important}
+  .how-steps li span:last-child{font-size:17px !important;line-height:1.45}
+  #how .wrap > p{font-size:16px !important;text-align:left !important}
+  .join-card{padding:22px 18px !important;gap:20px !important;border-radius:20px !important}
+  #join h2{font-size:30px !important}
+  #join .join-card p{font-size:17px !important}
+  #join button,#join .join-card a{width:100%;white-space:normal !important;font-size:18px !important}
+  #dates .wrap{padding-top:40px !important;padding-bottom:40px !important;gap:20px !important}
+  .dates-grid{grid-template-columns:1fr !important}
+  .dates-grid > div{padding:16px 0 12px !important}
+  .dates-grid p:first-child{font-size:52px !important}
+  .dates-grid p:last-child{font-size:17px !important}
+  #faq .wrap{padding-top:40px !important;padding-bottom:48px !important}
+  #faq button{font-size:18px !important;min-height:72px}
+  #faq p{font-size:17px !important}
+  .finale-photo{display:none}
+  #finale .wrap{padding:48px 20px 56px !important;flex-direction:column;align-items:flex-start !important}
+  #finale h2{font-size:44px !important}
+  #finale p{font-size:18px !important}
+  #finale .wrap > a{font-size:18px !important;white-space:normal !important;text-align:center}
+  #rules .wrap{padding-top:32px !important;padding-bottom:32px !important;font-size:15px !important}
+  #rules .wrap > p:first-child{font-size:20px !important;letter-spacing:.16em !important}
+}
 </style>
 </helmet>
 <div style="width: 100%; font-family: 'Manrope', Arial, sans-serif; color: #2A2420; background: #F3F7FB">
@@ -222,7 +350,7 @@ html.motion .pill:hover{transform:translateY(-2px)}
 
   <!-- Обращение -->
   <section id="letter" data-reveal="self" data-reveal-id="letter" style="position: relative; overflow: hidden; background: #F3F7FB; display: flex; flex-direction: column; align-items: center">
-    <p aria-hidden="true" style="position: absolute; right: -40px; top: -40px; margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-size: 520px; line-height: 1; color: #E3EBF4">20</p>
+    <p class="letter-mark" aria-hidden="true" style="position: absolute; right: -40px; top: -40px; margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-size: 520px; line-height: 1; color: #E3EBF4">20</p>
     <svg aria-hidden="true" viewBox="0 0 400 300" style="position: absolute; right: -40px; top: 40px; width: 420px; height: 320px; opacity: 0.9"><defs><linearGradient id="rba" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F6DDB8"></stop><stop offset="0.45" stop-color="#D9A66B"></stop><stop offset="0.7" stop-color="#FBE9CF"></stop><stop offset="1" stop-color="#B97D43"></stop></linearGradient></defs><path d="M10 40C120 10 170 120 110 160C60 195 40 110 130 100C230 90 260 250 390 280" fill="none" stroke="url(#rba)" stroke-width="10" stroke-linecap="round"></path><path d="M10 40C120 10 170 120 110 160C60 195 40 110 130 100C230 90 260 250 390 280" fill="none" stroke="#FFFFFF" stroke-opacity="0.45" stroke-width="2" stroke-linecap="round" transform="translate(-2 -3)"></path></svg>
     <span aria-hidden="true" style="position: absolute; left: 95.9%; top: 57.1%; width: 6px; height: 6px; border-radius: 50%; background: #D9A66B; opacity: 0.75"></span>
     <span aria-hidden="true" style="position: absolute; left: 85.3%; top: 41.5%; width: 13px; height: 4px; border-radius: 1px; background: #F0C99E; transform: rotate(64deg); opacity: 0.8"></span>
@@ -435,7 +563,7 @@ html.motion .pill:hover{transform:translateY(-2px)}
             <svg aria-hidden="true" width="52" height="52" viewBox="0 0 48 48" fill="none" stroke="#A5672F" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex: none"><path d="M14 8h20v8a10 10 0 01-20 0z"></path><path d="M14 11H8c0 6 3 9 7 9M34 11h6c0 6-3 9-7 9"></path><path d="M24 26v8M17 40h14l-2-6H19z"></path></svg>
             <h3 style="margin: 0; font-size: 22px; font-weight: 600; line-height: 1.3">Участвуйте в&nbsp;розыгрыше 120&nbsp;юбилейных призов</h3>
           </div>
-          <ol style="margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 18px">
+          <ol class="how-steps" style="margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 18px">
             <li style="display: flex; flex-direction: column; gap: 10px"><span style="width: 30px; height: 30px; border-radius: 50%; background: #A5672F; color: #FFFFFF; font-size: 14px; font-weight: 700; display: flex; align-items: center; justify-content: center">1</span><span style="font-size: 15px; line-height: 1.45">Совершите покупку в&nbsp;ОРТЕКЕ с&nbsp;17.11&nbsp;по&nbsp;09.12&nbsp;с&nbsp;картой лояльности</span></li>
             <li style="display: flex; flex-direction: column; gap: 10px"><span style="width: 30px; height: 30px; border-radius: 50%; background: #A5672F; color: #FFFFFF; font-size: 14px; font-weight: 700; display: flex; align-items: center; justify-content: center">2</span><span style="font-size: 15px; line-height: 1.45">Войдите в&nbsp;личный кабинет на&nbsp;сайте</span></li>
             <li style="display: flex; flex-direction: column; gap: 10px"><span style="width: 30px; height: 30px; border-radius: 50%; background: #A5672F; color: #FFFFFF; font-size: 14px; font-weight: 700; display: flex; align-items: center; justify-content: center">3</span><span style="font-size: 15px; line-height: 1.45">Нажмите<br>«Принять&nbsp;участие в&nbsp;розыгрыше» на&nbsp;странице акции</span></li>
@@ -446,7 +574,7 @@ html.motion .pill:hover{transform:translateY(-2px)}
             <svg aria-hidden="true" width="52" height="52" viewBox="0 0 48 48" fill="none" stroke="#A5672F" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex: none"><rect x="7" y="18" width="34" height="24" rx="2"></rect><rect x="4" y="12" width="40" height="7" rx="1.5"></rect><path d="M24 12v30"></path><path d="M24 12c-3-6-11-7-11-2 0 3 6 2 11 2zM24 12c3-6 11-7 11-2 0 3-6 2-11 2z"></path></svg>
             <h3 style="margin: 0; font-size: 22px; font-weight: 600; line-height: 1.3">Получите гарантированный подарок</h3>
           </div>
-          <ol style="margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 18px">
+          <ol class="how-steps" style="margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 18px">
             <li style="display: flex; flex-direction: column; gap: 10px"><span style="width: 30px; height: 30px; border-radius: 50%; background: #A5672F; color: #FFFFFF; font-size: 14px; font-weight: 700; display: flex; align-items: center; justify-content: center">1</span><span style="font-size: 15px; line-height: 1.45">Станьте участником розыгрыша</span></li>
             <li style="display: flex; flex-direction: column; gap: 10px"><span style="width: 30px; height: 30px; border-radius: 50%; background: #A5672F; color: #FFFFFF; font-size: 14px; font-weight: 700; display: flex; align-items: center; justify-content: center">2</span><span style="font-size: 15px; line-height: 1.45">Получите промокод на&nbsp;ваш email</span></li>
             <li style="display: flex; flex-direction: column; gap: 10px"><span style="width: 30px; height: 30px; border-radius: 50%; background: #A5672F; color: #FFFFFF; font-size: 14px; font-weight: 700; display: flex; align-items: center; justify-content: center">3</span><span style="font-size: 15px; line-height: 1.45">Запишитесь на&nbsp;сканирование стопы за&nbsp;1&nbsp;₽ в&nbsp;удобный салон до&nbsp;31.01.2027</span></li>
@@ -503,7 +631,7 @@ html.motion .pill:hover{transform:translateY(-2px)}
   <section id="dates" data-reveal="self" data-reveal-id="dates" style="background: #FFFFFF; border-top: 1px solid #E2EAF2; display: flex; flex-direction: column; align-items: center">
     <div class="wrap" style="width: 100%; max-width: 1200px; padding: 72px 24px; display: flex; flex-direction: column; gap: 36px">
       <h2 style="margin: 0; white-space: nowrap; font-size: 18px; font-weight: 600; letter-spacing: 6px; text-transform: uppercase; color: #231D19">Важные даты</h2>
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 0">
+      <div class="dates-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 0">
         <div style="padding: 22px 22px 0 0; border-top: 1px solid #CBD7E3; display: flex; flex-direction: column; gap: 6px"><p style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 44px; font-weight: 500; line-height: 1; color: #8A5526">17.11</p><p style="margin: 0; font-size: 15px; line-height: 1.5; color: #4F4640">Старт акции: бонусы, кешбэк и&nbsp;регистрация в&nbsp;розыгрыше</p></div>
         <div style="padding: 22px 22px 0 0; border-top: 1px solid #CBD7E3; display: flex; flex-direction: column; gap: 6px"><p style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 44px; font-weight: 500; line-height: 1; color: #231D19">09.12</p><p style="margin: 0; font-size: 15px; line-height: 1.5; color: #4F4640">Последний день покупок для&nbsp;участия</p></div>
         <div style="padding: 22px 22px 0 0; border-top: 1px solid #CBD7E3; display: flex; flex-direction: column; gap: 6px"><p style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 44px; font-weight: 500; line-height: 1; color: #8A5526">10.12</p><p style="margin: 0; font-size: 15px; line-height: 1.5; color: #4F4640">Розыгрыш 120&nbsp;призов. Можно оплачивать покупки кешбэком 20%</p></div>
@@ -560,7 +688,7 @@ html.motion .pill:hover{transform:translateY(-2px)}
     <span aria-hidden="true" style="position: absolute; left: 65.2%; top: 4.8%; width: 5px; height: 5px; border-radius: 50%; background: #B97D43; opacity: 0.75"></span>
     <span aria-hidden="true" style="position: absolute; left: 16.0%; top: 39.3%; width: 6px; height: 6px; border-radius: 50%; background: #B97D43; opacity: 0.75"></span>
     <span aria-hidden="true" style="position: absolute; left: 68.3%; top: 38.0%; width: 9px; height: 5px; border-radius: 1px; background: #B97D43; transform: rotate(167deg); opacity: 0.8"></span>
-    <img src="./assets/58c2607c2df609aee36116ad635f4442.jpg" alt="" aria-hidden="true" style="position: absolute; right: 2%; bottom: 24px; width: 300px; height: auto; mix-blend-mode: multiply; -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 18%); mask-image: linear-gradient(90deg, transparent 0%, #000 18%)">
+    <img class="finale-photo" src="./assets/58c2607c2df609aee36116ad635f4442.jpg" alt="" aria-hidden="true" style="position: absolute; right: 2%; bottom: 24px; width: 300px; height: auto; mix-blend-mode: multiply; -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 18%); mask-image: linear-gradient(90deg, transparent 0%, #000 18%)">
     <div class="wrap" style="position: relative; width: 100%; max-width: 1200px; padding: 72px 24px 140px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 28px">
       <div style="flex: 1 1 520px; display: flex; flex-direction: column; gap: 14px">
         <h2 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-weight: 400; font-size: clamp(40px, 5vw, 64px); line-height: 1.05; color: #231D19">Спасибо, что вы с&nbsp;нами!</h2>
