@@ -57,6 +57,7 @@ input::placeholder{color:#8A8F96}
 }
 
 .hero{position:relative;display:grid;container-type:inline-size;background:#E4EEF6}
+.hero-frame{display:contents}
 .hero::before{content:"";grid-area:1/1;padding-top:35.4167%}
 .hero-banner{grid-area:1/1;width:100%;height:100%;object-fit:cover;object-position:center center}
 .wrap{box-sizing:border-box;width:100%;max-width:1360px !important;margin-left:auto;margin-right:auto;padding-left:40px !important;padding-right:40px !important}
@@ -78,7 +79,7 @@ input::placeholder{color:#8A8F96}
   .hero-copy a{white-space:normal}
 }
 @media (max-width:700px){
-  #how h2,#dates h2,#faq h2{white-space:normal !important;letter-spacing:.12em !important;font-size:15px !important}
+  #how h2,#dates h2,#faq h2{white-space:normal !important;letter-spacing:.12em !important;font-size:15px !important;text-align:center !important}
   .how-grid{grid-template-columns:1fr !important}
   .join-card{padding:24px 18px !important}
   .join-card button,.scan-banner a,.hero-copy a{white-space:normal !important}
@@ -173,6 +174,11 @@ html.motion .pill:hover{transform:translateY(-2px)}
 
 /* Планшет. Десктопные правила выше не меняются. */
 @media (max-width:1024px){
+  .hero{display:flex;flex-direction:column;min-height:0}
+  .hero-frame{display:block;width:100%}
+  .hero-banner{position:relative;inset:auto;display:block;width:100%;height:auto;object-fit:contain;object-position:center center}
+  .hero-copy{position:relative;inset:auto;width:100%;justify-content:flex-start;padding:28px 32px 36px !important;gap:16px;background:none}
+  .hero-copy a{align-self:flex-start}
   .wrap{padding-left:32px !important;padding-right:32px !important}
   .benefits{padding-left:32px !important;padding-right:32px !important}
   .hero-copy h1{font-size:clamp(44px,6vw,60px)}
@@ -195,6 +201,7 @@ html.motion .pill:hover{transform:translateY(-2px)}
   #faq>img{display:none}
   .finale-photo{width:200px !important}
   #how .wrap,#dates .wrap,#faq .wrap{padding-top:56px !important}
+  #how h2,#dates h2,#faq h2{text-align:center !important}
   .how-steps{grid-template-columns:1fr !important}
   #join .join-card{padding:32px !important}
 }
@@ -213,8 +220,10 @@ html.motion .pill:hover{transform:translateY(-2px)}
 /* Мобилка. Блоки складываются, текст крупнее. */
 @media (max-width:390px){
   .wrap,.benefits{padding-left:20px !important;padding-right:20px !important}
-  .hero{min-height:100svh}
-  .hero-copy{padding:96px 20px 28px !important;gap:14px}
+  .hero{display:flex;flex-direction:column;min-height:0}
+  .hero-frame{display:block;width:100%}
+  .hero-banner{position:relative;inset:auto;width:100%;height:auto;object-fit:contain;object-position:center center}
+  .hero-copy{position:relative;inset:auto;width:100%;justify-content:flex-start;padding:22px 20px 28px !important;gap:14px;background:none}
   .hero-kicker{font-size:14px !important;letter-spacing:.12em}
   .hero-copy h1{font-size:46px !important;line-height:1}
   .hero-lead{font-size:18px !important;line-height:1.5}
@@ -268,7 +277,7 @@ html.motion .pill:hover{transform:translateY(-2px)}
   .scan-cta{font-size:16px;min-height:50px}
   .scan-foot-slot{width:100%;height:200px;min-height:0;flex:none}
   .scan-foot{top:auto;bottom:0;height:200px;max-width:none}
-  #how h2,#dates h2,#faq h2{white-space:normal !important;letter-spacing:.1em !important;font-size:16px !important}
+  #how h2,#dates h2,#faq h2{white-space:normal !important;letter-spacing:.1em !important;font-size:16px !important;text-align:center !important}
   #how .wrap{padding-top:40px !important;gap:24px !important}
   .how-grid{grid-template-columns:1fr !important}
   #how .how-grid > div{padding:22px 18px !important}
@@ -303,7 +312,10 @@ html.motion .pill:hover{transform:translateY(-2px)}
 
   <!-- Первый экран -->
   <section id="top" class="hero" data-reveal="self" data-reveal-id="hero">
-    <img class="hero-banner" src="./assets/banner.jpg" alt="Женщина в светлом пальто на фоне гор, рядом надпись 20 лет">
+    <picture class="hero-frame">
+      <source media="(max-width: 1024px)" srcset="./assets/banner-mob.jpg">
+      <img class="hero-banner" src="./assets/banner.jpg" alt="Женщина в светлом пальто на фоне гор, рядом надпись 20 лет">
+    </picture>
     <div class="hero-copy">
       <p class="hero-kicker">Юбилей ОРТЕКИ&nbsp;– 20&nbsp;ЛЕТ!</p>
       <h1><span>20&nbsp;лет</span><br>мы даём<br>опору</h1>
@@ -630,7 +642,11 @@ html.motion .pill:hover{transform:translateY(-2px)}
   <!-- Даты -->
   <section id="dates" data-reveal="self" data-reveal-id="dates" style="background: #FFFFFF; border-top: 1px solid #E2EAF2; display: flex; flex-direction: column; align-items: center">
     <div class="wrap" style="width: 100%; max-width: 1200px; padding: 72px 24px; display: flex; flex-direction: column; gap: 36px">
-      <h2 style="margin: 0; white-space: nowrap; font-size: 18px; font-weight: 600; letter-spacing: 6px; text-transform: uppercase; color: #231D19">Важные даты</h2>
+      <div style="display: flex; align-items: center; gap: 24px">
+        <div style="flex: 1; height: 1px; background: #CBD7E3"></div>
+        <h2 style="margin: 0; white-space: nowrap; font-size: 18px; font-weight: 600; letter-spacing: 6px; text-transform: uppercase; color: #231D19; text-align: center">Важные даты</h2>
+        <div style="flex: 1; height: 1px; background: #CBD7E3"></div>
+      </div>
       <div class="dates-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 0">
         <div style="padding: 22px 22px 0 0; border-top: 1px solid #CBD7E3; display: flex; flex-direction: column; gap: 6px"><p style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 44px; font-weight: 500; line-height: 1; color: #8A5526">17.11</p><p style="margin: 0; font-size: 15px; line-height: 1.5; color: #4F4640">Старт акции: бонусы, кешбэк и&nbsp;регистрация в&nbsp;розыгрыше</p></div>
         <div style="padding: 22px 22px 0 0; border-top: 1px solid #CBD7E3; display: flex; flex-direction: column; gap: 6px"><p style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 44px; font-weight: 500; line-height: 1; color: #231D19">09.12</p><p style="margin: 0; font-size: 15px; line-height: 1.5; color: #4F4640">Последний день покупок для&nbsp;участия</p></div>
@@ -645,7 +661,11 @@ html.motion .pill:hover{transform:translateY(-2px)}
   <section id="faq" data-reveal="self" data-reveal-id="faq" style="position: relative; overflow: hidden; background: #F3F7FB; display: flex; flex-direction: column; align-items: center">
     <img src="./assets/0606063e989c65493d03ba7aefd35937.jpg" alt="" aria-hidden="true" style="position: absolute; left: 0; top: 120px; width: 240px; height: auto; mix-blend-mode: multiply; opacity: 0.95">
     <div class="wrap" style="position: relative; width: 100%; max-width: 1000px; padding: 72px 24px 88px; display: flex; flex-direction: column; gap: 28px">
-      <h2 style="margin: 0; white-space: nowrap; font-size: 18px; font-weight: 600; letter-spacing: 6px; text-transform: uppercase; color: #231D19">Вопросы и&nbsp;ответы</h2>
+      <div style="display: flex; align-items: center; gap: 24px">
+        <div style="flex: 1; height: 1px; background: #CBD7E3"></div>
+        <h2 style="margin: 0; white-space: nowrap; font-size: 18px; font-weight: 600; letter-spacing: 6px; text-transform: uppercase; color: #231D19; text-align: center">Вопросы и&nbsp;ответы</h2>
+        <div style="flex: 1; height: 1px; background: #CBD7E3"></div>
+      </div>
       <div style="display: flex; flex-direction: column; gap: 12px">
         <sc-for list="{{faq}}" as="item" hint-placeholder-count="6">
           <div style="background: #FFFFFF; border-radius: 18px; padding: 0 26px; box-shadow: 0 8px 20px rgba(40,70,100,0.05)">
