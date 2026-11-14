@@ -96,7 +96,6 @@ input::placeholder{color:#8A8F96}
 .main-prize-count{grid-column:1;grid-row:1;position:relative;min-height:0;display:flex;flex-direction:column;justify-content:center;background:linear-gradient(160deg,#F08A1A 0%,#E36B12 46%,#D26508 100%);color:#FFFFFF;padding:28px 28px 36px}
 .main-prize-count .num{margin:0;font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-weight:400;font-size:200px;line-height:.78;color:#FFFFFF}
 .main-prize-count .label{margin:0;max-width:11em;font-size:18px;line-height:1.25;color:#FFFFFF}
-.main-prize-ribbon{position:absolute;right:0;bottom:0;width:192px;height:auto;pointer-events:none}
 .main-prize-copy{grid-column:2;grid-row:1;min-width:0;padding:36px;display:flex;flex-direction:column;justify-content:flex-start;gap:6px}
 .main-prize-copy h3{margin:0;font-family:'Jost',Arial,sans-serif;font-weight:400;font-size:clamp(22px,2.2vw,28px);line-height:1.1;text-transform:uppercase;color:#231D19}
 .main-prize-copy .body{margin:0;font-size:15px;line-height:1.4;color:#3F4750}
@@ -108,7 +107,6 @@ input::placeholder{color:#8A8F96}
   .main-prize{grid-template-columns:1fr}
   .main-prize-count{grid-column:1;grid-row:1;padding:24px 24px 32px}
   .main-prize-count .num{font-size:140px}
-  .main-prize-ribbon{width:150px}
   .main-prize-copy{grid-column:1;grid-row:2;padding:20px}
 }
 .scan-banner{position:relative;overflow:hidden;width:100%;display:grid;grid-template-columns:auto minmax(220px,1fr);align-items:stretch;min-height:228px;border-radius:24px;background:radial-gradient(ellipse at 82% 18%, #4DB8C8 0%, #0091A8 64%);color:#fff;box-shadow:0 22px 48px rgba(0,145,168,0.22)}
@@ -266,10 +264,9 @@ html.motion .cta:not(:disabled):hover{transform:translateY(-2px)}
   #prizes .wrap{padding:48px 20px 40px !important;gap:28px !important}
   #prizes h2{font-size:36px !important}
   .main-prize{grid-template-columns:1fr}
-  .main-prize-count{grid-column:1;grid-row:1;display:flex;flex-direction:row;align-items:flex-end;gap:8px;padding:16px 88px 16px 16px}
+  .main-prize-count{grid-column:1;grid-row:1;display:flex;flex-direction:row;align-items:flex-end;gap:8px;padding:16px 20px}
   .main-prize-count .num{flex:none;font-size:112px}
   .main-prize-count .label{flex:1;min-width:0;margin:0 0 10px;font-size:18px;color:#FFFFFF}
-  .main-prize-ribbon{width:120px}
   .main-prize-copy{grid-column:1;grid-row:2;padding:20px 16px 22px}
   .main-prize-copy h3{font-size:24px !important}
   .main-prize-copy .body{font-size:17px}
@@ -473,7 +470,6 @@ html.motion .cta:not(:disabled):hover{transform:translateY(-2px)}
         <div class="main-prize-count">
           <p class="num">20</p>
           <p class="label">Победителей получат<br>главный приз</p>
-          <img class="main-prize-ribbon" src="./assets/prize-ribbon.png" alt="">
         </div>
         <div class="main-prize-copy">
           <h3>Программа заботы о&nbsp;здоровье</h3>
@@ -573,8 +569,24 @@ html.motion .cta:not(:disabled):hover{transform:translateY(-2px)}
   </section>
 
   <!-- Как принять участие -->
-  <section id="how" data-reveal="self" data-reveal-id="how" style="background: #FFFFFF; display: flex; flex-direction: column; align-items: center">
-    <div class="wrap" style="width: 100%; max-width: 1200px; padding: 64px 24px 40px; display: flex; flex-direction: column; gap: 32px">
+  <section id="how" data-reveal="self" data-reveal-id="how" style="position: relative; overflow: hidden; background: #FFFFFF; display: flex; flex-direction: column; align-items: center">
+    <svg aria-hidden="true" viewBox="0 0 400 300" style="position: absolute; right: -50px; bottom: 0; width: 360px; height: 260px; opacity: 0.85"><defs><linearGradient id="rbh" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F6DDB8"></stop><stop offset="0.45" stop-color="#D9A66B"></stop><stop offset="0.7" stop-color="#FBE9CF"></stop><stop offset="1" stop-color="#F5A04A"></stop></linearGradient></defs><path d="M10 260C60 160 160 220 170 140C180 60 90 40 120 20C150 0 260 40 390 10" fill="none" stroke="url(#rbh)" stroke-width="10" stroke-linecap="round"></path><path d="M10 260C60 160 160 220 170 140C180 60 90 40 120 20C150 0 260 40 390 10" fill="none" stroke="#FFFFFF" stroke-opacity="0.45" stroke-width="2" stroke-linecap="round" transform="translate(-2 -3)"></path></svg>
+    <svg aria-hidden="true" viewBox="0 0 400 300" style="position: absolute; left: -60px; top: 10px; width: 340px; height: 240px; opacity: 0.85"><defs><linearGradient id="rbi" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F6DDB8"></stop><stop offset="0.45" stop-color="#D9A66B"></stop><stop offset="0.7" stop-color="#FBE9CF"></stop><stop offset="1" stop-color="#F5A04A"></stop></linearGradient></defs><path d="M390 250C300 200 330 120 250 120C170 120 190 210 120 190C50 170 60 60 10 30" fill="none" stroke="url(#rbi)" stroke-width="10" stroke-linecap="round"></path><path d="M390 250C300 200 330 120 250 120C170 120 190 210 120 190C50 170 60 60 10 30" fill="none" stroke="#FFFFFF" stroke-opacity="0.45" stroke-width="2" stroke-linecap="round" transform="translate(-2 -3)"></path></svg>
+    <span aria-hidden="true" style="position: absolute; left: 8%; top: 12%; width: 7px; height: 7px; border-radius: 50%; background: #F0C99E; opacity: 0.75"></span>
+    <span aria-hidden="true" style="position: absolute; left: 18%; top: 6%; width: 11px; height: 5px; border-radius: 1px; background: #E3B57E; transform: rotate(28deg); opacity: 0.8"></span>
+    <span aria-hidden="true" style="position: absolute; left: 31%; top: 16%; width: 6px; height: 6px; border-radius: 50%; background: #D9A66B; opacity: 0.75"></span>
+    <span aria-hidden="true" style="position: absolute; left: 46%; top: 8%; width: 12px; height: 4px; border-radius: 1px; background: #F5A04A; transform: rotate(64deg); opacity: 0.8"></span>
+    <span aria-hidden="true" style="position: absolute; left: 63%; top: 14%; width: 5px; height: 5px; border-radius: 50%; background: #C08A4E; opacity: 0.75"></span>
+    <span aria-hidden="true" style="position: absolute; left: 74%; top: 5%; width: 13px; height: 5px; border-radius: 1px; background: #F0C99E; transform: rotate(18deg); opacity: 0.8"></span>
+    <span aria-hidden="true" style="position: absolute; left: 88%; top: 18%; width: 8px; height: 8px; border-radius: 50%; background: #E3B57E; opacity: 0.75"></span>
+    <span aria-hidden="true" style="position: absolute; left: 4%; top: 42%; width: 12px; height: 5px; border-radius: 1px; background: #D9A66B; transform: rotate(140deg); opacity: 0.8"></span>
+    <span aria-hidden="true" style="position: absolute; left: 93%; top: 48%; width: 6px; height: 6px; border-radius: 50%; background: #F0C99E; opacity: 0.75"></span>
+    <span aria-hidden="true" style="position: absolute; left: 12%; top: 78%; width: 11px; height: 5px; border-radius: 1px; background: #F5A04A; transform: rotate(36deg); opacity: 0.8"></span>
+    <span aria-hidden="true" style="position: absolute; left: 27%; top: 88%; width: 7px; height: 7px; border-radius: 50%; background: #C08A4E; opacity: 0.75"></span>
+    <span aria-hidden="true" style="position: absolute; left: 52%; top: 84%; width: 13px; height: 4px; border-radius: 1px; background: #E3B57E; transform: rotate(72deg); opacity: 0.8"></span>
+    <span aria-hidden="true" style="position: absolute; left: 81%; top: 80%; width: 5px; height: 5px; border-radius: 50%; background: #D9A66B; opacity: 0.75"></span>
+    <span aria-hidden="true" style="position: absolute; left: 96%; top: 70%; width: 10px; height: 5px; border-radius: 1px; background: #F0C99E; transform: rotate(110deg); opacity: 0.8"></span>
+    <div class="wrap" style="position: relative; width: 100%; max-width: 1200px; padding: 64px 24px 40px; display: flex; flex-direction: column; gap: 32px">
       <div style="display: flex; align-items: center; gap: 24px">
         <div style="flex: 1; height: 1px; background: #E4D9CC"></div>
         <h2 style="margin: 0; white-space: nowrap; font-size: 18px; font-weight: 600; letter-spacing: 6px; text-transform: uppercase; color: #231D19; text-align: center">Как принять участие</h2>
@@ -613,7 +625,6 @@ html.motion .cta:not(:disabled):hover{transform:translateY(-2px)}
   <section id="join" data-reveal="self" data-reveal-id="join" style="position: relative; overflow: hidden; background: linear-gradient(180deg, #FFFFFF 0%, #FFF6EE 100%); display: flex; flex-direction: column; align-items: center">
     <div class="wrap" style="position: relative; width: 100%; max-width: 1200px; padding: 16px 24px 48px">
       <div class="join-card" style="position: relative; overflow: hidden; display: flex; flex-wrap: wrap; gap: 32px 48px; align-items: center; background: linear-gradient(160deg, #F08A1A 0%, #E36B12 46%, #D26508 100%); border-radius: 26px; padding: 44px; box-shadow: 0 24px 60px rgba(210,101,8,0.28)">
-        <svg aria-hidden="true" viewBox="0 0 300 200" style="position: absolute; left: -40px; bottom: -60px; width: 300px; height: 200px; opacity: 0.7"><defs><linearGradient id="rbe" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFF6EE"></stop><stop offset="0.45" stop-color="#FFE0C2"></stop><stop offset="0.7" stop-color="#FFFFFF"></stop><stop offset="1" stop-color="#F8C48A"></stop></linearGradient></defs><path d="M10 190C70 120 140 170 170 110C200 50 270 80 290 10" fill="none" stroke="url(#rbe)" stroke-width="10" stroke-linecap="round"></path><path d="M10 190C70 120 140 170 170 110C200 50 270 80 290 10" fill="none" stroke="#FFFFFF" stroke-opacity="0.45" stroke-width="2" stroke-linecap="round" transform="translate(-2 -3)"></path></svg>
         <div style="position: relative; flex: 1 1 360px; display: flex; flex-direction: column; gap: 12px">
           <h2 style="margin: 0; font-family: 'Jost', Arial, sans-serif; font-weight: 300; font-size: clamp(30px, 3.4vw, 42px); line-height: 1.1; text-transform: uppercase">Один шаг до&nbsp;юбилейных подарков</h2>
           <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #FFFFFF">Нажать «Принять участие в&nbsp;розыгрыше» можно в&nbsp;любой день акции после покупки в&nbsp;салоне или онлайн. В&nbsp;розыгрыш попадут участники программы лояльности с&nbsp;покупкой по&nbsp;карте на&nbsp;любую сумму с&nbsp;17&nbsp;ноября по&nbsp;9&nbsp;декабря.</p>
