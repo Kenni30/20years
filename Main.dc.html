@@ -219,7 +219,11 @@ html.intro-on{overflow:hidden}
 .intro-close:hover{color:#E36B12;background:rgba(227,107,18,.08)}
 .intro-close:focus-visible{outline:2px solid #F0C99E;outline-offset:3px}
 @media (max-width:700px){
-  .intro-bits{opacity:.3}
+  .intro-bits,.intro-ribbon,
+  #letter > svg,#letter > span[aria-hidden="true"],
+  #prizes > svg,#prizes > span[aria-hidden="true"],
+  #how > svg,#how > span[aria-hidden="true"],
+  #letter .wrap svg[aria-hidden="true"]{opacity:.4 !important}
 }
 
 /* Планшет. Десктопные правила выше не меняются. */
