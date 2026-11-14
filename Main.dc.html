@@ -31,11 +31,11 @@ input::placeholder{color:#8A8F96}
   flex:0 0 calc((100% - 48px) / 4);
   min-width:0;
   scroll-snap-align:start;
-  transition:transform .35s cubic-bezier(.16,1,.3,1),box-shadow .35s ease;
+  transition:transform .35s cubic-bezier(.16,1,.3,1);
 }
 .prize-track > div:last-child{scroll-snap-align:end}
 .prize-track > div:hover{transform:translateY(-6px)}
-.prize-card{background:#fff;border:1px solid #E7E0D6;border-radius:18px;overflow:hidden;display:flex;flex-direction:column;height:100%;box-shadow:0 12px 28px rgba(40,70,100,.07)}
+.prize-card{background:#fff;border:1px solid #E7E0D6;border-radius:18px;overflow:hidden;display:flex;flex-direction:column;height:100%}
 .prize-card img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;background:#F7F4EF}
 .prize-card-body{flex:1;display:flex;flex-direction:column;gap:6px;padding:16px 16px 18px}
 .prize-brand{margin:0;font-size:15px;font-weight:700;line-height:1.3;color:#231D19}
@@ -183,6 +183,39 @@ html.motion .cta:not(:disabled):hover{transform:translateY(-2px)}
   .prize-nav,.prize-track > div{transition:none}
   .prize-nav:hover{transform:translateY(-50%)}
   .prize-track > div:hover{transform:none}
+}
+
+html.intro-on{overflow:hidden}
+.intro{position:fixed;inset:0;z-index:100;display:flex;align-items:center;justify-content:center;overflow:hidden;background:radial-gradient(ellipse at 50% 46%, #FFFFFF 0%, #FFF6EE 62%, #F6E4D2 100%)}
+.intro::before{content:"";position:absolute;left:50%;top:46%;width:min(560px,78vw);height:min(560px,78vw);transform:translate(-50%,-54%);background:radial-gradient(circle, rgba(245,160,74,.22) 0%, rgba(245,160,74,0) 68%);pointer-events:none}
+.intro.is-leaving{animation:intro-out .7s cubic-bezier(.4,0,.2,1) forwards;pointer-events:none}
+@keyframes intro-out{to{opacity:0;transform:translateY(-28px)}}
+.intro-bits{position:absolute;inset:0;z-index:1;overflow:hidden;pointer-events:none}
+.intro-bit{position:absolute;top:-8vh;display:block;border-radius:1px;opacity:0;animation-name:intro-fall;animation-timing-function:linear;animation-fill-mode:forwards}
+.intro-bit.is-round{border-radius:50%}
+@keyframes intro-fall{
+  0%{opacity:0;transform:translate3d(0,-8vh,0) rotate(0deg)}
+  10%{opacity:1}
+  100%{opacity:.95;transform:translate3d(var(--drift),114vh,0) rotate(var(--spin))}
+}
+.intro-ribbon{position:absolute;z-index:1;height:auto;pointer-events:none}
+.intro-ribbon-a{left:-6vw;bottom:-8vh;width:min(720px,68vw)}
+.intro-ribbon-b{right:-5vw;top:-6vh;width:min(640px,58vw)}
+.intro-ribbon path{stroke-dasharray:1600;stroke-dashoffset:1600;animation:intro-draw 1.7s cubic-bezier(.16,1,.3,1) forwards}
+.intro-ribbon-b path{animation-delay:.22s}
+@keyframes intro-draw{to{stroke-dashoffset:0}}
+.intro-stage{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;text-align:center;padding:0 24px}
+.intro-nam{margin:0 0 4px;font-family:'Manrope',Arial,sans-serif;font-weight:500;font-size:clamp(28px,3.6vw,42px);letter-spacing:.28em;text-indent:.28em;color:#231D19;animation:intro-fade .7s ease .08s both}
+.intro-num{margin:0;font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-weight:400;font-size:clamp(148px,30vw,300px);line-height:.76;color:#E36B12;animation:intro-num 1.05s cubic-bezier(.16,1.2,.3,1) .12s both}
+.intro-years{margin:12px 0 0;font-family:'Manrope',Arial,sans-serif;font-weight:500;font-size:clamp(28px,3.6vw,42px);letter-spacing:.32em;text-indent:.32em;color:#231D19;animation:intro-years .85s cubic-bezier(.16,1,.3,1) .5s both}
+@keyframes intro-num{from{opacity:0;transform:scale(.76) translateY(16px)}to{opacity:1;transform:none}}
+@keyframes intro-years{from{opacity:0;letter-spacing:.62em;transform:translateY(16px)}to{opacity:1;letter-spacing:.32em;transform:none}}
+@keyframes intro-fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.intro-close{position:absolute;z-index:3;top:18px;right:18px;display:flex;align-items:center;justify-content:center;width:44px;height:44px;margin:0;padding:0;border:0;border-radius:50%;background:transparent;color:#A07858;cursor:pointer}
+.intro-close:hover{color:#E36B12;background:rgba(227,107,18,.08)}
+.intro-close:focus-visible{outline:2px solid #F0C99E;outline-offset:3px}
+@media (max-width:700px){
+  .intro-bits{opacity:.3}
 }
 
 /* Планшет. Десктопные правила выше не меняются. */
@@ -410,14 +443,14 @@ html.motion .cta:not(:disabled):hover{transform:translateY(-2px)}
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px">
         <div style="position: relative; overflow: hidden; background: #FFFFFF; border-radius: 22px; padding: 36px; display: flex; flex-direction: column; gap: 12px; box-shadow: 0 20px 50px rgba(40,70,100,0.10)">
           <svg aria-hidden="true" viewBox="0 0 300 160" style="position: absolute; right: -30px; bottom: -40px; width: 220px; height: 160px; opacity: 0.85"><defs><linearGradient id="rbb" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F6DDB8"></stop><stop offset="0.45" stop-color="#D9A66B"></stop><stop offset="0.7" stop-color="#FBE9CF"></stop><stop offset="1" stop-color="#F5A04A"></stop></linearGradient></defs><path d="M10 140C80 120 60 40 140 50C200 58 190 130 280 90" fill="none" stroke="url(#rbb)" stroke-width="10" stroke-linecap="round"></path><path d="M10 140C80 120 60 40 140 50C200 58 190 130 280 90" fill="none" stroke="#FFFFFF" stroke-opacity="0.45" stroke-width="2" stroke-linecap="round" transform="translate(-2 -3)"></path></svg>
-          <p style="position: relative; margin: 0; font-size: 16px; font-weight: 600; color: #E36B12">17&nbsp;ноября&nbsp;– 9&nbsp;декабря</p>
+          <p style="position: relative; margin: 0; font-family: 'Manrope', Arial, sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 4px; text-transform: uppercase; color: #E36B12">17&nbsp;ноября&nbsp;– 9&nbsp;декабря</p>
           <h3 style="position: relative; margin: 0; font-family: 'Jost', Arial, sans-serif; font-weight: 300; font-size: 30px; line-height: 1.15; text-transform: uppercase; color: #231D19">Дни особенных подарков</h3>
           <p style="position: relative; margin: 0; max-width: 460px; font-size: 16px; line-height: 1.6; color: #3F4750">В&nbsp;салонах ОРТЕКИ и&nbsp;интернет-магазине: начисляем каждому клиенту 2&nbsp;000&nbsp;бонусов на&nbsp;покупки и&nbsp;возвращаем 20% бонусами с&nbsp;каждой покупки. Пусть забота о&nbsp;себе в&nbsp;юбилейные дни будет ещё приятнее.</p>
           <a href="#gifts" class="pill cta">Подробнее</a>
         </div>
         <div class="gift-card" style="position: relative; overflow: hidden; background: radial-gradient(ellipse at 82% 18%, #4DB8C8 0%, #0091A8 64%); color: #FFFFFF; border-radius: 22px; padding: 36px 210px 36px 36px; display: flex; flex-direction: column; gap: 12px; box-shadow: 0 20px 50px rgba(0,145,168,0.22)">
           <img class="gift-shot" src="./assets/gift-box.png" alt="">
-          <p style="position: relative; margin: 0; font-size: 13px; font-weight: 600; letter-spacing: 4px; text-transform: uppercase; color: #F0C99E">10&nbsp;декабря</p>
+          <p style="position: relative; margin: 0; font-family: 'Manrope', Arial, sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 4px; text-transform: uppercase; color: #F0C99E">10&nbsp;декабря</p>
           <h3 style="position: relative; margin: 0; font-family: 'Jost', Arial, sans-serif; font-weight: 300; font-size: 30px; line-height: 1.15; text-transform: uppercase; color: #FFFFFF">Главное юбилейное событие</h3>
           <p style="position: relative; margin: 0; font-size: 16px; line-height: 1.6; color: #D4E7EA">Розыгрыш 120&nbsp;призов: программа заботы о&nbsp;здоровье, ортопедическая обувь, стельки, компрессионный трикотаж и&nbsp;другие подарки для&nbsp;активной и&nbsp;комфортной жизни.</p>
           <a href="#prizes" class="pill cta">Смотреть призы</a>
@@ -788,7 +821,64 @@ document.querySelectorAll('[data-reveal-id]').forEach((el) => {
   else if (this._io && !this._watched.has(el)) { this._watched.add(el); this._io.observe(el); }
 });
 }
+mountIntro() {
+if (!document.documentElement.classList.contains('motion') || document.querySelector('.intro')) return;
+const root = document.createElement('div');
+root.className = 'intro';
+root.setAttribute('role', 'dialog');
+root.setAttribute('aria-modal', 'true');
+root.setAttribute('aria-label', 'Нам 20 лет');
+root.innerHTML = '<div class="intro-bits" aria-hidden="true"></div>'
+  + '<svg class="intro-ribbon intro-ribbon-a" aria-hidden="true" viewBox="0 0 700 520"><defs><linearGradient id="intro-gold-a" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#F6DDB8"/><stop offset="0.45" stop-color="#D9A66B"/><stop offset="0.7" stop-color="#FBE9CF"/><stop offset="1" stop-color="#F5A04A"/></linearGradient></defs><path d="M24 490C110 360 40 300 180 250C320 200 250 120 340 78C430 36 540 60 680 24" fill="none" stroke="url(#intro-gold-a)" stroke-width="13" stroke-linecap="round"/><path d="M24 490C110 360 40 300 180 250C320 200 250 120 340 78C430 36 540 60 680 24" fill="none" stroke="#FFFFFF" stroke-opacity="0.5" stroke-width="3" stroke-linecap="round" transform="translate(-3 -4)"/></svg>'
+  + '<svg class="intro-ribbon intro-ribbon-b" aria-hidden="true" viewBox="0 0 700 520"><defs><linearGradient id="intro-gold-b" x1="1" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F6DDB8"/><stop offset="0.45" stop-color="#D9A66B"/><stop offset="0.7" stop-color="#FBE9CF"/><stop offset="1" stop-color="#F5A04A"/></linearGradient></defs><path d="M676 500C560 390 640 300 500 250C360 200 420 120 330 74C240 28 140 48 18 16" fill="none" stroke="url(#intro-gold-b)" stroke-width="13" stroke-linecap="round"/><path d="M676 500C560 390 640 300 500 250C360 200 420 120 330 74C240 28 140 48 18 16" fill="none" stroke="#FFFFFF" stroke-opacity="0.5" stroke-width="3" stroke-linecap="round" transform="translate(-3 -4)"/></svg>'
+  + '<div class="intro-stage"><p class="intro-nam">Нам</p><p class="intro-num">20</p><p class="intro-years">лет</p></div>'
+  + '<button type="button" class="intro-close" aria-label="Закрыть"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg></button>';
+const bits = root.querySelector('.intro-bits');
+const colors = ['#F5A04A', '#E36B12', '#F0C99E', '#E3B57E', '#D9A66B', '#FBE9CF'];
+for (let i = 0; i < 34; i++) {
+  const bit = document.createElement('span');
+  const round = i % 4 === 0;
+  const size = 7 + Math.random() * 8;
+  bit.className = 'intro-bit' + (round ? ' is-round' : '');
+  bit.style.left = (3 + Math.random() * 94) + '%';
+  bit.style.animationDelay = (Math.random() < 0.5 ? -Math.random() * 1.6 : Math.random() * 0.5).toFixed(2) + 's';
+  bit.style.animationDuration = (4.2 + Math.random() * 2.2).toFixed(2) + 's';
+  bit.style.background = colors[i % colors.length];
+  bit.style.setProperty('--drift', ((Math.random() * 90) - 45).toFixed(0) + 'px');
+  bit.style.setProperty('--spin', (160 + Math.random() * 380).toFixed(0) + 'deg');
+  bit.style.width = size.toFixed(0) + 'px';
+  bit.style.height = (round ? size : Math.max(4, size * 0.4)).toFixed(0) + 'px';
+  bits.appendChild(bit);
+}
+const page = document.getElementById('dc-root');
+const finish = () => {
+  if (root.isConnected) root.remove();
+  document.documentElement.classList.remove('intro-on');
+  if (page) page.inert = false;
+  document.removeEventListener('keydown', onKey);
+};
+let closed = false;
+const close = () => {
+  if (closed) return;
+  closed = true;
+  clearTimeout(this._introTimer);
+  root.classList.add('is-leaving');
+  root.addEventListener('animationend', (e) => {
+    if (e.target === root && e.animationName === 'intro-out') finish();
+  });
+  setTimeout(finish, 800);
+};
+const onKey = (e) => { if (e.key === 'Escape') close(); };
+if (page) page.inert = true;
+document.body.appendChild(root);
+document.documentElement.classList.add('intro-on');
+root.querySelector('.intro-close').addEventListener('click', close);
+document.addEventListener('keydown', onKey);
+this._introClose = finish;
+this._introTimer = setTimeout(close, 3000);
+}
 componentDidMount() {
+this.mountIntro();
 this.bindTrackFade();
 if (!document.documentElement.classList.contains('motion')) return;
 this._io = new IntersectionObserver((entries) => {
@@ -806,6 +896,8 @@ if (this._trackUpdate) this._trackUpdate();
 if (document.documentElement.classList.contains('motion')) this.scanReveals(false);
 }
 componentWillUnmount() {
+if (this._introTimer) clearTimeout(this._introTimer);
+if (this._introClose) this._introClose();
 if (this._io) this._io.disconnect();
 if (this.track && this._trackUpdate) this.track.removeEventListener('scroll', this._trackUpdate);
 if (this._style) this._style.remove();
