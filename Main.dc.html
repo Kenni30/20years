@@ -20,40 +20,41 @@ a{color:#E36B12}a:hover{color:#C45508}
 [data-track]::-webkit-scrollbar{display:none}
 input::placeholder{color:#8A8F96}
 
-.prize-carousel{position:relative;width:100%;container-type:inline-size}
-.prize-nav{position:absolute;top:50%;z-index:2;display:flex;align-items:center;justify-content:center;width:42px;height:42px;margin:0;padding:0;border:none;border-radius:50%;background:linear-gradient(120deg,#E36B12 0%,#F5A04A 55%,#F7B15A 100%);cursor:pointer;box-shadow:0 8px 18px rgba(210,101,8,0.30);transform:translateY(-50%);transition:transform .25s ease,box-shadow .25s ease}
-.prize-nav.prev{left:-21px}
-.prize-nav.next{right:-21px}
-.prize-nav:hover{transform:translateY(calc(-50% - 2px))}
-.prize-nav:focus-visible{outline:2px solid #F0C99E;outline-offset:3px}
-.prize-track{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:none;padding:2px 0 8px}
-.prize-track > div{
-  flex:0 0 calc((100% - 48px) / 4);
-  min-width:0;
-  scroll-snap-align:start;
-  transition:transform .35s cubic-bezier(.16,1,.3,1);
-}
-.prize-track > div:last-child{scroll-snap-align:end}
-.prize-track > div:hover{transform:translateY(-6px)}
-.prize-card{background:#fff;border:1px solid #E7E0D6;border-radius:18px;overflow:hidden;display:flex;flex-direction:column;height:100%}
-.prize-card img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;background:#F7F4EF}
-.prize-card-body{flex:1;display:flex;flex-direction:column;gap:6px;padding:16px 16px 18px}
+.prize-pick{width:100%;display:grid;grid-template-columns:minmax(0,1.08fr) minmax(280px,.92fr);gap:28px;align-items:center}
+.prize-list{display:flex;flex-direction:column;gap:2px;min-width:0}
+.prize-row{display:grid;grid-template-columns:56px minmax(0,1fr) auto;gap:12px;align-items:center;width:100%;margin:0;padding:8px 10px;border:0;border-radius:14px;background:transparent;color:#231D19;text-align:left;cursor:pointer;font:inherit;transition:background .35s ease,color .35s ease}
+.prize-row:hover{background:rgba(227,107,18,.08)}
+.prize-row.is-on,.prize-row.is-on:hover{background:linear-gradient(120deg,#E36B12 0%,#F5A04A 58%,#F7B15A 100%);color:#fff}
+.prize-row img{width:56px;height:56px;border-radius:10px;object-fit:cover;display:block;background:#F7F4EF}
+.prize-row-copy{min-width:0;display:flex;flex-direction:column;gap:2px}
+.prize-row .prize-brand{margin:0;font-size:14px;font-weight:700;line-height:1.25;color:inherit}
+.prize-row .prize-desc{margin:0;min-height:0;font-size:13px;line-height:1.35;color:#5C6570;transition:color .35s ease}
+.prize-row.is-on .prize-desc{color:rgba(255,255,255,.88)}
+.prize-row .prize-pill{align-self:center;margin:0;padding:6px 10px;background:#F6F1E8;color:#231D19;white-space:nowrap;transition:background .35s ease,color .35s ease}
+.prize-row.is-on .prize-pill{background:rgba(255,255,255,.92);color:#C45508}
+.prize-row:focus-visible{outline:2px solid #F0C99E;outline-offset:2px}
+.prize-stage{position:relative;width:100%;align-self:center;border-radius:22px;overflow:hidden;background:#F7F4EF}
+.prize-stage::before{content:"";display:block;box-sizing:content-box;width:100%;height:0;padding-top:100%}
+.prize-stage-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:0;transform:scale(1.045);z-index:0}
+html.motion .prize-stage-img{transition:opacity .55s ease,transform .7s ease}
+.prize-stage-img.is-front{opacity:1;transform:none;z-index:1}
+.prize-controls{position:absolute;left:50%;bottom:14px;z-index:2;transform:translateX(-50%);display:flex;align-items:center;gap:10px}
+.prize-arrow{display:flex;align-items:center;justify-content:center;width:30px;height:30px;margin:0;padding:0;border:0;border-radius:50%;background:rgba(255,255,255,.84);color:#231D19;cursor:pointer;box-shadow:0 2px 8px rgba(40,40,40,.16)}
+.prize-arrow:hover{background:#fff}
+.prize-arrow:focus-visible{outline:2px solid #F0C99E;outline-offset:2px}
+.prize-timeline{display:block;width:50px;height:3px;border-radius:999px;background:rgba(255,255,255,.72);box-shadow:0 0 0 1px rgba(35,29,25,.12);overflow:hidden}
+.prize-timeline-bar{display:block;height:100%;width:0;background:#E36B12}
+html.motion .prize-timeline-bar.is-run{animation:prize-time 3s linear forwards}
+@keyframes prize-time{from{width:0}to{width:100%}}
 .prize-brand{margin:0;font-size:15px;font-weight:700;line-height:1.3;color:#231D19}
-.prize-desc{margin:0;min-height:2.8em;font-size:14px;line-height:1.4;color:#4F4640}
-.prize-pill{align-self:flex-start;margin-top:10px;display:inline-flex;align-items:center;gap:6px;padding:6px 12px 6px 10px;border-radius:999px;background:#F6F1E8;color:#231D19;font-size:13px;font-weight:600;line-height:1}
+.prize-desc{margin:0;font-size:14px;line-height:1.4;color:#4F4640}
+.prize-pill{display:inline-flex;align-items:center;border-radius:999px;background:#F6F1E8;color:#231D19;font-size:13px;font-weight:600;line-height:1}
 .more-prizes{margin:40px 0 0;font-family:'Jost',Arial,sans-serif;font-weight:400;font-size:26px;line-height:1.3;color:#231D19;text-align:center}
 .more-prizes span{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-weight:400;font-size:1em;color:#E36B12}
-@container (max-width:1040px){
-  .prize-track > div{flex-basis:calc((100% - 32px) / 3)}
-}
-@container (max-width:820px){
-  .prize-track > div{flex-basis:calc((100% - 16px) / 2)}
-  .prize-nav.prev{left:-21px}
-  .prize-nav.next{right:-21px}
-}
-@container (max-width:480px){
-  .prize-track > div{flex-basis:100%}
-  .more-prizes{font-size:20px}
+@media (max-width:800px){
+  #prizes{overflow:clip !important}
+  .prize-pick{display:flex;flex-direction:column;gap:16px}
+  .prize-stage{position:sticky;top:8px;z-index:4;order:-1;align-self:stretch}
 }
 
 .hero{position:relative;display:flex;flex-direction:column;background:linear-gradient(180deg,#FFFFFF 0%,#F4FAFB 100%)}
@@ -109,7 +110,7 @@ input::placeholder{color:#8A8F96}
   .main-prize-count .num{font-size:140px}
   .main-prize-copy{grid-column:1;grid-row:2;padding:20px}
 }
-.scan-banner{position:relative;overflow:hidden;width:100%;display:grid;grid-template-columns:auto minmax(220px,1fr);align-items:stretch;min-height:228px;border-radius:24px;background:radial-gradient(ellipse at 82% 18%, #4DB8C8 0%, #0091A8 64%);color:#fff;box-shadow:0 22px 48px rgba(0,145,168,0.22)}
+.scan-banner{position:relative;overflow:hidden;width:100%;margin-top:40px;display:grid;grid-template-columns:auto minmax(220px,1fr);align-items:stretch;min-height:228px;border-radius:24px;background:radial-gradient(ellipse at 82% 18%, #4DB8C8 0%, #0091A8 64%);color:#fff;box-shadow:0 22px 48px rgba(0,145,168,0.22)}
 .scan-copy{position:relative;z-index:1;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;padding:32px 28px 30px 48px}
 .scan-kicker{margin:0;font-size:12px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:#E4C48A}
 .scan-title{margin:12px 0 0;font-family:'Jost',Arial,sans-serif;font-weight:400;font-size:clamp(28px,2.7vw,40px);line-height:1.15;color:#fff}
@@ -182,9 +183,7 @@ html.motion a[href="https://orteka.ru/catalog/"]:hover,
 html.motion #join button[type="button"]:not(:disabled):hover,
 html.motion .cta:not(:disabled):hover{transform:translateY(-2px)}
 @media (prefers-reduced-motion:reduce){
-  .prize-nav,.prize-track > div{transition:none}
-  .prize-nav:hover{transform:translateY(-50%)}
-  .prize-track > div:hover{transform:none}
+  .prize-arrow,.prize-row,.prize-row .prize-desc,.prize-row .prize-pill{transition:none}
 }
 
 html.intro-on{overflow:hidden}
@@ -316,12 +315,12 @@ html.intro-on{overflow:hidden}
   .main-prize-cash strong{font-size:18px}
   .main-prize-cash p{font-size:16px}
   .more-prizes{margin-top:8px;font-size:22px}
-  .prize-brand{font-size:17px}
-  .prize-desc{font-size:16px}
-  .prize-pill{font-size:14px}
-  .prize-nav.prev{left:-21px}
-  .prize-nav.next{right:-21px}
-  .scan-banner{display:flex;flex-direction:column;min-height:0;border-radius:20px}
+  .prize-row{grid-template-columns:48px minmax(0,1fr) auto;gap:10px;padding:8px}
+  .prize-row img{width:48px;height:48px}
+  .prize-row .prize-brand{font-size:16px}
+  .prize-row .prize-desc{font-size:15px}
+  .prize-row .prize-pill{font-size:13px}
+  .scan-banner{display:flex;flex-direction:column;min-height:0;margin-top:28px;border-radius:20px}
   .scan-copy{padding:22px 18px 6px}
   .scan-kicker{font-size:13px;letter-spacing:.12em}
   .scan-title{font-size:30px}
@@ -380,6 +379,10 @@ html.intro-on{overflow:hidden}
   8%{opacity:1}
   38%{transform:translate(var(--x),var(--peak)) scale(1) rotate(calc(var(--spin) * .45))}
   100%{opacity:0;transform:translate(calc(var(--x) * 1.15),var(--fall)) rotate(var(--spin))}
+}
+@media (max-width:700px){
+  .dog-pop{height:min(240px,27vh)}
+  .dog-burst{transform:scale(.5);transform-origin:0 0}
 }
 </style>
 </helmet>
@@ -540,67 +543,53 @@ html.intro-on{overflow:hidden}
       </div>
 
       <p class="more-prizes">И&nbsp;ещё <span>100&nbsp;призов</span> для активной и&nbsp;комфортной жизни</p>
-      <div class="prize-carousel">
-          <button type="button" class="prize-nav prev" aria-label="Предыдущие призы" onClick="{{prev}}"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6l6 6"></path></svg></button>
-        <div ref="{{setTrack}}" class="prize-track" data-track="prizes">
-        <div class="prize-card">
-          <img src="./assets/certificate-5000.jpg?v=2" alt="Сертификат ОРТЕКИ на 5 000 бонусных баллов">
-          <div class="prize-card-body">
-            <p class="prize-brand">ОРТЕКА</p>
-            <p class="prize-desc">Сертификат на&nbsp;5&nbsp;000 бонусных баллов</p>
-            <p class="prize-pill"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#E36B12" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="13" rx="1.5"></rect><path d="M12 8v13M3 12h18"></path><path d="M12 8c-2.4-3.1-5.4-3.3-5.4-1.2S9.4 8 12 8c2.6 0 4.4-2.1 5.4-1.2S14.4 4.9 12 8z"></path></svg>20&nbsp;призов</p>
+      <div class="prize-pick">
+        <div class="prize-list" role="listbox" aria-label="100 призов">
+          <button type="button" class="prize-row is-on" role="option" aria-selected="true">
+            <img src="./assets/certificate-5000.jpg?v=2" alt="Сертификат ОРТЕКИ на 5 000 бонусных баллов">
+            <span class="prize-row-copy"><span class="prize-brand">ОРТЕКА</span><span class="prize-desc">Сертификат на&nbsp;5&nbsp;000 бонусных баллов</span></span>
+            <span class="prize-pill">20&nbsp;призов</span>
+          </button>
+          <button type="button" class="prize-row" role="option" aria-selected="false">
+            <img src="./assets/dfaa64eba579852e347dd99302fe4004.jpg" alt="Ортопедическая подушка TRELAX">
+            <span class="prize-row-copy"><span class="prize-brand">TRELAX</span><span class="prize-desc">Ортопедическая подушка по&nbsp;промокоду</span></span>
+            <span class="prize-pill">10&nbsp;призов</span>
+          </button>
+          <button type="button" class="prize-row" role="option" aria-selected="false">
+            <img src="./assets/a9b294ebfb893ffee58ac04bb4f573c0.jpg" alt="Женщина в офисе в компрессионном трикотаже VENOTEKS">
+            <span class="prize-row-copy"><span class="prize-brand">VENOTEKS</span><span class="prize-desc">Компрессионный трикотаж, 2&nbsp;пары</span></span>
+            <span class="prize-pill">15&nbsp;призов</span>
+          </button>
+          <button type="button" class="prize-row" role="option" aria-selected="false">
+            <img src="./assets/083282f69b96ea046ee5bbb3a87ebeea.jpg" alt="Зимние ботинки GOEKKEN с мехом">
+            <span class="prize-row-copy"><span class="prize-brand">BERKEMANN, ORTMANN, GEKKEN</span><span class="prize-desc">Ортопедическая обувь</span></span>
+            <span class="prize-pill">10&nbsp;призов</span>
+          </button>
+          <button type="button" class="prize-row" role="option" aria-selected="false">
+            <img src="./assets/abf09751b3bedf91d0ceb3cdc7fbc318.jpg" alt="Ортопедические стельки ORTMANN">
+            <span class="prize-row-copy"><span class="prize-brand">BAUERFEIND, ORTMANN</span><span class="prize-desc">Ортопедические стельки</span></span>
+            <span class="prize-pill">15&nbsp;призов</span>
+          </button>
+          <button type="button" class="prize-row" role="option" aria-selected="false">
+            <img src="./assets/b467da54325301176b48c8a6ea229dee.jpg" alt="Ручной массажёр GEZATONE">
+            <span class="prize-row-copy"><span class="prize-brand">GEZATONE</span><span class="prize-desc">Массажёр для&nbsp;тела</span></span>
+            <span class="prize-pill">10&nbsp;призов</span>
+          </button>
+          <button type="button" class="prize-row" role="option" aria-selected="false">
+            <img src="./assets/ad6992e77cb3f14b53b84f4f144fcc53.jpg" alt="Кинезиотейп BBTAPE">
+            <span class="prize-row-copy"><span class="prize-brand">Кинезиотейпирование</span><span class="prize-desc">Абонемент на&nbsp;3&nbsp;сеанса в&nbsp;салоне ОРТЕКИ</span></span>
+            <span class="prize-pill">20&nbsp;призов</span>
+          </button>
+        </div>
+        <div class="prize-stage">
+          <img class="prize-stage-img is-front" src="./assets/certificate-5000.jpg?v=2" alt="Сертификат ОРТЕКИ на 5 000 бонусных баллов">
+          <img class="prize-stage-img" src="./assets/certificate-5000.jpg?v=2" alt="">
+          <div class="prize-controls">
+            <button type="button" class="prize-arrow" data-dir="-1" aria-label="Предыдущий приз"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6l6 6"></path></svg></button>
+            <span class="prize-timeline" aria-hidden="true"><span class="prize-timeline-bar"></span></span>
+            <button type="button" class="prize-arrow" data-dir="1" aria-label="Следующий приз"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6l-6 6"></path></svg></button>
           </div>
         </div>
-        <div class="prize-card">
-          <img src="./assets/dfaa64eba579852e347dd99302fe4004.jpg" alt="Ортопедическая подушка TRELAX">
-          <div class="prize-card-body">
-            <p class="prize-brand">TRELAX</p>
-            <p class="prize-desc">Ортопедическая подушка по&nbsp;промокоду</p>
-            <p class="prize-pill"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#E36B12" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="13" rx="1.5"></rect><path d="M12 8v13M3 12h18"></path><path d="M12 8c-2.4-3.1-5.4-3.3-5.4-1.2S9.4 8 12 8c2.6 0 4.4-2.1 5.4-1.2S14.4 4.9 12 8z"></path></svg>10&nbsp;призов</p>
-          </div>
-        </div>
-        <div class="prize-card">
-          <img src="./assets/a9b294ebfb893ffee58ac04bb4f573c0.jpg" alt="Женщина в офисе в компрессионном трикотаже VENOTEKS">
-          <div class="prize-card-body">
-            <p class="prize-brand">VENOTEKS</p>
-            <p class="prize-desc">Компрессионный трикотаж, 2&nbsp;пары</p>
-            <p class="prize-pill"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#E36B12" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="13" rx="1.5"></rect><path d="M12 8v13M3 12h18"></path><path d="M12 8c-2.4-3.1-5.4-3.3-5.4-1.2S9.4 8 12 8c2.6 0 4.4-2.1 5.4-1.2S14.4 4.9 12 8z"></path></svg>15&nbsp;призов</p>
-          </div>
-        </div>
-        <div class="prize-card">
-          <img src="./assets/083282f69b96ea046ee5bbb3a87ebeea.jpg" alt="Зимние ботинки GOEKKEN с мехом">
-          <div class="prize-card-body">
-            <p class="prize-brand">BERKEMANN, ORTMANN, GEKKEN</p>
-            <p class="prize-desc">Ортопедическая обувь</p>
-            <p class="prize-pill"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#E36B12" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="13" rx="1.5"></rect><path d="M12 8v13M3 12h18"></path><path d="M12 8c-2.4-3.1-5.4-3.3-5.4-1.2S9.4 8 12 8c2.6 0 4.4-2.1 5.4-1.2S14.4 4.9 12 8z"></path></svg>10&nbsp;призов</p>
-          </div>
-        </div>
-        <div class="prize-card">
-          <img src="./assets/abf09751b3bedf91d0ceb3cdc7fbc318.jpg" alt="Ортопедические стельки ORTMANN">
-          <div class="prize-card-body">
-            <p class="prize-brand">BAUERFEIND, ORTMANN</p>
-            <p class="prize-desc">Ортопедические стельки</p>
-            <p class="prize-pill"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#E36B12" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="13" rx="1.5"></rect><path d="M12 8v13M3 12h18"></path><path d="M12 8c-2.4-3.1-5.4-3.3-5.4-1.2S9.4 8 12 8c2.6 0 4.4-2.1 5.4-1.2S14.4 4.9 12 8z"></path></svg>15&nbsp;призов</p>
-          </div>
-        </div>
-        <div class="prize-card">
-          <img src="./assets/b467da54325301176b48c8a6ea229dee.jpg" alt="Ручной массажёр GEZATONE">
-          <div class="prize-card-body">
-            <p class="prize-brand">GEZATONE</p>
-            <p class="prize-desc">Массажёр для&nbsp;тела</p>
-            <p class="prize-pill"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#E36B12" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="13" rx="1.5"></rect><path d="M12 8v13M3 12h18"></path><path d="M12 8c-2.4-3.1-5.4-3.3-5.4-1.2S9.4 8 12 8c2.6 0 4.4-2.1 5.4-1.2S14.4 4.9 12 8z"></path></svg>10&nbsp;призов</p>
-          </div>
-        </div>
-        <div class="prize-card">
-          <img src="./assets/ad6992e77cb3f14b53b84f4f144fcc53.jpg" alt="Кинезиотейп BBTAPE">
-          <div class="prize-card-body">
-            <p class="prize-brand">Кинезиотейпирование</p>
-            <p class="prize-desc">Абонемент на&nbsp;3&nbsp;сеанса в&nbsp;салоне ОРТЕКИ</p>
-            <p class="prize-pill"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#E36B12" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="13" rx="1.5"></rect><path d="M12 8v13M3 12h18"></path><path d="M12 8c-2.4-3.1-5.4-3.3-5.4-1.2S9.4 8 12 8c2.6 0 4.4-2.1 5.4-1.2S14.4 4.9 12 8z"></path></svg>20&nbsp;призов</p>
-          </div>
-        </div>
-        </div>
-          <button type="button" class="prize-nav next" aria-label="Следующие призы" onClick="{{next}}"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6l-6 6"></path></svg></button>
       </div>
       <div class="scan-banner">
         <span class="scan-spark" aria-hidden="true" style="left: 2%; top: 46%; width: 11px; height: 4px; background: #F0C99E; transform: rotate(24deg)"></span>
@@ -961,9 +950,63 @@ this._armDog = () => {
 this._dogScroll = () => this._armDog();
 window.addEventListener('scroll', this._dogScroll, { passive: true });
 }
+mountPrizePick() {
+const root = document.querySelector('.prize-pick');
+if (!root || root.dataset.bound === '1') return;
+root.dataset.bound = '1';
+const rows = Array.from(root.querySelectorAll('.prize-row'));
+const frames = Array.from(root.querySelectorAll('.prize-stage-img'));
+const bar = root.querySelector('.prize-timeline-bar');
+const motion = document.documentElement.classList.contains('motion');
+let index = this._prizeIndex || 0;
+let front = Math.max(0, frames.findIndex((frame) => frame.classList.contains('is-front')));
+let paintId = 0;
+const showFrame = (thumb) => {
+  const current = frames[front];
+  current.alt = thumb.alt;
+  if (current.getAttribute('src') === thumb.getAttribute('src')) return;
+  const token = ++paintId;
+  const incoming = frames[1 - front];
+  const reveal = () => {
+    if (token !== paintId) return;
+    incoming.classList.add('is-front');
+    current.classList.remove('is-front');
+    front = 1 - front;
+  };
+  incoming.alt = thumb.alt;
+  if (incoming.getAttribute('src') === thumb.getAttribute('src') && incoming.complete) {
+    reveal();
+    return;
+  }
+  incoming.addEventListener('load', reveal, { once: true });
+  incoming.src = thumb.getAttribute('src');
+};
+const apply = (i, restart) => {
+  index = (i + rows.length) % rows.length;
+  this._prizeIndex = index;
+  rows.forEach((row, n) => {
+    const on = n === index;
+    row.classList.toggle('is-on', on);
+    row.setAttribute('aria-selected', on ? 'true' : 'false');
+  });
+  showFrame(rows[index].querySelector('img'));
+  if (this._prizeTimer) clearTimeout(this._prizeTimer);
+  if (restart && motion) {
+    bar.classList.remove('is-run');
+    void bar.offsetWidth;
+    bar.classList.add('is-run');
+    this._prizeTimer = setTimeout(() => apply(index + 1, true), 3000);
+  }
+};
+rows.forEach((row, n) => row.addEventListener('click', () => apply(n, true)));
+root.querySelector('[data-dir="-1"]').addEventListener('click', () => apply(index - 1, true));
+root.querySelector('[data-dir="1"]').addEventListener('click', () => apply(index + 1, true));
+apply(index, true);
+}
 componentDidMount() {
 this.mountIntro();
 this.mountDog();
+this.mountPrizePick();
 this.bindTrackFade();
 if (!document.documentElement.classList.contains('motion')) return;
 this._io = new IntersectionObserver((entries) => {
@@ -979,10 +1022,12 @@ this.scanReveals(true);
 componentDidUpdate() {
 if (this._trackUpdate) this._trackUpdate();
 if (document.documentElement.classList.contains('motion')) this.scanReveals(false);
+this.mountPrizePick();
 }
 componentWillUnmount() {
 if (this._introTimer) clearTimeout(this._introTimer);
 if (this._introClose) this._introClose();
+if (this._prizeTimer) clearTimeout(this._prizeTimer);
 if (this._dogTimers) this._dogTimers.forEach(clearTimeout);
 if (this._dogScroll) window.removeEventListener('scroll', this._dogScroll);
 if (this._dog) this._dog.remove();
