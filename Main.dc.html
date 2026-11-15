@@ -946,8 +946,8 @@ this._playDog = () => {
 };
 this._armDog = () => {
   if (this._dogPlayed || document.querySelector('.intro')) return;
-  const max = document.documentElement.scrollHeight - window.innerHeight;
-  if (max < 200 || window.scrollY < max * 0.5) return;
+  const prizes = document.getElementById('prizes');
+  if (!prizes || prizes.getBoundingClientRect().top > window.innerHeight * 0.82) return;
   window.removeEventListener('scroll', this._dogScroll);
   this._playDog();
 };
