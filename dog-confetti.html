@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Собака с конфетти — черновик</title>
+<style>
+  body{margin:0;background:#FEF2DD;color:#231D19;font-family:Manrope,Arial,sans-serif}
+  .page{max-width:720px;margin:0 auto;padding:48px 24px 80vh}
+  h1{margin:0 0 12px;font-weight:600;font-size:28px}
+  p{margin:0;font-size:17px;line-height:1.5;color:#4F4640}
+  .replay{margin-top:28px;min-height:48px;padding:0 22px;border:0;border-radius:999px;background:linear-gradient(120deg,#E36B12 0%,#F5A04A 55%,#F7B15A 100%);color:#fff;font:inherit;font-weight:700;cursor:pointer}
+  .mark{height:70vh}
+
+  .dog-pop{position:fixed;right:0;top:6vh;width:min(420px,78vw);z-index:5;transform:translateX(108%);transform-origin:88% 62%;transition:transform .9s cubic-bezier(.16,1.05,.3,1);pointer-events:none;filter:drop-shadow(0 16px 22px rgba(120,72,30,.16))}
+  .dog-pop.is-in{transform:translateX(0)}
+  .dog-pic{display:block;width:100%;height:auto}
+  .dog-smile{position:absolute;left:0;top:0;opacity:0;transition:opacity .45s ease}
+  .is-happy .dog-smile{opacity:1}
+
+  .burst{position:absolute;left:14%;top:48%;width:0;height:0}
+  .burst i{position:absolute;left:0;top:0;display:block;opacity:0;border-radius:1px;animation:pop 1.2s cubic-bezier(.15,.6,.3,1) forwards}
+  .burst i.is-round{border-radius:50%}
+  @keyframes pop{
+    0%{opacity:0;transform:translate(0,0) scale(.25) rotate(0)}
+    8%{opacity:1}
+    38%{transform:translate(var(--x),var(--peak)) scale(1) rotate(calc(var(--spin) * .45))}
+    100%{opacity:0;transform:translate(calc(var(--x) * 1.15),var(--fall)) rotate(var(--spin))}
+  }
+</style>
+</head>
+<body>
+  <div class="page">
+    <h1>Черновик: собака с конфетти</h1>
+    <p>Прокрутите страницу. Справа выглянет собака в колпачке, улыбнётся, выпустит конфетти и спрячется. На лендинг это пока не вставлено.</p>
+    <button class="replay" type="button">Показать ещё раз</button>
+  </div>
+  <div class="mark" id="mark"></div>
+
+  <div class="dog-pop" id="dog" aria-hidden="true">
+    <div class="burst" id="burst"></div>
+    <img class="dog-pic dog-calm" src="assets/dog-calm.png" alt="">
+    <img class="dog-pic dog-smile" src="assets/dog-smile.png" alt="">
+  </div>
+
+<script>
+(function () {
+  var dog = document.getElementById('dog');
+  var burst = document.getElementById('burst');
+  var colors = ['#F5A04A', '#E36B12', '#F0C99E', '#E3B57E', '#D9A66B', '#FBE9CF', '#FFFFFF'];
+  var playing = false;
+  var timers = [];
+
+  function later(fn, ms) {
+    timers.push(setTimeout(fn, ms));
+  }
+  function clearTimers() {
+    timers.forEach(clearTimeout);
+    timers = [];
+  }
+  function pieces(count) {
+    for (var i = 0; i < count; i++) {
+      var bit = document.createElement('i');
+      var round = i % 4 === 0;
+      var angle = (-170 + Math.random() * 130) * Math.PI / 180;
+      var dist = 80 + Math.random() * 180;
+      var size = 7 + Math.random() * 9;
+      var x = Math.cos(angle) * dist;
+      var peak = Math.sin(angle) * dist - 16;
+      bit.className = round ? 'is-round' : '';
+      bit.style.background = colors[i % colors.length];
+      bit.style.width = size.toFixed(0) + 'px';
+      bit.style.height = (round ? size : Math.max(4, size * 0.38)).toFixed(0) + 'px';
+      bit.style.setProperty('--x', x.toFixed(0) + 'px');
+      bit.style.setProperty('--peak', peak.toFixed(0) + 'px');
+      bit.style.setProperty('--fall', (peak + 100 + Math.random() * 150).toFixed(0) + 'px');
+      bit.style.setProperty('--spin', (160 + Math.random() * 320).toFixed(0) + 'deg');
+      burst.appendChild(bit);
+    }
+  }
+  function pop() {
+    burst.innerHTML = '';
+    pieces(28);
+    later(function () { pieces(12); }, 150);
+  }
+  function play() {
+    if (playing) return;
+    playing = true;
+    clearTimers();
+    burst.innerHTML = '';
+    dog.classList.remove('is-happy');
+    dog.classList.add('is-in');
+    later(function () { dog.classList.add('is-happy'); }, 700);
+    later(pop, 1100);
+    later(function () { dog.classList.remove('is-in', 'is-happy'); }, 2800);
+    later(function () {
+      playing = false;
+      burst.innerHTML = '';
+    }, 3800);
+  }
+
+  document.querySelector('.replay').addEventListener('click', play);
+  var seen = false;
+  if ('IntersectionObserver' in window) {
+    var watch = new IntersectionObserver(function (entries) {
+      if (!entries[0].isIntersecting || seen) return;
+      seen = true;
+      play();
+    }, { threshold: 0.6 });
+    watch.observe(document.getElementById('mark'));
+  } else {
+    play();
+  }
+  window.playDog = play;
+})();
+</script>
+</body>
+</html>

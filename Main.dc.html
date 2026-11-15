@@ -90,13 +90,13 @@ input::placeholder{color:#8A8F96}
   .benefit-value{font-size:46px}
   .wrap,.benefits{padding-left:20px !important;padding-right:20px !important}
 }
-.main-prize{width:100%;display:grid;grid-template-columns:minmax(280px,34%) 1fr;background:#fff;border:1px solid #E7E0D6;border-radius:20px;overflow:hidden;box-shadow:0 16px 40px rgba(40,70,100,.08)}
+.main-prize{width:100%;display:grid;grid-template-columns:minmax(280px,34%) 1fr;gap:16px;align-items:stretch}
 .prize-gold-text{background:linear-gradient(135deg,#E36B12 0%,#F5A04A 45%,#D9A66B 60%,#E36B12 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:#E36B12}
 .prize-draw{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-weight:400;font-size:1.18em;letter-spacing:0;color:#E36B12}
-.main-prize-count{grid-column:1;grid-row:1;position:relative;min-height:0;display:flex;flex-direction:column;justify-content:center;background:linear-gradient(160deg,#F08A1A 0%,#E36B12 46%,#D26508 100%);color:#FFFFFF;padding:28px 28px 36px}
+.main-prize-count{grid-column:1;grid-row:1;position:relative;min-height:0;display:flex;flex-direction:column;justify-content:center;background:linear-gradient(160deg,#F08A1A 0%,#E36B12 46%,#D26508 100%);color:#FFFFFF;padding:28px 28px 36px;border-radius:20px;box-shadow:0 16px 40px rgba(210,101,8,.22)}
 .main-prize-count .num{margin:0;font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-weight:400;font-size:200px;line-height:.78;color:#FFFFFF}
 .main-prize-count .label{margin:0;max-width:11em;font-size:18px;line-height:1.25;color:#FFFFFF}
-.main-prize-copy{grid-column:2;grid-row:1;min-width:0;padding:36px;display:flex;flex-direction:column;justify-content:flex-start;gap:6px}
+.main-prize-copy{grid-column:2;grid-row:1;min-width:0;padding:36px;display:flex;flex-direction:column;justify-content:flex-start;gap:6px;background:#fff;border:1px solid #E7E0D6;border-radius:20px;box-shadow:0 16px 40px rgba(40,70,100,.08)}
 .main-prize-copy h3{margin:0;font-family:'Jost',Arial,sans-serif;font-weight:400;font-size:clamp(22px,2.2vw,28px);line-height:1.1;text-transform:uppercase;color:#231D19}
 .main-prize-copy .body{margin:0;font-size:15px;line-height:1.4;color:#3F4750}
 .main-prize-cash{display:flex;flex-direction:column;gap:2px;padding-top:6px;border-top:1px solid #E3DED6}
@@ -156,6 +156,8 @@ a.cta:hover,a.cta:focus,a.cta:active,button.cta:hover,button.cta:focus{color:#FF
 .benefit-value{margin:0;font-family:'Cormorant Garamond',Georgia,serif;font-size:54px;font-weight:500;line-height:.9;white-space:nowrap;color:#231D19}
 .benefit-value span{font-family:'Manrope',Arial,sans-serif;font-size:16px;font-weight:500;letter-spacing:0;margin-left:8px}
 .benefit-text{margin:0;font-size:15px;line-height:1.55;color:#3F4750}
+.benefit-text sup a{color:#3F4750;text-decoration:none}
+.benefit-text sup a:hover{color:#E36B12}
 @media (max-width:860px){
   .benefits{grid-template-columns:1fr 1fr}
   .benefit{box-shadow:none;padding:28px 18px}
@@ -365,6 +367,20 @@ html.intro-on{overflow:hidden}
   .hero-num{font-size:60px}
   .hero-line{font-size:18px}
 }
+.dog-pop{position:fixed;right:0;bottom:0;z-index:30;height:min(480px,54vh);width:max-content;transform:translateX(108%);transform-origin:100% 100%;transition:transform .9s cubic-bezier(.16,1.05,.3,1);pointer-events:none;filter:drop-shadow(-8px 12px 22px rgba(120,72,30,.18))}
+.dog-pop.is-in{transform:translateX(0)}
+.dog-pic{display:block;height:100%;width:auto}
+.dog-smile{position:absolute;left:0;top:0;height:100%;width:100%;opacity:0;transition:opacity .45s ease}
+.dog-pop.is-happy .dog-smile{opacity:1}
+.dog-burst{position:absolute;left:14%;top:48%;width:0;height:0}
+.dog-burst i{position:absolute;left:0;top:0;display:block;opacity:0;border-radius:1px;animation:dog-burst-fly 1.2s cubic-bezier(.15,.6,.3,1) forwards}
+.dog-burst i.is-round{border-radius:50%}
+@keyframes dog-burst-fly{
+  0%{opacity:0;transform:translate(0,0) scale(.25) rotate(0)}
+  8%{opacity:1}
+  38%{transform:translate(var(--x),var(--peak)) scale(1) rotate(calc(var(--spin) * .45))}
+  100%{opacity:0;transform:translate(calc(var(--x) * 1.15),var(--fall)) rotate(var(--spin))}
+}
 </style>
 </helmet>
 <div style="width: 100%; font-family: 'Manrope', Arial, sans-serif; color: #2A2420; background: #FFFFFF">
@@ -391,7 +407,7 @@ html.intro-on{overflow:hidden}
       <div class="benefit">
         <div class="benefit-head"><div class="benefit-icon"><svg aria-hidden="true" width="44" height="44" viewBox="0 0 48 48" fill="none" stroke="#E87820" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="18" width="34" height="24" rx="2"></rect><rect x="4" y="12" width="40" height="7" rx="1.5"></rect><path d="M24 12v30"></path><path d="M24 12c-3-6-11-7-11-2 0 3 6 2 11 2zM24 12c3-6 11-7 11-2 0 3-6 2-11 2z"></path></svg></div><p class="benefit-label">Бонусы</p></div>
         <p class="benefit-value">2&nbsp;000</p>
-        <p class="benefit-text">Всем участникам программы лояльности «Ваш ключ к&nbsp;здоровью». Оплачивайте ими до&nbsp;20% покупки до&nbsp;9&nbsp;декабря</p>
+        <p class="benefit-text">Всем участникам программы лояльности «Ваш ключ к&nbsp;здоровью». Оплачивайте ими до&nbsp;20% покупки до&nbsp;9&nbsp;декабря<sup><a href="#bonus-note">*</a></sup></p>
       </div>
       <div class="benefit">
         <div class="benefit-head"><div class="benefit-icon"><svg aria-hidden="true" width="44" height="44" viewBox="0 0 48 48" fill="none" stroke="#E87820" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="24" cy="24" r="20"></circle><path d="M16 32l16-16"></path><circle cx="17.5" cy="17.5" r="3"></circle><circle cx="30.5" cy="30.5" r="3"></circle></svg></div><p class="benefit-label">Кешбэк</p></div>
@@ -763,6 +779,7 @@ html.intro-on{overflow:hidden}
       <p style="margin: 0; font-family: 'Jost', Arial, sans-serif; font-size: 18px; font-weight: 500; letter-spacing: 5px; color: #FFFFFF">ОРТЕКА</p>
       <p style="margin: 0">Акция «Юбилей ОРТЕКИ&nbsp;– 20&nbsp;ЛЕТ!» проводится с&nbsp;17.11.2026&nbsp;по&nbsp;09.12.2026, розыгрыш 10.12.2026. Организатор: ООО «НИКАМЕД», ОГРН 1037700031588, 127015, г. Москва, Бумажный проезд, д. 14, стр. 2. Один участник может выиграть один приз розыгрыша. Подробные условия и&nbsp;порядок получения призов&nbsp;— в&nbsp;<a href="#rules" style="color: #F0C99E">правилах акции</a>.</p>
       <p style="margin: 0">Бонусы начисляются на&nbsp;карту программы лояльности «Ваш ключ к&nbsp;здоровью». 2&nbsp;000&nbsp;бонусов действуют с&nbsp;17.11&nbsp;по&nbsp;09.12.2026, ими можно оплатить до&nbsp;20% суммы чека. Бонусы не&nbsp;списываются на&nbsp;медицинские услуги, подарочные карты, госпитальный компрессионный трикотаж, индивидуальные стельки, коллаген и&nbsp;товары категории «Ортопедия» и&nbsp;не&nbsp;суммируются с&nbsp;другими акциями.</p>
+      <p id="bonus-note" style="margin: 0">* Для новых клиентов 2&nbsp;000 бонусов начисляются после получения согласия на&nbsp;рекламные рассылки</p>
       <p style="margin: 6px 0 0; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #FFFFFF">Имеются противопоказания. Необходимо проконсультироваться со&nbsp;специалистом</p>
     </div>
   </footer>
@@ -866,6 +883,7 @@ const finish = () => {
   document.documentElement.classList.remove('intro-on');
   setInert(false);
   document.removeEventListener('keydown', onKey);
+  if (this._armDog) this._armDog();
 };
 let closed = false;
 const close = () => {
@@ -887,8 +905,65 @@ document.addEventListener('keydown', onKey);
 this._introClose = finish;
 this._introTimer = setTimeout(close, 3000);
 }
+mountDog() {
+if (document.querySelector('.dog-pop')) return;
+const dog = document.createElement('div');
+dog.className = 'dog-pop';
+dog.setAttribute('aria-hidden', 'true');
+dog.innerHTML = '<div class="dog-burst"></div>'
+  + '<img class="dog-pic dog-calm" src="assets/dog-calm.png" alt="" width="708" height="1120">'
+  + '<img class="dog-pic dog-smile" src="assets/dog-smile.png" alt="" width="708" height="1120">';
+document.body.appendChild(dog);
+this._dog = dog;
+const burst = dog.querySelector('.dog-burst');
+const colors = ['#F5A04A', '#E36B12', '#F0C99E', '#E3B57E', '#D9A66B', '#FBE9CF', '#FFFFFF'];
+const timers = [];
+const later = (fn, ms) => { const id = setTimeout(fn, ms); timers.push(id); };
+const pieces = (count) => {
+  for (let i = 0; i < count; i++) {
+    const bit = document.createElement('i');
+    const round = i % 4 === 0;
+    const angle = (-170 + Math.random() * 130) * Math.PI / 180;
+    const dist = 80 + Math.random() * 180;
+    const size = 7 + Math.random() * 9;
+    const x = Math.cos(angle) * dist;
+    const peak = Math.sin(angle) * dist - 16;
+    bit.className = round ? 'is-round' : '';
+    bit.style.background = colors[i % colors.length];
+    bit.style.width = size.toFixed(0) + 'px';
+    bit.style.height = (round ? size : Math.max(4, size * 0.38)).toFixed(0) + 'px';
+    bit.style.setProperty('--x', x.toFixed(0) + 'px');
+    bit.style.setProperty('--peak', peak.toFixed(0) + 'px');
+    bit.style.setProperty('--fall', (peak + 100 + Math.random() * 150).toFixed(0) + 'px');
+    bit.style.setProperty('--spin', (160 + Math.random() * 320).toFixed(0) + 'deg');
+    burst.appendChild(bit);
+  }
+};
+this._dogTimers = timers;
+this._playDog = () => {
+  if (this._dogPlayed) return;
+  this._dogPlayed = true;
+  burst.innerHTML = '';
+  dog.classList.remove('is-happy');
+  dog.classList.add('is-in');
+  later(() => dog.classList.add('is-happy'), 700);
+  later(() => { burst.innerHTML = ''; pieces(28); later(() => pieces(12), 150); }, 1100);
+  later(() => dog.classList.remove('is-in', 'is-happy'), 2800);
+  later(() => { burst.innerHTML = ''; }, 3800);
+};
+this._armDog = () => {
+  if (this._dogPlayed || document.querySelector('.intro')) return;
+  const max = document.documentElement.scrollHeight - window.innerHeight;
+  if (max < 200 || window.scrollY < max * 0.5) return;
+  window.removeEventListener('scroll', this._dogScroll);
+  this._playDog();
+};
+this._dogScroll = () => this._armDog();
+window.addEventListener('scroll', this._dogScroll, { passive: true });
+}
 componentDidMount() {
 this.mountIntro();
+this.mountDog();
 this.bindTrackFade();
 if (!document.documentElement.classList.contains('motion')) return;
 this._io = new IntersectionObserver((entries) => {
@@ -908,6 +983,9 @@ if (document.documentElement.classList.contains('motion')) this.scanReveals(fals
 componentWillUnmount() {
 if (this._introTimer) clearTimeout(this._introTimer);
 if (this._introClose) this._introClose();
+if (this._dogTimers) this._dogTimers.forEach(clearTimeout);
+if (this._dogScroll) window.removeEventListener('scroll', this._dogScroll);
+if (this._dog) this._dog.remove();
 if (this._io) this._io.disconnect();
 if (this.track && this._trackUpdate) this.track.removeEventListener('scroll', this._trackUpdate);
 if (this._style) this._style.remove();
