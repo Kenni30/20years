@@ -381,6 +381,7 @@ html.intro-on{overflow:hidden}
   100%{opacity:0;transform:translate(calc(var(--x) * 1.15),var(--fall)) rotate(var(--spin))}
 }
 @media (max-width:700px){
+  .hero-banner{aspect-ratio:1400/1302}
   .dog-pop{height:min(240px,27vh)}
   .dog-burst{transform:scale(.5);transform-origin:0 0}
 }
@@ -390,7 +391,10 @@ html.intro-on{overflow:hidden}
 
   <!-- Первый экран -->
   <section id="top" class="hero" data-reveal="self" data-reveal-id="hero">
-    <img class="hero-banner" src="./assets/banner-v2.png" alt="Люди идут вместе на фоне большой цифры 20. ОРТЕКА — мы даём опору">
+    <picture>
+      <source media="(max-width: 700px)" srcset="./assets/banner-mobile.jpg">
+      <img class="hero-banner" src="./assets/banner-v2.jpg" width="2688" height="1152" alt="Люди идут вместе на фоне большой цифры 20. ОРТЕКА — мы даём опору">
+    </picture>
     <div class="hero-copy">
       <h1>
         <span class="hero-num">20&nbsp;лет</span>
