@@ -40,7 +40,7 @@ h1,h2,h3{font-family:'Montserrat',Arial,sans-serif;font-weight:500}
 html.motion .prize-stage-img{transition:opacity .55s ease,transform .7s ease}
 .prize-stage-img.is-front{opacity:1;transform:none;z-index:1}
 .prize-controls{position:absolute;left:50%;bottom:14px;z-index:2;transform:translateX(-50%);display:flex;align-items:center;gap:10px}
-.prize-arrow{display:flex;align-items:center;justify-content:center;width:30px;height:30px;margin:0;padding:0;border:0;border-radius:50%;background:rgba(255,255,255,.84);color:#231D19;cursor:pointer;box-shadow:0 2px 8px rgba(40,40,40,.16)}
+.prize-arrow{display:flex;align-items:center;justify-content:center;width:30px;height:30px;margin:0;padding:0;border:0;border-radius:50%;background:rgba(255,255,255,.84);color:#231D19;cursor:pointer}
 .prize-arrow:hover{background:#fff}
 .prize-arrow:focus-visible{outline:2px solid #F0C99E;outline-offset:2px}
 .prize-timeline{display:block;width:50px;height:3px;border-radius:999px;background:rgba(255,255,255,.72);box-shadow:0 0 0 1px rgba(35,29,25,.12);overflow:hidden}
@@ -92,7 +92,7 @@ html.motion .prize-timeline-bar.is-run{animation:prize-time 3s linear forwards}
   .benefit-value{font-size:46px}
   .wrap,.benefits{padding-left:20px !important;padding-right:20px !important}
 }
-.main-prize{width:100%;display:grid;grid-template-columns:minmax(280px,34%) 1fr;gap:16px;align-items:stretch}
+.main-prize{width:100%;display:grid;grid-template-columns:minmax(280px,34%) 1fr;gap:32px;align-items:stretch}
 .prize-gold-text{background:linear-gradient(135deg,#E36B12 0%,#F5A04A 45%,#D9A66B 60%,#E36B12 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:#E36B12}
 .prize-draw{font-family:'Montserrat',Arial,sans-serif;font-weight:400;font-size:1.18em;letter-spacing:0;color:#E36B12}
 .main-prize-count{grid-column:1;grid-row:1;position:relative;z-index:1;min-height:0;display:flex;flex-direction:column;justify-content:center;background:linear-gradient(160deg,#F08A1A 0%,#E36B12 46%,#D26508 100%);color:#FFFFFF;padding:28px 28px 32px;border-radius:20px;box-shadow:0 16px 40px rgba(210,101,8,.22)}
@@ -137,6 +137,7 @@ html.motion .prize-timeline-bar.is-run{animation:prize-time 3s linear forwards}
   .letter-wrap{gap:84px !important}
 }
 .letter-copy{min-width:0;display:flex;flex-direction:column;gap:20px;font-size:18px;line-height:1.7;color:#2F3640}
+.card-cta.cta{margin-top:auto}
 .silk{position:absolute;display:block;width:240px;height:auto;pointer-events:none;opacity:.9;user-select:none}
 .silk-l{left:-18px}
 .silk-r{right:-22px}
@@ -151,7 +152,7 @@ html.motion .prize-timeline-bar.is-run{animation:prize-time 3s linear forwards}
   .scan-foot{top:auto;bottom:0;height:180px;max-width:none}
 }
 .pill{position:relative;align-self:flex-start;margin-top:8px}
-.cta{box-sizing:border-box;max-width:100%;display:inline-flex;align-items:center;justify-content:center;text-align:center;min-height:58px;padding:10px 34px;border:none;border-radius:999px;background:linear-gradient(120deg,#E36B12 0%,#F5A04A 55%,#F7B15A 100%);color:#FFFFFF;font-family:inherit;font-size:17px;font-weight:700;line-height:1.2;text-decoration:none;cursor:pointer;box-shadow:0 14px 30px rgba(210,101,8,0.30)}
+.cta{box-sizing:border-box;max-width:100%;display:inline-flex;align-items:center;justify-content:center;text-align:center;min-height:58px;padding:10px 34px;border:none;border-radius:999px;background:linear-gradient(120deg,#E36B12 0%,#F5A04A 55%,#F7B15A 100%);color:#FFFFFF;font-family:inherit;font-size:17px;font-weight:700;line-height:1.2;text-decoration:none;cursor:pointer}
 a.cta:hover,a.cta:focus,a.cta:active,button.cta:hover,button.cta:focus{color:#FFFFFF}
 .cta:disabled,.cta:disabled:hover,.cta:disabled:focus{background:#E3E8ED;color:#5F6873;box-shadow:none;cursor:default}
 .how-head{display:flex;align-items:center;justify-content:space-between;gap:18px}
@@ -160,7 +161,16 @@ a.cta:hover,a.cta:focus,a.cta:active,button.cta:hover,button.cta:focus{color:#FF
 .join-card{color:#FFFFFF}
 .join-card h2,.join-card p,.join-card label{color:#FFFFFF}
 .join-card a:not(.cta),.join-card a:not(.cta):hover{color:#FFFFFF}
-.join-card .cta:not(:disabled){background:#FFFFFF;color:#E36B12;box-shadow:0 10px 24px rgba(90,30,0,0.16)}
+.join-card .cta:not(:disabled){background:#FFFFFF;color:#E36B12}
+.consent{appearance:none;-webkit-appearance:none;flex:none;width:22px;height:22px;margin:1px 0 0;border:2px solid rgba(255,255,255,.9);border-radius:7px;background:transparent;cursor:pointer;position:relative;transition:background .25s ease,border-color .25s ease}
+.consent:hover{background:rgba(255,255,255,.16)}
+.consent:checked{background:#FFFFFF;border-color:#FFFFFF}
+.consent:checked::after{content:"";position:absolute;left:6px;top:2px;width:6px;height:11px;border:solid #E36B12;border-width:0 2.5px 2.5px 0;transform:rotate(45deg)}
+.consent:focus-visible{outline:2px solid #F0C99E;outline-offset:2px}
+.faq-a{display:grid;grid-template-rows:0fr;opacity:0;visibility:hidden}
+html.motion .faq-a{transition:grid-template-rows .45s cubic-bezier(.16,1,.3,1),opacity .35s ease,visibility .45s}
+.faq-a-inner{overflow:hidden;min-height:0}
+.faq-a[data-open="true"]{grid-template-rows:1fr;opacity:1;visibility:visible}
 .join-card a.cta:hover,.join-card a.cta:focus,.join-card a.cta:active,.join-card button.cta:not(:disabled):hover,.join-card button.cta:not(:disabled):focus{color:#E36B12}
 .join-card .cta:disabled,.join-card .cta:disabled:hover,.join-card .cta:disabled:focus{background:#FFFFFF;color:#C4A090;box-shadow:none}
 .gift-shot{position:absolute;right:-64px;bottom:-8px;width:380px;height:auto;pointer-events:none}
@@ -384,6 +394,7 @@ html.motion .intro-ribbon-b{animation-delay:.28s}
 @media (max-width:700px){
   .gift-card{padding:24px 20px 0 !important}
   #letter .wrap > div:nth-child(2) > div:not(.gift-card){padding:24px 20px !important}
+  .card-cta.cta{margin-top:0}
   .gift-shot{position:relative !important;order:5;width:280px !important;max-width:78%;height:auto !important;right:auto !important;bottom:auto !important;align-self:flex-end;margin:18px -40px -18px auto !important}
   .scan-foot{-webkit-mask-image:linear-gradient(to bottom,transparent 0%,#000 34%);mask-image:linear-gradient(to bottom,transparent 0%,#000 34%)}
 }
@@ -392,7 +403,7 @@ html.motion .intro-ribbon-b{animation-delay:.28s}
   .hero-line{font-size:18px}
 }
 @media (max-width:700px){
-  .hero-banner{aspect-ratio:1400/1302}
+  .hero-banner{aspect-ratio:1200/800}
   .results{grid-template-columns:1fr}
   .results-copy{padding:0 0 8px}
   .results-copy p{font-size:26px}
@@ -406,7 +417,7 @@ html.motion .intro-ribbon-b{animation-delay:.28s}
   <section id="top" class="hero" data-reveal="self" data-reveal-id="hero">
     <picture>
       <source media="(max-width: 700px)" srcset="./assets/banner-mobile.jpg">
-      <img class="hero-banner" src="./assets/banner-v2.jpg" width="2688" height="1152" alt="Люди идут вместе на фоне большой цифры 20. ОРТЕКА — мы даём опору">
+      <img class="hero-banner" src="./assets/banner-v2.jpg" width="2688" height="1051" alt="Люди идут вместе на фоне большой цифры 20. ОРТЕКА — мы даём опору">
     </picture>
     <div class="hero-copy">
       <h1>
@@ -488,14 +499,14 @@ html.motion .intro-ribbon-b{animation-delay:.28s}
           <p style="position: relative; margin: 0; font-family: 'Manrope', Arial, sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 4px; text-transform: uppercase; color: #E36B12">17&nbsp;ноября&nbsp;– 9&nbsp;декабря</p>
           <h3 style="position: relative; margin: 0; font-family: 'Montserrat', Arial, sans-serif; font-weight: 300; font-size: 30px; line-height: 1.15; text-transform: uppercase; color: #231D19">Дни особенных подарков</h3>
           <p style="position: relative; margin: 0; max-width: 460px; font-size: 16px; line-height: 1.6; color: #3F4750">В&nbsp;салонах ОРТЕКИ и&nbsp;интернет-магазине: начисляем каждому клиенту 2&nbsp;000&nbsp;бонусов на&nbsp;покупки и&nbsp;возвращаем 20% бонусами с&nbsp;каждой покупки. Пусть забота о&nbsp;себе в&nbsp;юбилейные дни будет ещё приятнее.</p>
-          <a href="#gifts" class="pill cta">Подробнее</a>
+          <a href="#gifts" class="pill cta card-cta">Подробнее</a>
         </div>
         <div class="gift-card" style="position: relative; overflow: hidden; background: radial-gradient(ellipse at 82% 18%, #4DB8C8 0%, #0091A8 64%); color: #FFFFFF; border-radius: 22px; padding: 36px 210px 36px 36px; display: flex; flex-direction: column; gap: 12px; box-shadow: 0 20px 50px rgba(0,145,168,0.22)">
           <img class="gift-shot" src="./assets/gift-box.png" alt="">
           <p style="position: relative; margin: 0; font-family: 'Manrope', Arial, sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 4px; text-transform: uppercase; color: #F0C99E">10&nbsp;декабря</p>
           <h3 style="position: relative; margin: 0; font-family: 'Montserrat', Arial, sans-serif; font-weight: 300; font-size: 30px; line-height: 1.15; text-transform: uppercase; color: #FFFFFF">Главное юбилейное событие</h3>
           <p style="position: relative; margin: 0; font-size: 16px; line-height: 1.6; color: #D4E7EA">Розыгрыш 120&nbsp;призов: программа заботы о&nbsp;здоровье, ортопедическая обувь, стельки, компрессионный трикотаж и&nbsp;другие подарки для&nbsp;активной и&nbsp;комфортной жизни.</p>
-          <a href="#prizes" class="pill cta">Смотреть призы</a>
+                   <a href="#prizes" class="pill cta card-cta">Смотреть призы</a>
         </div>
       </div>
     </div>
@@ -697,7 +708,7 @@ html.motion .intro-ribbon-b{animation-delay:.28s}
               <input type="email" value="{{email}}" onChange="{{setEmail}}" placeholder="name@example.ru" autocomplete="email" style="white-space: nowrap; min-height: 56px; padding: 0 20px; border: 1px solid #C9D3DD; border-radius: 14px; background: #F8FAFC; font-family: inherit; font-size: 16px; color: #231D19">
             </label>
             <label style="display: flex; gap: 12px; align-items: flex-start; font-size: 14px; line-height: 1.5; color: #FFFFFF; cursor: pointer">
-              <input type="checkbox" checked="{{consent}}" onChange="{{toggleConsent}}" style="width: 22px; height: 22px; margin: 1px 0 0; accent-color: #FFFFFF; flex: none">
+              <input type="checkbox" checked="{{consent}}" onChange="{{toggleConsent}}" class="consent">
               <span>Соглашаюсь с&nbsp;<a href="#rules">правилами розыгрыша</a></span>
             </label>
             <sc-if value="{{canJoin}}" hint-placeholder-val="{{ false }}">
@@ -768,9 +779,11 @@ html.motion .intro-ribbon-b{animation-delay:.28s}
               <span>{{item.q}}</span>
               <span aria-hidden="true" style="flex: none; font-family: 'Montserrat', Arial, sans-serif; font-size: 28px; font-weight: 300; color: #E87820">{{item.sign}}</span>
             </button>
-            <sc-if value="{{item.open}}" hint-placeholder-val="{{ false }}">
-              <p style="margin: 0 0 22px; font-size: 15px; line-height: 1.65; color: #3F4750">{{item.a}}</p>
-            </sc-if>
+            <div class="faq-a" data-open="{{item.expanded}}">
+              <div class="faq-a-inner">
+                <p style="margin: 0 0 22px; font-size: 15px; line-height: 1.65; color: #3F4750">{{item.a}}</p>
+              </div>
+            </div>
           </div>
         </sc-for>
       </div>
@@ -974,7 +987,6 @@ root.querySelector('[data-dir="1"]').addEventListener('click', () => apply(index
 apply(index, true);
 }
 componentDidMount() {
-this.mountIntro();
 this.mountPrizePick();
 this.bindTrackFade();
 if (!document.documentElement.classList.contains('motion')) return;
