@@ -122,11 +122,21 @@ html.motion .prize-timeline-bar.is-run{animation:prize-time 3s linear forwards}
 .scan-cta{margin-top:18px}
 .scan-note{margin:12px 0 0;font-size:13px;line-height:1.4;color:#D4E7EA}
 .results{position:relative;z-index:1;width:100%;display:grid;grid-template-columns:minmax(280px,34%) 1fr;gap:16px;align-items:stretch}
-.results-copy{display:flex;align-items:center;padding:0 8px 0 0;background:#FFFFFF}
+.results-copy{display:flex;align-items:center;padding:0 8px 0 0;background:transparent}
 .results-copy p{margin:0;font-family:'Montserrat',Arial,sans-serif;font-weight:500;font-size:clamp(26px,2.4vw,36px);line-height:1.25;color:#231D19}
 .results-date{display:block;margin-top:10px;font-size:2em;line-height:1.05;color:#E36B12}
 .results-photo{position:relative;min-height:460px;border-radius:20px;overflow:hidden;background:#F7F4EF;box-shadow:0 16px 40px rgba(40,70,100,.08)}
 .results-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center}
+.letter-intro{display:grid;grid-template-columns:auto minmax(0,1fr);gap:32px 192px;align-items:stretch}
+.letter-logo{display:flex;align-items:stretch;align-self:stretch}
+.letter-logo img{display:block;height:0;min-height:100%;width:auto;object-fit:contain;object-position:left center}
+@media (max-width:800px){
+  .letter-intro{grid-template-columns:1fr;gap:60px}
+  .letter-logo{width:min(400px,100%);margin-inline:auto}
+  .letter-logo img{height:auto;min-height:0;width:100%}
+  .letter-wrap{gap:84px !important}
+}
+.letter-copy{min-width:0;display:flex;flex-direction:column;gap:20px;font-size:18px;line-height:1.7;color:#2F3640}
 .silk{position:absolute;display:block;width:240px;height:auto;pointer-events:none;opacity:.9;user-select:none}
 .silk-l{left:-18px}
 .silk-r{right:-22px}
@@ -253,7 +263,6 @@ html.motion .intro-ribbon-b{animation-delay:.28s}
   .wrap{padding-left:32px !important;padding-right:32px !important}
   .benefits{padding-left:32px !important;padding-right:32px !important}
   .hero-lead{font-size:16px}
-  .letter-mark{font-size:280px !important;right:-70px;top:-30px}
   #letter .wrap{padding-top:64px !important;padding-bottom:64px !important}
   #letter .wrap > div:nth-child(2) > div h3{font-size:28px !important}
   .gift-card{padding:28px 200px 28px 28px !important}
@@ -306,10 +315,9 @@ html.motion .intro-ribbon-b{animation-delay:.28s}
   .benefit-text{font-size:17px !important;line-height:1.5}
   #gifts .wrap{padding-bottom:32px !important}
   #gifts .wrap a{font-size:18px !important;white-space:normal;text-align:center;line-height:1.3}
-  .letter-mark{display:none}
   #letter > svg{display:none}
-  #letter .wrap{padding-top:40px !important;padding-bottom:40px !important;gap:28px !important}
-  #letter .wrap > div:first-child{flex-direction:column !important;gap:16px !important}
+  #letter .wrap{padding-top:40px !important;padding-bottom:40px !important;gap:84px !important}
+  #letter .wrap > div:first-child{flex-direction:column !important}
   #letter .wrap > div:first-child > div:first-child p{font-size:14px !important;letter-spacing:.12em !important}
   #letter .wrap > div:first-child h2{font-size:48px !important}
   #letter .wrap > div:first-child > div:last-child{font-size:18px !important;line-height:1.55 !important;gap:16px !important}
@@ -444,7 +452,6 @@ html.motion .intro-ribbon-b{animation-delay:.28s}
 
   <!-- Обращение -->
   <section id="letter" data-reveal="self" data-reveal-id="letter" style="position: relative; overflow: hidden; background: linear-gradient(180deg, #FFFFFF 0%, #FFF6EE 100%); display: flex; flex-direction: column; align-items: center">
-    <p class="letter-mark" aria-hidden="true" style="position: absolute; right: -40px; top: -40px; margin: 0; font-family: 'Montserrat', Arial, sans-serif; font-size: 520px; line-height: 1; color: #D1EBEF">20</p>
     <img class="silk silk-r" src="./assets/ribbon-r2.png" alt="" style="top: 28px">
     <img class="silk silk-l" src="./assets/ribbon-l1.png" alt="" style="bottom: 36px">
     <span aria-hidden="true" style="position: absolute; left: 95.9%; top: 57.1%; width: 6px; height: 6px; border-radius: 50%; background: #D9A66B; opacity: 0.75"></span>
@@ -465,14 +472,12 @@ html.motion .intro-ribbon-b{animation-delay:.28s}
     <span aria-hidden="true" style="position: absolute; left: 55.1%; top: 36.2%; width: 14px; height: 4px; border-radius: 1px; background: #D9A66B; transform: rotate(69deg); opacity: 0.8"></span>
     <span aria-hidden="true" style="position: absolute; left: 86.2%; top: 11.6%; width: 9px; height: 5px; border-radius: 1px; background: #F0C99E; transform: rotate(62deg); opacity: 0.8"></span>
     <span aria-hidden="true" style="position: absolute; left: 93.1%; top: 46.5%; width: 10px; height: 6px; border-radius: 1px; background: #D9A66B; transform: rotate(92deg); opacity: 0.8"></span>
-    <div class="wrap" style="position: relative; width: 100%; max-width: 1200px; padding: 80px 24px 88px; display: flex; flex-direction: column; gap: 56px">
-        <div style="display: flex; flex-wrap: wrap; gap: 32px 72px">
-        <div style="flex: 1 1 300px; display: flex; flex-direction: column; gap: 16px">
-          <p style="margin: 0; font-size: 13px; font-weight: 600; letter-spacing: 5px; text-transform: uppercase; color: #E36B12">20&nbsp;лет нам. Подарки вам!</p>
-          <h2 style="margin: 0; font-family: 'Montserrat', Arial, sans-serif; font-weight: 400; font-size: clamp(44px, 5vw, 64px); line-height: 1.05; color: #231D19">20&nbsp;лет рядом</h2>
-          <div style="width: 64px; height: 1px; background: #E87820; margin-top: 8px"></div>
+    <div class="wrap letter-wrap" style="position: relative; width: 100%; max-width: 1200px; padding: 80px 24px 88px; display: flex; flex-direction: column; gap: 168px">
+        <div class="letter-intro">
+        <div class="letter-logo">
+          <img src="./assets/letter-20.png" alt="20 лет рядом с вами">
         </div>
-        <div style="flex: 2 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 20px; font-size: 18px; line-height: 1.7; color: #2F3640">
+        <div class="letter-copy">
           <p style="margin: 0">Уже 20&nbsp;лет мы помогаем людям сохранять свободу движения, чувствовать уверенность в&nbsp;каждом шаге и&nbsp;заботиться о&nbsp;своём здоровье. Объединяя медицинскую экспертизу, современные технологии и&nbsp;индивидуальный подход, мы создаём пространство, где каждый может найти профессиональную поддержку и&nbsp;внимание к&nbsp;своим потребностям.</p>
           <p style="margin: 0">Спасибо вам за&nbsp;доверие к&nbsp;ОРТЕКЕ, нашим специалистам и&nbsp;врачам, передовым технологиям, эксклюзивным брендам и&nbsp;уникальным решениям, которые мы выбираем для&nbsp;вас.</p>
           <p style="margin: 0">Все эти годы мы даём вам опору. А&nbsp;ваше доверие становится опорой для&nbsp;нас. И&nbsp;сегодня, отмечая 20-летие ОРТЕКИ, мы хотим сказать вам спасибо&nbsp;— и&nbsp;подарить ещё больше поводов для&nbsp;заботы о&nbsp;себе.</p>
