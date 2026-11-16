@@ -12,13 +12,14 @@
 <body>
 <x-dc>
 <helmet>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&amp;family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&amp;family=Manrope:wght@400;500;600;700&amp;display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&amp;family=Manrope:wght@400;500;600;700&amp;display=swap">
 <style>
 body{margin:0;background:#FFFFFF}
 a{color:#E36B12}a:hover{color:#C45508}
 *{box-sizing:border-box}
 [data-track]::-webkit-scrollbar{display:none}
 input::placeholder{color:#8A8F96}
+h1,h2,h3{font-family:'Montserrat',Arial,sans-serif;font-weight:500}
 
 .prize-pick{width:100%;display:grid;grid-template-columns:minmax(0,1.08fr) minmax(280px,.92fr);gap:28px;align-items:center}
 .prize-list{display:flex;flex-direction:column;gap:2px;min-width:0}
@@ -49,8 +50,8 @@ html.motion .prize-timeline-bar.is-run{animation:prize-time 3s linear forwards}
 .prize-brand{margin:0;font-size:15px;font-weight:700;line-height:1.3;color:#231D19}
 .prize-desc{margin:0;font-size:14px;line-height:1.4;color:#4F4640}
 .prize-pill{display:inline-flex;align-items:center;border-radius:999px;background:#F6F1E8;color:#231D19;font-size:13px;font-weight:600;line-height:1}
-.more-prizes{margin:40px 0 0;font-family:'Jost',Arial,sans-serif;font-weight:400;font-size:26px;line-height:1.3;color:#231D19;text-align:center}
-.more-prizes span{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-weight:400;font-size:1em;color:#E36B12}
+.more-prizes{margin:40px 0 0;font-family:'Montserrat',Arial,sans-serif;font-weight:400;font-size:26px;line-height:1.3;color:#231D19;text-align:center}
+.more-prizes span{font-family:'Montserrat',Arial,sans-serif;font-weight:400;font-size:1em;color:#E36B12}
 @media (max-width:800px){
   #prizes{overflow:clip !important}
   .prize-pick{display:flex;flex-direction:column;gap:16px}
@@ -63,15 +64,15 @@ html.motion .prize-timeline-bar.is-run{animation:prize-time 3s linear forwards}
 .wrap{box-sizing:border-box;width:100%;max-width:1360px !important;margin-left:auto;margin-right:auto;padding-left:40px !important;padding-right:40px !important}
 .hero-copy{position:relative;z-index:1;box-sizing:border-box;width:100%;max-width:1360px;margin:0 auto;display:flex;align-items:center;justify-content:center;gap:56px;padding:28px 40px 36px}
 .hero-copy h1{margin:0;display:flex;flex-direction:column;align-items:flex-start;gap:8px;text-align:left}
-.hero-num{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-weight:400;font-size:84px;line-height:.8;color:#E36B12}
+.hero-num{font-family:'Montserrat',Arial,sans-serif;font-weight:400;font-size:84px;line-height:.8;color:#E36B12}
 .hero-line{font-family:'Manrope',Arial,sans-serif;font-weight:400;font-size:18px;line-height:1.3;white-space:nowrap;color:#231D19}
 .hero-lead{margin:0;max-width:420px;font-size:16px;line-height:1.5;text-align:left;color:#231D19}
 .hero-action{display:flex;flex-direction:column;align-items:flex-start;gap:12px}
-.hero-date{margin:0;font-family:'Cormorant Garamond',Georgia,serif;font-size:26px;font-weight:500;line-height:1;white-space:nowrap;color:#E36B12}
+.hero-date{margin:0;font-family:'Montserrat',Arial,sans-serif;font-size:26px;font-weight:500;line-height:1;white-space:nowrap;color:#E36B12}
 .finale{background:linear-gradient(180deg,#FFFFFF 0%,#FFF6EE 100%)}
 .finale-copy{box-sizing:border-box;width:100%;max-width:1360px;margin:0 auto;display:flex;align-items:center;justify-content:center;gap:56px;padding:48px 40px}
 .finale-copy h2{margin:0;display:flex;flex-direction:column;align-items:flex-start;gap:8px;text-align:left}
-.finale-title{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-weight:400;font-size:72px;line-height:.85;color:#E36B12}
+.finale-title{font-family:'Montserrat',Arial,sans-serif;font-weight:400;font-size:72px;line-height:.85;color:#E36B12}
 .finale-line{font-family:'Manrope',Arial,sans-serif;font-weight:400;font-size:18px;line-height:1.3;white-space:nowrap;color:#231D19}
 .finale-lead{margin:0;max-width:420px;font-size:16px;line-height:1.5;text-align:left;color:#231D19}
 @media (max-width:1100px){
@@ -93,30 +94,42 @@ html.motion .prize-timeline-bar.is-run{animation:prize-time 3s linear forwards}
 }
 .main-prize{width:100%;display:grid;grid-template-columns:minmax(280px,34%) 1fr;gap:16px;align-items:stretch}
 .prize-gold-text{background:linear-gradient(135deg,#E36B12 0%,#F5A04A 45%,#D9A66B 60%,#E36B12 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:#E36B12}
-.prize-draw{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-weight:400;font-size:1.18em;letter-spacing:0;color:#E36B12}
-.main-prize-count{grid-column:1;grid-row:1;position:relative;min-height:0;display:flex;flex-direction:column;justify-content:center;background:linear-gradient(160deg,#F08A1A 0%,#E36B12 46%,#D26508 100%);color:#FFFFFF;padding:28px 28px 36px;border-radius:20px;box-shadow:0 16px 40px rgba(210,101,8,.22)}
-.main-prize-count .num{margin:0;font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-weight:400;font-size:200px;line-height:.78;color:#FFFFFF}
-.main-prize-count .label{margin:0;max-width:11em;font-size:18px;line-height:1.25;color:#FFFFFF}
+.prize-draw{font-family:'Montserrat',Arial,sans-serif;font-weight:400;font-size:1.18em;letter-spacing:0;color:#E36B12}
+.main-prize-count{grid-column:1;grid-row:1;position:relative;z-index:1;min-height:0;display:flex;flex-direction:column;justify-content:center;background:linear-gradient(160deg,#F08A1A 0%,#E36B12 46%,#D26508 100%);color:#FFFFFF;padding:28px 28px 32px;border-radius:20px;box-shadow:0 16px 40px rgba(210,101,8,.22)}
+.main-prize-gift{position:absolute;right:-5%;bottom:-22px;z-index:1;width:44%;max-width:196px;height:auto;pointer-events:none;user-select:none}
+.main-prize-count .num{position:relative;z-index:2;margin:0;font-family:'Montserrat',Arial,sans-serif;font-weight:400;font-size:clamp(112px,11.2vw,180px);line-height:.78;color:#FFFFFF}
+.main-prize-count .label{position:relative;z-index:2;margin:36px 0 0;max-width:none;font-size:18px;line-height:1.3;color:#FFFFFF}
+.main-prize-count .label span{white-space:nowrap}
 .main-prize-copy{grid-column:2;grid-row:1;min-width:0;padding:36px;display:flex;flex-direction:column;justify-content:flex-start;gap:6px;background:#fff;border:1px solid #E7E0D6;border-radius:20px;box-shadow:0 16px 40px rgba(40,70,100,.08)}
-.main-prize-copy h3{margin:0;font-family:'Jost',Arial,sans-serif;font-weight:400;font-size:clamp(22px,2.2vw,28px);line-height:1.1;text-transform:uppercase;color:#231D19}
+.main-prize-copy h3{margin:0;font-family:'Montserrat',Arial,sans-serif;font-weight:400;font-size:clamp(22px,2.2vw,28px);line-height:1.1;text-transform:uppercase;color:#231D19}
 .main-prize-copy .body{margin:0;font-size:15px;line-height:1.4;color:#3F4750}
 .main-prize-cash{display:flex;flex-direction:column;gap:2px;padding-top:6px;border-top:1px solid #E3DED6}
 .main-prize-cash strong{font-size:17px;font-weight:600;line-height:1.35;color:#231D19}
-.main-prize-cash strong span{font-family:'Cormorant Garamond',Georgia,serif;font-size:32px;font-weight:500;color:#E36B12}
+.main-prize-cash strong span{font-family:'Montserrat',Arial,sans-serif;font-size:32px;font-weight:500;color:#E36B12}
 .main-prize-cash p{margin:0;font-size:14px;line-height:1.4;color:#4F5862}
 @media (max-width:800px){
   .main-prize{grid-template-columns:1fr}
-  .main-prize-count{grid-column:1;grid-row:1;padding:24px 24px 32px}
+  .main-prize-count{grid-column:1;grid-row:1;width:min(100%,440px);justify-self:center;padding:24px 24px 28px}
   .main-prize-count .num{font-size:140px}
+  .main-prize-gift{width:min(186px,46%);right:-14px;bottom:-16px}
   .main-prize-copy{grid-column:1;grid-row:2;padding:20px}
 }
 .scan-banner{position:relative;overflow:hidden;width:100%;margin-top:40px;display:grid;grid-template-columns:auto minmax(220px,1fr);align-items:stretch;min-height:228px;border-radius:24px;background:radial-gradient(ellipse at 82% 18%, #4DB8C8 0%, #0091A8 64%);color:#fff;box-shadow:0 22px 48px rgba(0,145,168,0.22)}
 .scan-copy{position:relative;z-index:1;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;padding:32px 28px 30px 48px}
 .scan-kicker{margin:0;font-size:12px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:#E4C48A}
-.scan-title{margin:12px 0 0;font-family:'Jost',Arial,sans-serif;font-weight:400;font-size:clamp(28px,2.7vw,40px);line-height:1.15;color:#fff}
+.scan-title{margin:12px 0 0;font-family:'Montserrat',Arial,sans-serif;font-weight:500;font-size:clamp(28px,2.7vw,40px);line-height:1.15;color:#fff}
 .scan-title s{margin-left:12px;font-size:.68em;font-weight:400;color:rgba(255,255,255,.62);text-decoration:line-through;text-decoration-thickness:1.5px}
 .scan-cta{margin-top:18px}
 .scan-note{margin:12px 0 0;font-size:13px;line-height:1.4;color:#D4E7EA}
+.results{position:relative;z-index:1;width:100%;display:grid;grid-template-columns:minmax(280px,34%) 1fr;gap:16px;align-items:stretch}
+.results-copy{display:flex;align-items:center;padding:0 8px 0 0;background:#FFFFFF}
+.results-copy p{margin:0;font-family:'Montserrat',Arial,sans-serif;font-weight:500;font-size:clamp(26px,2.4vw,36px);line-height:1.25;color:#231D19}
+.results-date{display:block;margin-top:10px;font-size:2em;line-height:1.05;color:#E36B12}
+.results-photo{position:relative;min-height:460px;border-radius:20px;overflow:hidden;background:#F7F4EF;box-shadow:0 16px 40px rgba(40,70,100,.08)}
+.results-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center}
+.silk{position:absolute;display:block;width:240px;height:auto;pointer-events:none;opacity:.9;user-select:none}
+.silk-l{left:-18px}
+.silk-r{right:-22px}
 .scan-foot-slot{position:relative;min-height:100%}
 .scan-foot{position:absolute;left:50%;top:0;height:100%;width:auto;max-width:100%;transform:translateX(calc(-50% - 12px));display:block;pointer-events:none;object-fit:contain;object-position:center bottom}
 .scan-spark{position:absolute;border-radius:1px;background:#E3B57E;opacity:.8;pointer-events:none}
@@ -154,7 +167,7 @@ a.cta:hover,a.cta:focus,a.cta:active,button.cta:hover,button.cta:focus{color:#FF
 .benefit-icon{flex:none;height:44px;display:flex;align-items:center}
 .benefit-icon svg{display:block}
 .benefit-label{margin:0;font-size:12px;font-weight:600;letter-spacing:.14em;line-height:1.35;text-transform:uppercase;color:#3C4650}
-.benefit-value{margin:0;font-family:'Cormorant Garamond',Georgia,serif;font-size:54px;font-weight:500;line-height:.9;white-space:nowrap;color:#231D19}
+.benefit-value{margin:0;font-family:'Montserrat',Arial,sans-serif;font-size:54px;font-weight:500;line-height:.9;white-space:nowrap;color:#231D19}
 .benefit-value span{font-family:'Manrope',Arial,sans-serif;font-size:16px;font-weight:500;letter-spacing:0;margin-left:8px}
 .benefit-text{margin:0;font-size:15px;line-height:1.55;color:#3F4750}
 .benefit-text sup a{color:#3F4750;text-decoration:none}
@@ -199,18 +212,18 @@ html.intro-on{overflow:hidden}
   10%{opacity:1}
   100%{opacity:.95;transform:translate3d(var(--drift),114vh,0) rotate(var(--spin))}
 }
-.intro-ribbon{position:absolute;z-index:1;height:auto;pointer-events:none}
-.intro-ribbon-a{left:-6vw;bottom:-8vh;width:min(720px,68vw)}
-.intro-ribbon-b{right:-5vw;top:-6vh;width:min(640px,58vw)}
-.intro-ribbon path{stroke-dasharray:1600;stroke-dashoffset:1600;animation:intro-draw 1.7s cubic-bezier(.16,1,.3,1) forwards}
-.intro-ribbon-b path{animation-delay:.22s}
-@keyframes intro-draw{to{stroke-dashoffset:0}}
+.intro-ribbon{position:absolute;z-index:1;display:block;height:auto;pointer-events:none;opacity:.48}
+.intro-ribbon-a{left:-12vw;bottom:-4vh;width:min(440px,56vw)}
+.intro-ribbon-b{right:-10vw;top:-3vh;width:min(400px,50vw)}
+html.motion .intro-ribbon{animation:silk-in 1.1s ease .2s both}
+html.motion .intro-ribbon-b{animation-delay:.28s}
+@keyframes silk-in{from{opacity:0}to{opacity:.48}}
 .intro-stage{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;text-align:center;padding:0 24px}
-.intro-num{margin:0;font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-weight:400;font-size:clamp(148px,30vw,300px);line-height:.76;color:#E36B12;animation:intro-num 1.05s cubic-bezier(.16,1.2,.3,1) both}
+.intro-num{margin:0;font-family:'Montserrat',Arial,sans-serif;font-weight:400;font-size:clamp(148px,30vw,300px);line-height:.76;color:#E36B12;animation:intro-num 1.05s cubic-bezier(.16,1.2,.3,1) both}
 .intro-years{margin:12px 0 0;font-family:'Manrope',Arial,sans-serif;font-weight:500;font-size:clamp(28px,3.6vw,42px);letter-spacing:.32em;text-indent:.32em;color:#231D19;animation:intro-years .85s cubic-bezier(.16,1,.3,1) .4s both}
-.intro-brand{margin:14px 0 0;font-family:'Jost',Arial,sans-serif;font-weight:400;font-size:clamp(20px,2.6vw,28px);letter-spacing:.46em;text-indent:.46em;color:#231D19;animation:intro-fade .8s ease .9s both}
-.intro-still .intro-num,.intro-still .intro-years,.intro-still .intro-brand,.intro-still .intro-ribbon path{animation:none}
-.intro-still .intro-ribbon path{stroke-dashoffset:0}
+.intro-brand{margin:14px 0 0;font-family:'Montserrat',Arial,sans-serif;font-weight:400;font-size:clamp(20px,2.6vw,28px);letter-spacing:.46em;text-indent:.46em;color:#231D19;animation:intro-fade .8s ease .9s both}
+.intro-still .intro-num,.intro-still .intro-years,.intro-still .intro-brand,.intro-still .intro-ribbon{animation:none}
+.intro-still .intro-ribbon{opacity:.48}
 .intro-still .intro-bits{display:none}
 .intro-still.is-leaving{animation:none;opacity:0}
 @keyframes intro-num{from{opacity:0;transform:scale(.76) translateY(16px)}to{opacity:1;transform:none}}
@@ -220,11 +233,14 @@ html.intro-on{overflow:hidden}
 .intro-close:hover{color:#E36B12;background:rgba(227,107,18,.08)}
 .intro-close:focus-visible{outline:2px solid #F0C99E;outline-offset:3px}
 @media (max-width:700px){
-  .intro-bits,.intro-ribbon,
+  .intro-bits,.intro-ribbon,.silk,
   #letter > svg,#letter > span[aria-hidden="true"],
   #prizes > svg,#prizes > span[aria-hidden="true"],
   #how > svg,#how > span[aria-hidden="true"],
   #letter .wrap svg[aria-hidden="true"]{opacity:.4 !important}
+  .silk{width:150px !important;opacity:.85 !important}
+  .silk-l{left:-28px}
+  .silk-r{right:-32px}
 }
 
 /* Планшет. Десктопные правила выше не меняются. */
@@ -306,9 +322,10 @@ html.intro-on{overflow:hidden}
   #prizes .wrap{padding:48px 20px 40px !important;gap:28px !important}
   #prizes h2{font-size:36px !important}
   .main-prize{grid-template-columns:1fr}
-  .main-prize-count{grid-column:1;grid-row:1;display:flex;flex-direction:row;align-items:flex-end;gap:8px;padding:16px 20px}
-  .main-prize-count .num{flex:none;font-size:112px}
-  .main-prize-count .label{flex:1;min-width:0;margin:0 0 10px;font-size:18px;color:#FFFFFF}
+  .main-prize-count{grid-column:1;grid-row:1;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:2px;padding:18px 16px 20px}
+  .main-prize-count .num{flex:none;font-size:104px}
+  .main-prize-count .label{flex:none;max-width:none;margin:18px 0 0;font-size:16px;color:#FFFFFF}
+  .main-prize-gift{width:132px;right:-8px;bottom:-10px}
   .main-prize-copy{grid-column:1;grid-row:2;padding:20px 16px 22px}
   .main-prize-copy h3{font-size:24px !important}
   .main-prize-copy .body{font-size:17px}
@@ -366,24 +383,12 @@ html.intro-on{overflow:hidden}
   .hero-num{font-size:60px}
   .hero-line{font-size:18px}
 }
-.dog-pop{position:fixed;right:0;bottom:0;z-index:30;height:min(480px,54vh);width:max-content;transform:translateX(108%);transform-origin:100% 100%;transition:transform .9s cubic-bezier(.16,1.05,.3,1);pointer-events:none;filter:drop-shadow(-8px 12px 22px rgba(120,72,30,.18))}
-.dog-pop.is-in{transform:translateX(0)}
-.dog-pic{display:block;height:100%;width:auto}
-.dog-smile{position:absolute;left:0;top:0;height:100%;width:100%;opacity:0;transition:opacity .45s ease}
-.dog-pop.is-happy .dog-smile{opacity:1}
-.dog-burst{position:absolute;left:14%;top:48%;width:0;height:0}
-.dog-burst i{position:absolute;left:0;top:0;display:block;opacity:0;border-radius:1px;animation:dog-burst-fly 1.2s cubic-bezier(.15,.6,.3,1) forwards}
-.dog-burst i.is-round{border-radius:50%}
-@keyframes dog-burst-fly{
-  0%{opacity:0;transform:translate(0,0) scale(.25) rotate(0)}
-  8%{opacity:1}
-  38%{transform:translate(var(--x),var(--peak)) scale(1) rotate(calc(var(--spin) * .45))}
-  100%{opacity:0;transform:translate(calc(var(--x) * 1.15),var(--fall)) rotate(var(--spin))}
-}
 @media (max-width:700px){
   .hero-banner{aspect-ratio:1400/1302}
-  .dog-pop{height:min(240px,27vh)}
-  .dog-burst{transform:scale(.5);transform-origin:0 0}
+  .results{grid-template-columns:1fr}
+  .results-copy{padding:0 0 8px}
+  .results-copy p{font-size:26px}
+  .results-photo{min-height:0;aspect-ratio:4/3}
 }
 </style>
 </helmet>
@@ -439,8 +444,9 @@ html.intro-on{overflow:hidden}
 
   <!-- Обращение -->
   <section id="letter" data-reveal="self" data-reveal-id="letter" style="position: relative; overflow: hidden; background: linear-gradient(180deg, #FFFFFF 0%, #FFF6EE 100%); display: flex; flex-direction: column; align-items: center">
-    <p class="letter-mark" aria-hidden="true" style="position: absolute; right: -40px; top: -40px; margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-size: 520px; line-height: 1; color: #D1EBEF">20</p>
-    <svg aria-hidden="true" viewBox="0 0 400 300" style="position: absolute; right: -40px; top: 40px; width: 420px; height: 320px; opacity: 0.9"><defs><linearGradient id="rba" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F6DDB8"></stop><stop offset="0.45" stop-color="#D9A66B"></stop><stop offset="0.7" stop-color="#FBE9CF"></stop><stop offset="1" stop-color="#F5A04A"></stop></linearGradient></defs><path d="M10 40C120 10 170 120 110 160C60 195 40 110 130 100C230 90 260 250 390 280" fill="none" stroke="url(#rba)" stroke-width="10" stroke-linecap="round"></path><path d="M10 40C120 10 170 120 110 160C60 195 40 110 130 100C230 90 260 250 390 280" fill="none" stroke="#FFFFFF" stroke-opacity="0.45" stroke-width="2" stroke-linecap="round" transform="translate(-2 -3)"></path></svg>
+    <p class="letter-mark" aria-hidden="true" style="position: absolute; right: -40px; top: -40px; margin: 0; font-family: 'Montserrat', Arial, sans-serif; font-size: 520px; line-height: 1; color: #D1EBEF">20</p>
+    <img class="silk silk-r" src="./assets/ribbon-r2.png" alt="" style="top: 28px">
+    <img class="silk silk-l" src="./assets/ribbon-l1.png" alt="" style="bottom: 36px">
     <span aria-hidden="true" style="position: absolute; left: 95.9%; top: 57.1%; width: 6px; height: 6px; border-radius: 50%; background: #D9A66B; opacity: 0.75"></span>
     <span aria-hidden="true" style="position: absolute; left: 85.3%; top: 41.5%; width: 13px; height: 4px; border-radius: 1px; background: #F0C99E; transform: rotate(64deg); opacity: 0.8"></span>
     <span aria-hidden="true" style="position: absolute; left: 77.9%; top: 12.9%; width: 14px; height: 6px; border-radius: 1px; background: #E3B57E; transform: rotate(163deg); opacity: 0.8"></span>
@@ -463,7 +469,7 @@ html.intro-on{overflow:hidden}
         <div style="display: flex; flex-wrap: wrap; gap: 32px 72px">
         <div style="flex: 1 1 300px; display: flex; flex-direction: column; gap: 16px">
           <p style="margin: 0; font-size: 13px; font-weight: 600; letter-spacing: 5px; text-transform: uppercase; color: #E36B12">20&nbsp;лет нам. Подарки вам!</p>
-          <h2 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-weight: 400; font-size: clamp(44px, 5vw, 64px); line-height: 1.05; color: #231D19">20&nbsp;лет рядом</h2>
+          <h2 style="margin: 0; font-family: 'Montserrat', Arial, sans-serif; font-weight: 400; font-size: clamp(44px, 5vw, 64px); line-height: 1.05; color: #231D19">20&nbsp;лет рядом</h2>
           <div style="width: 64px; height: 1px; background: #E87820; margin-top: 8px"></div>
         </div>
         <div style="flex: 2 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 20px; font-size: 18px; line-height: 1.7; color: #2F3640">
@@ -474,16 +480,15 @@ html.intro-on{overflow:hidden}
       </div>
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px">
         <div style="position: relative; overflow: hidden; background: #FFFFFF; border-radius: 22px; padding: 36px; display: flex; flex-direction: column; gap: 12px; box-shadow: 0 20px 50px rgba(40,70,100,0.10)">
-          <svg aria-hidden="true" viewBox="0 0 300 160" style="position: absolute; right: -30px; bottom: -40px; width: 220px; height: 160px; opacity: 0.85"><defs><linearGradient id="rbb" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F6DDB8"></stop><stop offset="0.45" stop-color="#D9A66B"></stop><stop offset="0.7" stop-color="#FBE9CF"></stop><stop offset="1" stop-color="#F5A04A"></stop></linearGradient></defs><path d="M10 140C80 120 60 40 140 50C200 58 190 130 280 90" fill="none" stroke="url(#rbb)" stroke-width="10" stroke-linecap="round"></path><path d="M10 140C80 120 60 40 140 50C200 58 190 130 280 90" fill="none" stroke="#FFFFFF" stroke-opacity="0.45" stroke-width="2" stroke-linecap="round" transform="translate(-2 -3)"></path></svg>
           <p style="position: relative; margin: 0; font-family: 'Manrope', Arial, sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 4px; text-transform: uppercase; color: #E36B12">17&nbsp;ноября&nbsp;– 9&nbsp;декабря</p>
-          <h3 style="position: relative; margin: 0; font-family: 'Jost', Arial, sans-serif; font-weight: 300; font-size: 30px; line-height: 1.15; text-transform: uppercase; color: #231D19">Дни особенных подарков</h3>
+          <h3 style="position: relative; margin: 0; font-family: 'Montserrat', Arial, sans-serif; font-weight: 300; font-size: 30px; line-height: 1.15; text-transform: uppercase; color: #231D19">Дни особенных подарков</h3>
           <p style="position: relative; margin: 0; max-width: 460px; font-size: 16px; line-height: 1.6; color: #3F4750">В&nbsp;салонах ОРТЕКИ и&nbsp;интернет-магазине: начисляем каждому клиенту 2&nbsp;000&nbsp;бонусов на&nbsp;покупки и&nbsp;возвращаем 20% бонусами с&nbsp;каждой покупки. Пусть забота о&nbsp;себе в&nbsp;юбилейные дни будет ещё приятнее.</p>
           <a href="#gifts" class="pill cta">Подробнее</a>
         </div>
         <div class="gift-card" style="position: relative; overflow: hidden; background: radial-gradient(ellipse at 82% 18%, #4DB8C8 0%, #0091A8 64%); color: #FFFFFF; border-radius: 22px; padding: 36px 210px 36px 36px; display: flex; flex-direction: column; gap: 12px; box-shadow: 0 20px 50px rgba(0,145,168,0.22)">
           <img class="gift-shot" src="./assets/gift-box.png" alt="">
           <p style="position: relative; margin: 0; font-family: 'Manrope', Arial, sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 4px; text-transform: uppercase; color: #F0C99E">10&nbsp;декабря</p>
-          <h3 style="position: relative; margin: 0; font-family: 'Jost', Arial, sans-serif; font-weight: 300; font-size: 30px; line-height: 1.15; text-transform: uppercase; color: #FFFFFF">Главное юбилейное событие</h3>
+          <h3 style="position: relative; margin: 0; font-family: 'Montserrat', Arial, sans-serif; font-weight: 300; font-size: 30px; line-height: 1.15; text-transform: uppercase; color: #FFFFFF">Главное юбилейное событие</h3>
           <p style="position: relative; margin: 0; font-size: 16px; line-height: 1.6; color: #D4E7EA">Розыгрыш 120&nbsp;призов: программа заботы о&nbsp;здоровье, ортопедическая обувь, стельки, компрессионный трикотаж и&nbsp;другие подарки для&nbsp;активной и&nbsp;комфортной жизни.</p>
           <a href="#prizes" class="pill cta">Смотреть призы</a>
         </div>
@@ -493,8 +498,8 @@ html.intro-on{overflow:hidden}
 
   <!-- Главное юбилейное событие: розыгрыш -->
   <section id="prizes" data-reveal="self" data-reveal-id="prizes" style="position: relative; overflow: hidden; background: linear-gradient(180deg, #FFFFFF 0%, #F4FAFB 100%); display: flex; flex-direction: column; align-items: center">
-    <svg aria-hidden="true" viewBox="0 0 400 300" style="position: absolute; left: -60px; top: 30px; width: 380px; height: 280px; opacity: 0.85"><defs><linearGradient id="rbc" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F6DDB8"></stop><stop offset="0.45" stop-color="#D9A66B"></stop><stop offset="0.7" stop-color="#FBE9CF"></stop><stop offset="1" stop-color="#F5A04A"></stop></linearGradient></defs><path d="M10 260C60 160 160 220 170 140C180 60 90 40 120 20C150 0 260 40 390 10" fill="none" stroke="url(#rbc)" stroke-width="10" stroke-linecap="round"></path><path d="M10 260C60 160 160 220 170 140C180 60 90 40 120 20C150 0 260 40 390 10" fill="none" stroke="#FFFFFF" stroke-opacity="0.45" stroke-width="2" stroke-linecap="round" transform="translate(-2 -3)"></path></svg>
-    <svg aria-hidden="true" viewBox="0 0 400 300" style="position: absolute; right: -50px; top: 120px; width: 360px; height: 260px; opacity: 0.85"><defs><linearGradient id="rbd" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F6DDB8"></stop><stop offset="0.45" stop-color="#D9A66B"></stop><stop offset="0.7" stop-color="#FBE9CF"></stop><stop offset="1" stop-color="#F5A04A"></stop></linearGradient></defs><path d="M390 250C300 200 330 120 250 120C170 120 190 210 120 190C50 170 60 60 10 30" fill="none" stroke="url(#rbd)" stroke-width="10" stroke-linecap="round"></path><path d="M390 250C300 200 330 120 250 120C170 120 190 210 120 190C50 170 60 60 10 30" fill="none" stroke="#FFFFFF" stroke-opacity="0.45" stroke-width="2" stroke-linecap="round" transform="translate(-2 -3)"></path></svg>
+    <img class="silk silk-l" src="./assets/ribbon-l3.png" alt="" style="top: 18px">
+    <img class="silk silk-r" src="./assets/ribbon-r4.png" alt="" style="top: 20px">
     <span aria-hidden="true" style="position: absolute; left: 24.7%; top: 5.9%; width: 5px; height: 5px; border-radius: 50%; background: #E3B57E; opacity: 0.75"></span>
     <span aria-hidden="true" style="position: absolute; left: 3.9%; top: 22.9%; width: 7px; height: 7px; border-radius: 50%; background: #F0C99E; opacity: 0.75"></span>
     <span aria-hidden="true" style="position: absolute; left: 28.6%; top: 8.6%; width: 5px; height: 5px; border-radius: 50%; background: #D9A66B; opacity: 0.75"></span>
@@ -528,17 +533,18 @@ html.intro-on{overflow:hidden}
     <div class="wrap" style="position: relative; width: 100%; max-width: 1240px; padding: 88px 24px 80px; display: flex; flex-direction: column; align-items: center; gap: 40px">
       <div style="display: flex; flex-direction: column; align-items: center; gap: 22px; text-align: center">
         <p style="margin: 0; font-size: 15px; font-weight: 500; letter-spacing: 6px; text-transform: uppercase; color: #3C4650">Главное юбилейное событие</p>
-        <h2 style="margin: 0; font-family: 'Jost', Arial, sans-serif; font-weight: 400; font-size: clamp(40px, 5.2vw, 68px); line-height: 1.12; color: #231D19">10&nbsp;декабря<br><span class="prize-draw">розыгрыш 120&nbsp;призов</span> от&nbsp;ОРТЕКИ</h2>
+        <h2 style="margin: 0; font-family: 'Montserrat', Arial, sans-serif; font-weight: 500; font-size: clamp(40px, 5.2vw, 68px); line-height: 1.12; color: #231D19">10&nbsp;декабря<br><span class="prize-draw">розыгрыш 120&nbsp;призов</span></h2>
       </div>
 
       <div class="main-prize">
         <div class="main-prize-count">
           <p class="num">20</p>
-          <p class="label">Победителей получат<br>главный приз</p>
+          <p class="label"><span>Победителей получат</span><br>главный приз</p>
+          <img class="main-prize-gift" src="./assets/main-prize-gift.png" alt="" width="263" height="263">
         </div>
         <div class="main-prize-copy">
           <h3>Программа заботы о&nbsp;здоровье</h3>
-          <p class="body">Комплексный приём травматолога-ортопеда с&nbsp;плантографией и&nbsp;3&nbsp;повторных приёма, 1&nbsp;пара индивидуальных стелек, ортопедическая подушка TRELAX, 2&nbsp;банки коллагена ARQUILLENA и&nbsp;3&nbsp;сеанса кинезиотейпирования</p>
+          <p class="body">Комплексный приём травматолога-ортопеда с&nbsp;плантографией и&nbsp;3&nbsp;повторных приёма, 1&nbsp;пара индивидуальных стелек, ортопедическая подушка TRELAX и&nbsp;3&nbsp;сеанса кинезиотейпирования</p>
           <div class="main-prize-cash">
             <strong>+ кешбэк 100% до&nbsp;<span>20&nbsp;000</span> бонусов</strong>
             <p>Вернём бонусами всю сумму ваших покупок за&nbsp;период акции&nbsp;— 10&nbsp;декабря. Списание&nbsp;— по&nbsp;вашему уровню в&nbsp;программе лояльности, бонусы действуют 1&nbsp;год</p>
@@ -550,44 +556,44 @@ html.intro-on{overflow:hidden}
       <div class="prize-pick">
         <div class="prize-list" role="listbox" aria-label="100 призов">
           <button type="button" class="prize-row is-on" role="option" aria-selected="true">
-            <img src="./assets/certificate-5000.jpg?v=2" alt="Сертификат ОРТЕКИ на 5 000 бонусных баллов">
+            <img src="./assets/prize-certificate.jpg" alt="Сертификат ОРТЕКИ на 5 000 бонусных баллов">
             <span class="prize-row-copy"><span class="prize-brand">ОРТЕКА</span><span class="prize-desc">Сертификат на&nbsp;5&nbsp;000 бонусных баллов</span></span>
             <span class="prize-pill">20&nbsp;призов</span>
           </button>
           <button type="button" class="prize-row" role="option" aria-selected="false">
-            <img src="./assets/dfaa64eba579852e347dd99302fe4004.jpg" alt="Ортопедическая подушка TRELAX">
+            <img src="./assets/prize-trelax.jpg" alt="Ортопедическая подушка TRELAX">
             <span class="prize-row-copy"><span class="prize-brand">TRELAX</span><span class="prize-desc">Ортопедическая подушка по&nbsp;промокоду</span></span>
             <span class="prize-pill">10&nbsp;призов</span>
           </button>
           <button type="button" class="prize-row" role="option" aria-selected="false">
-            <img src="./assets/a9b294ebfb893ffee58ac04bb4f573c0.jpg" alt="Женщина в офисе в компрессионном трикотаже VENOTEKS">
+            <img src="./assets/prize-venoteks.jpg" alt="Женщина в офисе в компрессионном трикотаже VENOTEKS">
             <span class="prize-row-copy"><span class="prize-brand">VENOTEKS</span><span class="prize-desc">Компрессионный трикотаж, 2&nbsp;пары</span></span>
             <span class="prize-pill">15&nbsp;призов</span>
           </button>
           <button type="button" class="prize-row" role="option" aria-selected="false">
-            <img src="./assets/083282f69b96ea046ee5bbb3a87ebeea.jpg" alt="Зимние ботинки GOEKKEN с мехом">
+            <img src="./assets/prize-shoes.jpg" alt="Зимние ботинки GOEKKEN с мехом">
             <span class="prize-row-copy"><span class="prize-brand">BERKEMANN, ORTMANN, GEKKEN</span><span class="prize-desc">Ортопедическая обувь</span></span>
             <span class="prize-pill">10&nbsp;призов</span>
           </button>
           <button type="button" class="prize-row" role="option" aria-selected="false">
-            <img src="./assets/abf09751b3bedf91d0ceb3cdc7fbc318.jpg" alt="Ортопедические стельки ORTMANN">
+            <img src="./assets/prize-insoles.jpg" alt="Ортопедические стельки ORTMANN">
             <span class="prize-row-copy"><span class="prize-brand">BAUERFEIND, ORTMANN</span><span class="prize-desc">Ортопедические стельки</span></span>
             <span class="prize-pill">15&nbsp;призов</span>
           </button>
           <button type="button" class="prize-row" role="option" aria-selected="false">
-            <img src="./assets/b467da54325301176b48c8a6ea229dee.jpg" alt="Ручной массажёр GEZATONE">
+            <img src="./assets/prize-gezatone.jpg" alt="Ручной массажёр GEZATONE">
             <span class="prize-row-copy"><span class="prize-brand">GEZATONE</span><span class="prize-desc">Массажёр для&nbsp;тела</span></span>
             <span class="prize-pill">10&nbsp;призов</span>
           </button>
           <button type="button" class="prize-row" role="option" aria-selected="false">
-            <img src="./assets/ad6992e77cb3f14b53b84f4f144fcc53.jpg" alt="Кинезиотейп BBTAPE">
+            <img src="./assets/prize-kinesio.jpg" alt="Кинезиотейп BBTAPE">
             <span class="prize-row-copy"><span class="prize-brand">Кинезиотейпирование</span><span class="prize-desc">Абонемент на&nbsp;3&nbsp;сеанса в&nbsp;салоне ОРТЕКИ</span></span>
             <span class="prize-pill">20&nbsp;призов</span>
           </button>
         </div>
         <div class="prize-stage">
-          <img class="prize-stage-img is-front" src="./assets/certificate-5000.jpg?v=2" alt="Сертификат ОРТЕКИ на 5 000 бонусных баллов">
-          <img class="prize-stage-img" src="./assets/certificate-5000.jpg?v=2" alt="">
+          <img class="prize-stage-img is-front" src="./assets/prize-certificate.jpg" alt="Сертификат ОРТЕКИ на 5 000 бонусных баллов">
+          <img class="prize-stage-img" src="./assets/prize-certificate.jpg" alt="">
           <div class="prize-controls">
             <button type="button" class="prize-arrow" data-dir="-1" aria-label="Предыдущий приз"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6l6 6"></path></svg></button>
             <span class="prize-timeline" aria-hidden="true"><span class="prize-timeline-bar"></span></span>
@@ -615,14 +621,13 @@ html.intro-on{overflow:hidden}
           <img class="scan-foot" src="./assets/scan-foot.png" alt="Стопа над светящимся сканером">
         </div>
       </div>
-      <p style="margin: 0; font-size: 16px; color: #3F4750; text-align: center">Итоги розыгрыша объявим 10&nbsp;декабря на&nbsp;сайте</p>
     </div>
   </section>
 
   <!-- Как принять участие -->
   <section id="how" data-reveal="self" data-reveal-id="how" style="position: relative; overflow: hidden; background: #FFFFFF; display: flex; flex-direction: column; align-items: center">
-    <svg aria-hidden="true" viewBox="0 0 400 300" style="position: absolute; right: -50px; bottom: 0; width: 360px; height: 260px; opacity: 0.85"><defs><linearGradient id="rbh" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F6DDB8"></stop><stop offset="0.45" stop-color="#D9A66B"></stop><stop offset="0.7" stop-color="#FBE9CF"></stop><stop offset="1" stop-color="#F5A04A"></stop></linearGradient></defs><path d="M10 260C60 160 160 220 170 140C180 60 90 40 120 20C150 0 260 40 390 10" fill="none" stroke="url(#rbh)" stroke-width="10" stroke-linecap="round"></path><path d="M10 260C60 160 160 220 170 140C180 60 90 40 120 20C150 0 260 40 390 10" fill="none" stroke="#FFFFFF" stroke-opacity="0.45" stroke-width="2" stroke-linecap="round" transform="translate(-2 -3)"></path></svg>
-    <svg aria-hidden="true" viewBox="0 0 400 300" style="position: absolute; left: -60px; top: 10px; width: 340px; height: 240px; opacity: 0.85"><defs><linearGradient id="rbi" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F6DDB8"></stop><stop offset="0.45" stop-color="#D9A66B"></stop><stop offset="0.7" stop-color="#FBE9CF"></stop><stop offset="1" stop-color="#F5A04A"></stop></linearGradient></defs><path d="M390 250C300 200 330 120 250 120C170 120 190 210 120 190C50 170 60 60 10 30" fill="none" stroke="url(#rbi)" stroke-width="10" stroke-linecap="round"></path><path d="M390 250C300 200 330 120 250 120C170 120 190 210 120 190C50 170 60 60 10 30" fill="none" stroke="#FFFFFF" stroke-opacity="0.45" stroke-width="2" stroke-linecap="round" transform="translate(-2 -3)"></path></svg>
+    <img class="silk silk-r" src="./assets/ribbon-r6.png" alt="" style="bottom: 8px">
+    <img class="silk silk-l" src="./assets/ribbon-l5.png" alt="" style="top: 12px">
     <span aria-hidden="true" style="position: absolute; left: 8%; top: 12%; width: 7px; height: 7px; border-radius: 50%; background: #F0C99E; opacity: 0.75"></span>
     <span aria-hidden="true" style="position: absolute; left: 18%; top: 6%; width: 11px; height: 5px; border-radius: 1px; background: #E3B57E; transform: rotate(28deg); opacity: 0.8"></span>
     <span aria-hidden="true" style="position: absolute; left: 31%; top: 16%; width: 6px; height: 6px; border-radius: 50%; background: #D9A66B; opacity: 0.75"></span>
@@ -651,8 +656,8 @@ html.intro-on{overflow:hidden}
           </div>
           <ol class="how-steps" style="margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 18px">
             <li style="display: flex; flex-direction: column; gap: 10px"><span class="how-num">1</span><span style="font-size: 15px; line-height: 1.45">Совершите покупку в&nbsp;ОРТЕКЕ с&nbsp;17.11&nbsp;по&nbsp;09.12&nbsp;с&nbsp;картой лояльности</span></li>
-            <li style="display: flex; flex-direction: column; gap: 10px"><span class="how-num">2</span><span style="font-size: 15px; line-height: 1.45">Войдите в&nbsp;личный кабинет на&nbsp;сайте</span></li>
-            <li style="display: flex; flex-direction: column; gap: 10px"><span class="how-num">3</span><span style="font-size: 15px; line-height: 1.45">Нажмите<br>«Принять&nbsp;участие в&nbsp;розыгрыше» на&nbsp;странице акции</span></li>
+            <li style="display: flex; flex-direction: column; gap: 10px"><span class="how-num">2</span><span style="font-size: 15px; line-height: 1.45">Заполните поле «email» в&nbsp;форме ниже</span></li>
+            <li style="display: flex; flex-direction: column; gap: 10px"><span class="how-num">3</span><span style="font-size: 15px; line-height: 1.45">Нажмите<br>«Принять&nbsp;участие в&nbsp;розыгрыше»</span></li>
           </ol>
         </div>
         <div style="background: #FFFFFF; border-radius: 22px; padding: 32px; display: flex; flex-direction: column; gap: 26px; box-shadow: 0 16px 40px rgba(40,70,100,0.08)">
@@ -677,7 +682,7 @@ html.intro-on{overflow:hidden}
     <div class="wrap" style="position: relative; width: 100%; max-width: 1200px; padding: 16px 24px 48px">
       <div class="join-card" style="position: relative; overflow: hidden; display: flex; flex-wrap: wrap; gap: 32px 48px; align-items: center; background: linear-gradient(160deg, #F08A1A 0%, #E36B12 46%, #D26508 100%); border-radius: 26px; padding: 44px; box-shadow: 0 24px 60px rgba(210,101,8,0.28)">
         <div style="position: relative; flex: 1 1 360px; display: flex; flex-direction: column; gap: 12px">
-          <h2 style="margin: 0; font-family: 'Jost', Arial, sans-serif; font-weight: 300; font-size: clamp(30px, 3.4vw, 42px); line-height: 1.1; text-transform: uppercase">Один шаг до&nbsp;юбилейных подарков</h2>
+          <h2 style="margin: 0; font-family: 'Montserrat', Arial, sans-serif; font-weight: 300; font-size: clamp(30px, 3.4vw, 42px); line-height: 1.1; text-transform: uppercase">Один шаг до&nbsp;юбилейных подарков</h2>
           <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #FFFFFF">Нажать «Принять участие в&nbsp;розыгрыше» можно в&nbsp;любой день акции после покупки в&nbsp;салоне или онлайн. В&nbsp;розыгрыш попадут участники программы лояльности с&nbsp;покупкой по&nbsp;карте на&nbsp;любую сумму с&nbsp;17&nbsp;ноября по&nbsp;9&nbsp;декабря.</p>
         </div>
         <div style="position: relative; flex: 1 1 380px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
@@ -688,7 +693,7 @@ html.intro-on{overflow:hidden}
             </label>
             <label style="display: flex; gap: 12px; align-items: flex-start; font-size: 14px; line-height: 1.5; color: #FFFFFF; cursor: pointer">
               <input type="checkbox" checked="{{consent}}" onChange="{{toggleConsent}}" style="width: 22px; height: 22px; margin: 1px 0 0; accent-color: #FFFFFF; flex: none">
-              <span>Соглашаюсь с&nbsp;<a href="#rules">правилами розыгрыша</a> и&nbsp;обработкой персональных данных</span>
+              <span>Соглашаюсь с&nbsp;<a href="#rules">правилами розыгрыша</a></span>
             </label>
             <sc-if value="{{canJoin}}" hint-placeholder-val="{{ false }}">
               <button type="button" onClick="{{join}}" class="cta">Принять участие в&nbsp;розыгрыше</button>
@@ -713,7 +718,12 @@ html.intro-on{overflow:hidden}
   </section>
 
   <!-- Даты -->
-  <section id="dates" data-reveal="self" data-reveal-id="dates" style="background: #FFFFFF; display: flex; flex-direction: column; align-items: center">
+  <section id="dates" data-reveal="self" data-reveal-id="dates" style="position: relative; overflow: hidden; background: #FFFFFF; display: flex; flex-direction: column; align-items: center">
+    <img class="silk silk-r" src="./assets/ribbon-r2.png" alt="" style="top: 6px">
+    <img class="silk silk-l" src="./assets/ribbon-l1.png" alt="" style="bottom: 10px">
+    <span aria-hidden="true" style="position: absolute; left: 6%; top: 18%; width: 8px; height: 8px; background: #F0C99E; transform: rotate(45deg); opacity: 0.8"></span>
+    <span aria-hidden="true" style="position: absolute; left: 14%; top: 72%; width: 14px; height: 5px; border-radius: 1px; background: #E3B57E; transform: rotate(24deg); opacity: 0.75"></span>
+    <span aria-hidden="true" style="position: absolute; left: 78%; top: 78%; width: 7px; height: 7px; background: #F5A04A; transform: rotate(45deg); opacity: 0.7"></span>
     <div class="wrap" style="width: 100%; max-width: 1200px; padding: 72px 24px; display: flex; flex-direction: column; gap: 36px">
       <div style="display: flex; align-items: center; gap: 24px">
         <div style="flex: 1; height: 1px; background: #E4D9CC"></div>
@@ -721,11 +731,19 @@ html.intro-on{overflow:hidden}
         <div style="flex: 1; height: 1px; background: #E4D9CC"></div>
       </div>
       <div class="dates-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 32px 40px">
-        <div style="padding: 0; display: flex; flex-direction: column; gap: 6px"><p style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 44px; font-weight: 500; line-height: 1; color: #E36B12">17.11</p><p style="margin: 0; font-size: 15px; line-height: 1.5; color: #4F4640">Старт акции: бонусы, кешбэк и&nbsp;регистрация в&nbsp;розыгрыше</p></div>
-        <div style="padding: 0; display: flex; flex-direction: column; gap: 6px"><p style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 44px; font-weight: 500; line-height: 1; color: #231D19">09.12</p><p style="margin: 0; font-size: 15px; line-height: 1.5; color: #4F4640">Последний день покупок для&nbsp;участия</p></div>
-        <div style="padding: 0; display: flex; flex-direction: column; gap: 6px"><p style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 44px; font-weight: 500; line-height: 1; color: #E36B12">10.12</p><p style="margin: 0; font-size: 15px; line-height: 1.5; color: #4F4640">Розыгрыш 120&nbsp;призов. Можно оплачивать покупки кешбэком 20%</p></div>
-        <div style="padding: 0; display: flex; flex-direction: column; gap: 6px"><p style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 44px; font-weight: 500; line-height: 1; color: #231D19">31.12</p><p style="margin: 0; font-size: 15px; line-height: 1.5; color: #4F4640">Последний день, чтобы воспользоваться кешбэком 20%</p></div>
-        <div style="padding: 0; display: flex; flex-direction: column; gap: 6px"><p style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 44px; font-weight: 500; line-height: 1; color: #231D19">31.01</p><p style="margin: 0; font-size: 15px; line-height: 1.5; color: #4F4640">До&nbsp;этой даты действует сканирование стопы за&nbsp;1&nbsp;₽</p></div>
+        <div style="padding: 0; display: flex; flex-direction: column; gap: 6px"><p style="margin: 0; font-family: 'Montserrat', Arial, sans-serif; font-size: 44px; font-weight: 500; line-height: 1; color: #E36B12">17.11</p><p style="margin: 0; font-size: 15px; line-height: 1.5; color: #4F4640">Старт акции: бонусы, кешбэк и&nbsp;регистрация в&nbsp;розыгрыше</p></div>
+        <div style="padding: 0; display: flex; flex-direction: column; gap: 6px"><p style="margin: 0; font-family: 'Montserrat', Arial, sans-serif; font-size: 44px; font-weight: 500; line-height: 1; color: #231D19">09.12</p><p style="margin: 0; font-size: 15px; line-height: 1.5; color: #4F4640">Последний день покупок для&nbsp;участия</p></div>
+        <div style="padding: 0; display: flex; flex-direction: column; gap: 6px"><p style="margin: 0; font-family: 'Montserrat', Arial, sans-serif; font-size: 44px; font-weight: 500; line-height: 1; color: #E36B12">10.12</p><p style="margin: 0; font-size: 15px; line-height: 1.5; color: #4F4640">Розыгрыш 120&nbsp;призов. Можно оплачивать покупки кешбэком 20%</p></div>
+        <div style="padding: 0; display: flex; flex-direction: column; gap: 6px"><p style="margin: 0; font-family: 'Montserrat', Arial, sans-serif; font-size: 44px; font-weight: 500; line-height: 1; color: #231D19">31.12</p><p style="margin: 0; font-size: 15px; line-height: 1.5; color: #4F4640">Последний день, чтобы воспользоваться кешбэком 20%</p></div>
+        <div style="padding: 0; display: flex; flex-direction: column; gap: 6px"><p style="margin: 0; font-family: 'Montserrat', Arial, sans-serif; font-size: 44px; font-weight: 500; line-height: 1; color: #231D19">31.01</p><p style="margin: 0; font-size: 15px; line-height: 1.5; color: #4F4640">До&nbsp;этой даты действует сканирование стопы за&nbsp;1&nbsp;₽</p></div>
+      </div>
+      <div class="results">
+        <div class="results-copy">
+          <p>Итоги розыгрыша подведём<span class="results-date">10&nbsp;декабря</span></p>
+        </div>
+        <div class="results-photo">
+          <img src="./assets/results-photo.jpg" alt="Девушка с подарком улыбается и поднимает кулак">
+        </div>
       </div>
     </div>
   </section>
@@ -743,7 +761,7 @@ html.intro-on{overflow:hidden}
           <div style="background: #FFFFFF; border-radius: 18px; padding: 0 26px; box-shadow: 0 8px 20px rgba(40,70,100,0.05)">
             <button type="button" onClick="{{item.toggle}}" aria-expanded="{{item.expanded}}" style="width: 100%; min-height: 64px; padding: 18px 0; border: none; background: transparent; display: flex; align-items: center; justify-content: space-between; gap: 16px; text-align: left; font-family: inherit; font-size: 17px; font-weight: 600; color: #231D19; cursor: pointer">
               <span>{{item.q}}</span>
-              <span aria-hidden="true" style="flex: none; font-family: 'Jost', Arial, sans-serif; font-size: 28px; font-weight: 300; color: #E87820">{{item.sign}}</span>
+              <span aria-hidden="true" style="flex: none; font-family: 'Montserrat', Arial, sans-serif; font-size: 28px; font-weight: 300; color: #E87820">{{item.sign}}</span>
             </button>
             <sc-if value="{{item.open}}" hint-placeholder-val="{{ false }}">
               <p style="margin: 0 0 22px; font-size: 15px; line-height: 1.65; color: #3F4750">{{item.a}}</p>
@@ -769,7 +787,7 @@ html.intro-on{overflow:hidden}
   <!-- Подвал -->
   <footer id="rules" data-reveal="self" data-reveal-id="footer" style="background: #006879; color: #D4E6E8; display: flex; flex-direction: column; align-items: center">
     <div class="wrap" style="width: 100%; max-width: 1200px; padding: 44px 24px; display: flex; flex-direction: column; gap: 12px; font-size: 13px; line-height: 1.65">
-      <p style="margin: 0; font-family: 'Jost', Arial, sans-serif; font-size: 18px; font-weight: 500; letter-spacing: 5px; color: #FFFFFF">ОРТЕКА</p>
+      <p style="margin: 0; font-family: 'Montserrat', Arial, sans-serif; font-size: 18px; font-weight: 500; letter-spacing: 5px; color: #FFFFFF">ОРТЕКА</p>
       <p style="margin: 0">Акция «Юбилей ОРТЕКИ&nbsp;– 20&nbsp;ЛЕТ!» проводится с&nbsp;17.11.2026&nbsp;по&nbsp;09.12.2026, розыгрыш 10.12.2026. Организатор: ООО «НИКАМЕД», ОГРН 1037700031588, 127015, г. Москва, Бумажный проезд, д. 14, стр. 2. Один участник может выиграть один приз розыгрыша. Подробные условия и&nbsp;порядок получения призов&nbsp;— в&nbsp;<a href="#rules" style="color: #F0C99E">правилах акции</a>.</p>
       <p style="margin: 0">Бонусы начисляются на&nbsp;карту программы лояльности «Ваш ключ к&nbsp;здоровью». 2&nbsp;000&nbsp;бонусов действуют с&nbsp;17.11&nbsp;по&nbsp;09.12.2026, ими можно оплатить до&nbsp;20% суммы чека. Бонусы не&nbsp;списываются на&nbsp;медицинские услуги, подарочные карты, госпитальный компрессионный трикотаж, индивидуальные стельки, коллаген и&nbsp;товары категории «Ортопедия» и&nbsp;не&nbsp;суммируются с&nbsp;другими акциями.</p>
       <p id="bonus-note" style="margin: 0">* Для новых клиентов 2&nbsp;000 бонусов начисляются после получения согласия на&nbsp;рекламные рассылки</p>
@@ -848,8 +866,8 @@ root.setAttribute('role', 'dialog');
 root.setAttribute('aria-modal', 'true');
 root.setAttribute('aria-label', '20 лет ОРТЕКЕ');
 root.innerHTML = '<div class="intro-bits" aria-hidden="true"></div>'
-  + '<svg class="intro-ribbon intro-ribbon-a" aria-hidden="true" viewBox="0 0 700 520"><defs><linearGradient id="intro-gold-a" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#F6DDB8"/><stop offset="0.45" stop-color="#D9A66B"/><stop offset="0.7" stop-color="#FBE9CF"/><stop offset="1" stop-color="#F5A04A"/></linearGradient></defs><path d="M24 490C110 360 40 300 180 250C320 200 250 120 340 78C430 36 540 60 680 24" fill="none" stroke="url(#intro-gold-a)" stroke-width="13" stroke-linecap="round"/><path d="M24 490C110 360 40 300 180 250C320 200 250 120 340 78C430 36 540 60 680 24" fill="none" stroke="#FFFFFF" stroke-opacity="0.5" stroke-width="3" stroke-linecap="round" transform="translate(-3 -4)"/></svg>'
-  + '<svg class="intro-ribbon intro-ribbon-b" aria-hidden="true" viewBox="0 0 700 520"><defs><linearGradient id="intro-gold-b" x1="1" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F6DDB8"/><stop offset="0.45" stop-color="#D9A66B"/><stop offset="0.7" stop-color="#FBE9CF"/><stop offset="1" stop-color="#F5A04A"/></linearGradient></defs><path d="M676 500C560 390 640 300 500 250C360 200 420 120 330 74C240 28 140 48 18 16" fill="none" stroke="url(#intro-gold-b)" stroke-width="13" stroke-linecap="round"/><path d="M676 500C560 390 640 300 500 250C360 200 420 120 330 74C240 28 140 48 18 16" fill="none" stroke="#FFFFFF" stroke-opacity="0.5" stroke-width="3" stroke-linecap="round" transform="translate(-3 -4)"/></svg>'
+  + '<img class="intro-ribbon intro-ribbon-a" src="./assets/ribbon-l5.png" alt="">'
+  + '<img class="intro-ribbon intro-ribbon-b" src="./assets/ribbon-r6.png" alt="">'
   + '<div class="intro-stage"><p class="intro-num">20</p><p class="intro-years">лет</p><p class="intro-brand">ОРТЕКЕ</p></div>'
   + '<button type="button" class="intro-close" aria-label="Закрыть"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg></button>';
 const bits = root.querySelector('.intro-bits');
@@ -876,7 +894,6 @@ const finish = () => {
   document.documentElement.classList.remove('intro-on');
   setInert(false);
   document.removeEventListener('keydown', onKey);
-  if (this._armDog) this._armDog();
 };
 let closed = false;
 const close = () => {
@@ -897,62 +914,6 @@ root.querySelector('.intro-close').addEventListener('click', close);
 document.addEventListener('keydown', onKey);
 this._introClose = finish;
 this._introTimer = setTimeout(close, 3000);
-}
-mountDog() {
-if (document.querySelector('.dog-pop')) return;
-const dog = document.createElement('div');
-dog.className = 'dog-pop';
-dog.setAttribute('aria-hidden', 'true');
-dog.innerHTML = '<div class="dog-burst"></div>'
-  + '<img class="dog-pic dog-calm" src="assets/dog-calm.png" alt="" width="708" height="1120">'
-  + '<img class="dog-pic dog-smile" src="assets/dog-smile.png" alt="" width="708" height="1120">';
-document.body.appendChild(dog);
-this._dog = dog;
-const burst = dog.querySelector('.dog-burst');
-const colors = ['#F5A04A', '#E36B12', '#F0C99E', '#E3B57E', '#D9A66B', '#FBE9CF', '#FFFFFF'];
-const timers = [];
-const later = (fn, ms) => { const id = setTimeout(fn, ms); timers.push(id); };
-const pieces = (count) => {
-  for (let i = 0; i < count; i++) {
-    const bit = document.createElement('i');
-    const round = i % 4 === 0;
-    const angle = (-170 + Math.random() * 130) * Math.PI / 180;
-    const dist = 80 + Math.random() * 180;
-    const size = 7 + Math.random() * 9;
-    const x = Math.cos(angle) * dist;
-    const peak = Math.sin(angle) * dist - 16;
-    bit.className = round ? 'is-round' : '';
-    bit.style.background = colors[i % colors.length];
-    bit.style.width = size.toFixed(0) + 'px';
-    bit.style.height = (round ? size : Math.max(4, size * 0.38)).toFixed(0) + 'px';
-    bit.style.setProperty('--x', x.toFixed(0) + 'px');
-    bit.style.setProperty('--peak', peak.toFixed(0) + 'px');
-    bit.style.setProperty('--fall', (peak + 100 + Math.random() * 150).toFixed(0) + 'px');
-    bit.style.setProperty('--spin', (160 + Math.random() * 320).toFixed(0) + 'deg');
-    burst.appendChild(bit);
-  }
-};
-this._dogTimers = timers;
-this._playDog = () => {
-  if (this._dogPlayed) return;
-  this._dogPlayed = true;
-  burst.innerHTML = '';
-  dog.classList.remove('is-happy');
-  dog.classList.add('is-in');
-  later(() => dog.classList.add('is-happy'), 700);
-  later(() => { burst.innerHTML = ''; pieces(28); later(() => pieces(12), 150); }, 1100);
-  later(() => dog.classList.remove('is-in', 'is-happy'), 2800);
-  later(() => { burst.innerHTML = ''; }, 3800);
-};
-this._armDog = () => {
-  if (this._dogPlayed || document.querySelector('.intro')) return;
-  const prizes = document.getElementById('prizes');
-  if (!prizes || prizes.getBoundingClientRect().top > window.innerHeight * 0.82) return;
-  window.removeEventListener('scroll', this._dogScroll);
-  this._playDog();
-};
-this._dogScroll = () => this._armDog();
-window.addEventListener('scroll', this._dogScroll, { passive: true });
 }
 mountPrizePick() {
 const root = document.querySelector('.prize-pick');
@@ -1009,7 +970,6 @@ apply(index, true);
 }
 componentDidMount() {
 this.mountIntro();
-this.mountDog();
 this.mountPrizePick();
 this.bindTrackFade();
 if (!document.documentElement.classList.contains('motion')) return;
@@ -1032,9 +992,6 @@ componentWillUnmount() {
 if (this._introTimer) clearTimeout(this._introTimer);
 if (this._introClose) this._introClose();
 if (this._prizeTimer) clearTimeout(this._prizeTimer);
-if (this._dogTimers) this._dogTimers.forEach(clearTimeout);
-if (this._dogScroll) window.removeEventListener('scroll', this._dogScroll);
-if (this._dog) this._dog.remove();
 if (this._io) this._io.disconnect();
 if (this.track && this._trackUpdate) this.track.removeEventListener('scroll', this._trackUpdate);
 if (this._style) this._style.remove();
